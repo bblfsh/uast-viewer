@@ -1,0 +1,82 @@
+.uast {
+  &-item {
+    margin-left: $indent;
+    min-width: 400px;
+    background: none;
+
+    &.hovered {
+      background: $background-hovered;
+    }
+    &.highlighted {
+      background: $background-highlight;
+    }
+  }
+
+  &-title {
+    min-height: 29px;
+
+    &::before {
+      content: '';
+      width: 15px;
+      display: inline-block;
+    }
+
+    &-collapsible {
+      cursor: pointer;
+
+      &::before {
+        content: '-';
+        color: $font-color-accent-light;
+      }
+
+      &.collapsed::before {
+        content: '+';
+        color: $font-color-accent-dark;
+      }
+
+      &:hover > span {
+        border-bottom: 1px dashed $border-light;
+      }
+    }
+  }
+
+  &-content {
+    margin-left: 4px;
+    border-left: 1px solid $border-smooth;
+  }
+
+  &-label {
+    display: inline;
+    font-family: $font-family;
+    color: $font-color-light;
+  }
+
+  &-value {
+    color: $font-color-dark;
+
+    &.number,
+    &.object {
+      color: $font-color-accent-dark;
+    }
+
+    &.string {
+      color: $font-color-accent-light;
+
+      &::before {
+        content: '\27';
+      }
+      &::after {
+        content: '\27';
+      }
+    }
+  }
+
+  &-property-name {
+    margin-right: 5px;
+
+    &::after {
+      content: ':';
+      color: $font-color-light;
+    }
+  }
+}
