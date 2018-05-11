@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-/* package doesn't exist on npm yet */
-/* eslint import/no-extraneous-dependencies: 0 */
 import UASTViewer from 'uast-viewer';
 import 'uast-viewer/dist/default-theme.css';
 import uastJson from './uast.json';
