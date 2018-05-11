@@ -6,7 +6,7 @@
   "module": "es/index.js",
   "license": "MIT",
   "scripts": {
-    "format": "eslint --fix '*.js'",
+    "format": "eslint --fix 'src/*.js'",
     "build": "npm-run-all build:*",
     "build:cjs": "babel src --out-dir lib --source-maps inline",
     "build:es": "BABEL_ENV=es babel src --out-dir es --source-maps inline",
