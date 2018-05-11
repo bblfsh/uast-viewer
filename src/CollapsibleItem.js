@@ -31,9 +31,15 @@ class CollapsibleItem extends Component {
 
   render() {
     const { name, label, children } = this.props;
+    const rest = Object.keys(this.props)
+      .filter(prop => !CollapsibleItem.propNames.includes(prop))
+      .reduce((acc, prop) => {
+        acc[prop] = this.props[prop];
+        return acc;
+      }, {});
 
     return (
-      <Item>
+      <Item {...rest}>
         <div
           className={`uast-title uast-title-collapsible ${
             this.state.collapsed ? 'collapsed' : ''
@@ -58,5 +64,7 @@ CollapsibleItem.propTypes = {
   children: PropTypes.node.isRequired,
   toggle: PropTypes.func
 };
+
+CollapsibleItem.propNames = Object.keys(CollapsibleItem.propTypes);
 
 export default CollapsibleItem;
