@@ -6,7 +6,6 @@
   "module": "es/index.js",
   "license": "MIT",
   "scripts": {
-    "format": "eslint --fix 'src/*.js'",
     "build": "npm-run-all build:*",
     "build:cjs": "babel src --out-dir lib --source-maps inline",
     "build:es": "BABEL_ENV=es babel src --out-dir es --source-maps inline",
@@ -14,7 +13,10 @@
     "watch": "npm-run-all --parallel watch:*",
     "watch:cjs": "babel src --out-dir lib --source-maps inline -w",
     "watch:es": "BABEL_ENV=es babel src --out-dir es --source-maps inline -w",
-    "watch:css": "node-sass-chokidar styles/ -o dist/ --watch"
+    "watch:css": "node-sass-chokidar styles/ -o dist/ --watch",
+    "lint": "eslint 'src/**/*.js'",
+    "format": "eslint --fix 'src/**/*.js'",
+    "test": "jest src/"
   },
   "devDependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -27,6 +29,7 @@
     "eslint-plugin-jest": "^21.15.1",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.7.0",
+    "jest": "^22.4.3",
     "node-sass-chokidar": "^1.2.2",
     "npm-run-all": "^4.1.3",
     "prettier": "^1.12.1"
