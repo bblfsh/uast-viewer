@@ -17,6 +17,16 @@ export function hoverNodeById(uast, id, prevId) {
   return newUast;
 }
 
+export function toggleNodeById(uast, id) {
+  return {
+    ...uast,
+    [id]: {
+      ...uast[id],
+      expanded: !uast[id].expanded
+    }
+  };
+}
+
 export function highlightNodeById(uast, id, prevId) {
   const node = uast[id];
   const newUast = {
