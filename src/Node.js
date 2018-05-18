@@ -4,16 +4,43 @@ import CollapsibleItem from './CollapsibleItem';
 import { Property, Properties } from './properties';
 
 class Node extends Component {
+  constructor(props) {
+    super(props);
+
+    this.handleMouseMove = this.handleMouseMove.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
+  }
+
+  handleMouseMove(e) {
+    // need to stop propagation to catch hover only on the node itself not parent
+    e.stopPropagation();
+
+    const { id, onMouseMove } = this.props;
+    return onMouseMove(id);
+  }
+
+  handleToggle() {
+    const { id, onToggle } = this.props;
+    onToggle(id);
+  }
+
   render() {
-    const { node, showLocations, toggle } = this.props;
-    const onToggle = toggle ? () => toggle(node.id) : undefined;
+    const { id, uast, showLocations, onToggle, onMouseMove } = this.props;
+    const node = uast[id];
 
     if (!node) {
       return null;
     }
 
     return (
-      <CollapsibleItem label="Node" toggle={onToggle}>
+      <CollapsibleItem
+        label="Node"
+        collapsed={!node.expanded}
+        hovered={node.hovered}
+        higlighted={node.higlighted}
+        toggle={this.handleToggle}
+        onMouseMove={this.handleMouseMove}
+      >
         <Property name="internal_type" value={node.InternalType} />
         <Properties properties={node.Properties} />
         <Property name="token" value={node.Token} />
@@ -24,16 +51,28 @@ class Node extends Component {
           <Position name="end_position" position={node.EndPosition} />
         ) : null}
         <Roles roles={node.Roles} />
-        <Children items={node.Children} showLocations={showLocations} />
+        <Children
+          items={node.Children}
+          uast={uast}
+          showLocations={showLocations}
+          onToggle={onToggle}
+          onMouseMove={onMouseMove}
+        />
       </CollapsibleItem>
     );
   }
 }
 
 Node.propTypes = {
-  node: PropTypes.object, // valid UAST json
+  id: PropTypes.number.isRequired,
+  uast: PropTypes.object.isRequired,
   showLocations: PropTypes.bool,
-  toggle: PropTypes.func
+  onMouseMove: PropTypes.func,
+  onToggle: PropTypes.func
+};
+
+Node.defaultProps = {
+  showLocations: false
 };
 
 export default Node;
@@ -56,7 +95,7 @@ Roles.propTypes = {
 
 class Children extends Component {
   render() {
-    const { items, showLocations } = this.props;
+    const { items, uast, showLocations, onMouseMove, onToggle } = this.props;
 
     if (!Array.isArray(items)) {
       return null;
@@ -64,8 +103,15 @@ class Children extends Component {
 
     return (
       <CollapsibleItem name="children" label="[]Node">
-        {items.map((node, i) => (
-          <Node key={i} node={node} showLocations={showLocations} />
+        {items.map((id, i) => (
+          <Node
+            key={i}
+            id={id}
+            uast={uast}
+            showLocations={showLocations}
+            onMouseMove={onMouseMove}
+            onToggle={onToggle}
+          />
         ))}
       </CollapsibleItem>
     );
@@ -73,8 +119,11 @@ class Children extends Component {
 }
 
 Children.propTypes = {
+  uast: PropTypes.object.isRequired,
+  items: PropTypes.arrayOf(PropTypes.number),
   showLocations: PropTypes.bool,
-  items: PropTypes.array
+  onMouseMove: PropTypes.func,
+  onToggle: PropTypes.func
 };
 
 function coordinates(position) {

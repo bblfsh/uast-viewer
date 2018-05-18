@@ -1,0 +1,16 @@
+.app {
+    margin: 20px;
+}
+
+.case-content {
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+}
+
+.viewer {
+    max-height: 500px;
+    overflow: auto;
+}
