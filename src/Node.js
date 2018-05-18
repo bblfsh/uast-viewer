@@ -7,11 +7,11 @@ class Node extends Component {
   constructor(props) {
     super(props);
 
-    this.onMouseMove = this.onMouseMove.bind(this);
-    this.onToggle = this.onToggle.bind(this);
+    this.handleMouseMove = this.handleMouseMove.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
   }
 
-  onMouseMove(e) {
+  handleMouseMove(e) {
     // need to stop propagation to catch hover only on the node itself not parent
     e.stopPropagation();
 
@@ -19,7 +19,7 @@ class Node extends Component {
     return onMouseMove(id);
   }
 
-  onToggle() {
+  handleToggle() {
     const { id, onToggle } = this.props;
     onToggle(id);
   }
@@ -38,8 +38,8 @@ class Node extends Component {
         collapsed={!node.expanded}
         hovered={node.hovered}
         higlighted={node.higlighted}
-        toggle={() => onToggle(id)}
-        onMouseMove={this.onMouseMove}
+        toggle={this.handleToggle}
+        onMouseMove={this.handleMouseMove}
       >
         <Property name="internal_type" value={node.InternalType} />
         <Properties properties={node.Properties} />
