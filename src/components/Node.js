@@ -16,12 +16,16 @@ class Node extends Component {
     e.stopPropagation();
 
     const { id, onMouseMove } = this.props;
-    return onMouseMove(id);
+    if (onMouseMove) {
+      onMouseMove(id);
+    }
   }
 
   handleToggle() {
     const { id, onToggle } = this.props;
-    onToggle(id);
+    if (onToggle) {
+      onToggle(id);
+    }
   }
 
   render() {

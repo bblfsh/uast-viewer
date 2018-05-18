@@ -1,4 +1,4 @@
-import UASTViewer from './UASTViewer';
+import UASTViewer from './components/UASTViewer';
 import PositionIndex from './PositionIndex';
 import transformer, { DEFAULT_EXPAND_LEVEL } from './transformer';
 import {
