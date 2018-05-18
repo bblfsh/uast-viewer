@@ -23,6 +23,7 @@ module.exports = {
     'func-names': 0,
     'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
     'class-methods-use-this': 0, // strange rule. It doesn't allow to create method render() without this
-    'no-case-declarations': 0 // otherwise code is very ugly
+    'no-case-declarations': 0, // otherwise code is very ugly
+    'no-continue': 0 // why would avoid continue?
   }
 };

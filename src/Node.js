@@ -37,7 +37,7 @@ class Node extends Component {
         label="Node"
         collapsed={!node.expanded}
         hovered={node.hovered}
-        higlighted={node.higlighted}
+        highlighted={node.highlighted}
         toggle={this.handleToggle}
         onMouseMove={this.handleMouseMove}
       >

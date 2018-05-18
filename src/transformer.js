@@ -1,6 +1,6 @@
-const DEFAULT_EXPAND_LEVEL = 2;
+export const DEFAULT_EXPAND_LEVEL = 2;
 
-function transformer(uastJson, expandLevel = DEFAULT_EXPAND_LEVEL) {
+function transformer(uastJson, expandLevel = DEFAULT_EXPAND_LEVEL, ...hooks) {
   const tree = {};
   let id = 0;
 
@@ -20,6 +20,7 @@ function transformer(uastJson, expandLevel = DEFAULT_EXPAND_LEVEL) {
       );
     }
     tree[curId] = node;
+    hooks.forEach(hook => hook(node));
 
     return curId;
   }
