@@ -21,6 +21,10 @@ module.exports = {
         {
           name: 'Controlled',
           content: 'docs/cases/controlled.md'
+        },
+        {
+          name: 'With source code',
+          content: 'docs/cases/with_source_code.md'
         }
       ]
     },

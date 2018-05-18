@@ -4,7 +4,7 @@
 
  - Drop-in component to display uast. [Example](#!/Uncontrolled)
  - Get full control of the tree. [Example](#!/Controlled)
- - Integration with online source code editor [Example](#todo)
+ - Integration with online source code editor [Example](#!/With%20source%20code)
 
 ## Installation
 
