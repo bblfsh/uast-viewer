@@ -11,16 +11,17 @@ class ControlledUAST extends Component {
       showLocations: false,
       toggleOnlyEven: false,
       uast: transformer(uastJson),
-      hoveredId: null
+      hoveredId: null,
+      highlighted: false
     };
 
     this.onNodeHover = this.onNodeHover.bind(this);
     this.onNodeToggle = this.onNodeToggle.bind(this);
 
-    this.onShowLocation = this.onShowLocation.bind(this);
     this.onToggleOnlyEven = this.onToggleOnlyEven.bind(this);
     this.onExpandAll = this.onExpandAll.bind(this);
     this.onCollapseAll = this.onCollapseAll.bind(this);
+    this.onHighlight = this.onHighlight.bind(this);
   }
 
   onNodeHover(id, prevId) {
@@ -44,10 +45,6 @@ class ControlledUAST extends Component {
       }
     };
     this.setState({ uast: newUast });
-  }
-
-  onShowLocation() {
-    this.setState({ showLocations: !this.state.showLocations });
   }
 
   onToggleOnlyEven() {
@@ -76,6 +73,24 @@ class ControlledUAST extends Component {
     }, {});
 
     this.setState({ uast: newUast });
+  }
+
+  onHighlight() {
+    const { uast, highlighted } = this.state;
+    const newUast = Object.keys(this.state.uast).reduce((acc, key) => {
+      const node = uast[key];
+      const newNode = node.Roles.includes('Identifier')
+        ? {
+            ...node,
+            highlighted: !highlighted
+          }
+        : node;
+
+      acc[key] = newNode;
+      return acc;
+    }, {});
+
+    this.setState({ uast: newUast, highlighted: !highlighted });
   }
 
   render() {
@@ -111,6 +126,11 @@ class ControlledUAST extends Component {
         </div>
         <div>
           <button onClick={this.onCollapseAll}>collapse all</button>
+        </div>
+        <div>
+          <button onClick={this.onHighlight}>
+            Toggle highlight for all nodes with Identifier role
+          </button>
         </div>
       </Case>
     );
