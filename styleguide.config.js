@@ -8,6 +8,10 @@ module.exports = {
   },
   sections: [
     {
+      name: 'Quick start',
+      content: 'docs/quick_start.md'
+    },
+    {
       name: 'Use cases',
       sections: [
         {
@@ -23,6 +27,10 @@ module.exports = {
     {
       name: 'UI Components',
       components: 'src/components/**/*.js'
+    },
+    {
+      name: 'State',
+      content: 'docs/state.md'
     }
   ],
   getExampleFilename(componentPath) {
@@ -30,6 +38,11 @@ module.exports = {
       __dirname,
       `${componentPath.replace('src/', 'docs/').replace(/\.js$/, '.md')}`
     );
+  },
+  pagePerSection: true,
+  ribbon: {
+    url: 'https://github.com/src-d/uast-viewer',
+    text: 'Fork me on GitHub'
   },
   webpackConfig: {
     module: {
