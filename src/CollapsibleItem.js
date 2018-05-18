@@ -32,7 +32,7 @@ class CollapsibleItem extends Component {
   render() {
     const { name, label, children } = this.props;
     const rest = Object.keys(this.props)
-      .filter(prop => !CollapsibleItem.propNames.includes(prop))
+      .filter(prop => !CollapsibleItem.propTypes[prop])
       .reduce((acc, prop) => {
         acc[prop] = this.props[prop];
         return acc;
@@ -64,7 +64,5 @@ CollapsibleItem.propTypes = {
   children: PropTypes.node.isRequired,
   toggle: PropTypes.func
 };
-
-CollapsibleItem.propNames = Object.keys(CollapsibleItem.propTypes);
 
 export default CollapsibleItem;
