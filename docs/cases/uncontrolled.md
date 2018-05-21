@@ -1,7 +1,7 @@
-Just pass UAST to the component and it will be rendered.
+Just pass a UAST to the component and it will be rendered.
 
-Original UAST must be converted to flat structure.
-The library provides default transformer function for it.
+The original UAST must be converted to a flat structure.
+The library provides a default transformer function for this purpose.
 
 ```js
 const { transformer } = require('uast-viewer');

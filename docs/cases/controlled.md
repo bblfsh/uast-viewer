@@ -1,6 +1,6 @@
-`UASTViewer` component support controlled mode when the application needs to control uast state.
+The `UASTViewer` component supports controlled mode when the application needs to control the UAST state.
 
-The application is responsible for setting hovered and expanded properties in such case.
+The application is responsible for setting the `hovered` and `expanded` properties in such case.
 
 ```js
 const { transformer, hoverNodeById, toggleNodeById } = require('uast-viewer');
@@ -104,7 +104,7 @@ class ControlledExample extends React.Component {
                 </div>
 
                 {/* the component becomes controlled
-                    when onNodeHover and onNodeToggle props are passed */}
+                    when onNodeHover or onNodeToggle props are passed */}
                 <UASTViewer
                     uast={this.state.uast}
                     onNodeHover={this.onNodeHover}

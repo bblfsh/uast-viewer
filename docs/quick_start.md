@@ -2,13 +2,13 @@
 
 ## Features
 
- - Drop-in component to display uast. [Example](#!/Uncontrolled)
+ - Drop-in component to display a UAST. [Example](#!/Uncontrolled)
  - Get full control of the tree. [Example](#!/Controlled)
  - Integration with online source code editor [Example](#!/With%20source%20code)
 
 ## Installation
 
-1. Install Uast Viewer as a dependency
+1. Install UAST Viewer as a dependency
 
     ```bash
     # Yarn
@@ -30,7 +30,7 @@
     import 'uast-viewer/dist/default-theme.css';
     ```
 
-4. Use default `transformer` function to feed the component with UAST json
+4. Use the default `transformer` function to feed the UAST JSON to the component
 
     ```js static
     import { transformer } from 'uast-viewer';

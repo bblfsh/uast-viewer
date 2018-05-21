@@ -1,4 +1,4 @@
-Renders UAST node recursively.
+Renders a UAST node recursively.
 
 ```js
 const someUast = {

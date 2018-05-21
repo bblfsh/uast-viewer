@@ -1,4 +1,4 @@
-Renders item which can be collapsed.
+Renders any item with a control to collapse and expand the contents.
 
 Label for the item is required:
 
