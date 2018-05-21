@@ -1,8 +1,9 @@
-import UASTViewer from './UASTViewer';
+import UASTViewer from './components/UASTViewer';
 import PositionIndex from './PositionIndex';
 import transformer, { DEFAULT_EXPAND_LEVEL } from './transformer';
 import {
   hoverNodeById,
+  toggleNodeById,
   highlightNodeById,
   getNodePosition,
   makePositionIndexHook
@@ -13,6 +14,7 @@ export {
   transformer,
   DEFAULT_EXPAND_LEVEL,
   hoverNodeById,
+  toggleNodeById,
   highlightNodeById,
   getNodePosition,
   PositionIndex,

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Node from './Node';
-import { hoverNodeById } from './helpers';
+import { hoverNodeById } from '../helpers';
 
 class UASTViewer extends Component {
   constructor(props) {

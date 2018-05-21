@@ -26,7 +26,9 @@ class CollapsibleItem extends Component {
       this.setState({ collapsed: !this.state.collapsed });
       return;
     }
-    this.props.toggle();
+    if (this.props.toggle) {
+      this.props.toggle();
+    }
   }
 
   render() {
