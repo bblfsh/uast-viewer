@@ -81,7 +81,7 @@ class UASTViewer extends Component {
 
   render() {
     const [props, childProps] = splitProps(this.props, UASTViewer);
-    const { showLocations, rootId } = props;
+    const { showLocations, rootIds } = props;
     const uast = this.getUast();
 
     return (
@@ -90,13 +90,16 @@ class UASTViewer extends Component {
         onMouseOut={this.unHoverNode}
         {...childProps}
       >
-        <Node
-          id={rootId}
-          uast={uast}
-          showLocations={showLocations}
-          onToggle={this.onToggle}
-          onMouseMove={this.onMouseMove}
-        />
+        {rootIds.map(id => (
+          <Node
+            key={id}
+            id={id}
+            uast={uast}
+            showLocations={showLocations}
+            onToggle={this.onToggle}
+            onMouseMove={this.onMouseMove}
+          />
+        ))}
       </div>
     );
   }
@@ -106,14 +109,14 @@ UASTViewer.propTypes = {
   // Object should have {[id]: node} format
   // don't use PropTypes.shape due to possible extra properties in a node
   uast: PropTypes.object.isRequired,
-  rootId: PropTypes.number.isRequired,
+  rootIds: PropTypes.arrayOf(PropTypes.number).isRequired,
   showLocations: PropTypes.bool.isRequired,
   onNodeHover: PropTypes.func,
   onNodeToggle: PropTypes.func
 };
 
 UASTViewer.defaultProps = {
-  rootId: 1,
+  rootIds: [1],
   showLocations: false
 };
 
