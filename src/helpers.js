@@ -66,6 +66,23 @@ export function highlightNodeById(uast, id, prevId) {
   return newUast;
 }
 
+// expands all nodes from the root to id
+export function expandToNodeId(uast, id) {
+  let nodeId = id;
+  let newUast = uast;
+  while (nodeId) {
+    newUast = {
+      ...newUast,
+      [nodeId]: {
+        ...uast[nodeId],
+        expanded: true
+      }
+    };
+    nodeId = uast[nodeId].parentId;
+  }
+  return newUast;
+}
+
 export function getNodePosition(node) {
   const { StartPosition: start, EndPosition: end } = node;
 

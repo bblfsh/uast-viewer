@@ -5,6 +5,7 @@ import PositionIndex from './PositionIndex';
 import {
   hoverNodeById,
   highlightNodeById,
+  expandToNodeId,
   makePositionIndexHook,
   getNodePosition
 } from './helpers';
@@ -84,7 +85,7 @@ function withUASTEditor(WrappedComponent) {
       const { uast, lastHighlighted } = this.state;
       const newUast = highlightNodeById(uast, pos.id, lastHighlighted);
       this.setState({
-        uast: newUast,
+        uast: expandToNodeId(newUast, pos.id),
         lastHighlighted: pos.id
       });
     }
