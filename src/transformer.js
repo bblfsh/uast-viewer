@@ -19,8 +19,7 @@ function transformer(uastJson, expandLevel = DEFAULT_EXPAND_LEVEL, ...hooks) {
         convertNode(child, level + 1, curId)
       );
     }
-    tree[curId] = node;
-    hooks.forEach(hook => hook(node));
+    tree[curId] = hooks.reduce((n, hook) => hook(n), node);
 
     return curId;
   }
