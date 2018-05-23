@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Item from './Item';
 import { PropertyName } from './properties';
+import splitProps from '../splitProps';
 
 class CollapsibleItem extends Component {
   constructor(props) {
@@ -32,16 +33,11 @@ class CollapsibleItem extends Component {
   }
 
   render() {
-    const { name, label, children } = this.props;
-    const rest = Object.keys(this.props)
-      .filter(prop => !CollapsibleItem.propTypes[prop])
-      .reduce((acc, prop) => {
-        acc[prop] = this.props[prop];
-        return acc;
-      }, {});
+    const [props, childProps] = splitProps(this.props, CollapsibleItem);
+    const { name, label, children } = props;
 
     return (
-      <Item {...rest}>
+      <Item {...childProps}>
         <div
           className={`uast-title uast-title-collapsible ${
             this.state.collapsed ? 'collapsed' : ''

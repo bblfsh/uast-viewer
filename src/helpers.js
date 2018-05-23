@@ -1,16 +1,26 @@
 export function hoverNodeById(uast, id, prevId) {
+  if (prevId === id) {
+    return uast;
+  }
+
+  let newUast = uast;
   const node = uast[id];
-  const newUast = {
-    ...uast,
-    [id]: {
-      ...node,
-      hovered: true
-    }
-  };
+  if (node) {
+    newUast = {
+      ...newUast,
+      [id]: {
+        ...node,
+        hovered: true
+      }
+    };
+  }
   if (prevId !== null) {
-    newUast[prevId] = {
-      ...newUast[prevId],
-      hovered: false
+    newUast = {
+      ...newUast,
+      [prevId]: {
+        ...newUast[prevId],
+        hovered: false
+      }
     };
   }
 
@@ -28,18 +38,28 @@ export function toggleNodeById(uast, id) {
 }
 
 export function highlightNodeById(uast, id, prevId) {
+  if (prevId === id) {
+    return uast;
+  }
+
+  let newUast = uast;
   const node = uast[id];
-  const newUast = {
-    ...uast,
-    [id]: {
-      ...node,
-      highlighted: true
-    }
-  };
+  if (node) {
+    newUast = {
+      ...newUast,
+      [id]: {
+        ...node,
+        highlighted: true
+      }
+    };
+  }
   if (prevId !== null) {
-    newUast[prevId] = {
-      ...newUast[prevId],
-      highlighted: false
+    newUast = {
+      ...newUast,
+      [prevId]: {
+        ...newUast[prevId],
+        highlighted: false
+      }
     };
   }
 

@@ -1,4 +1,6 @@
 import UASTViewer from './components/UASTViewer';
+import Editor from './components/Editor';
+import withUASTEditor from './withUASTEditor';
 import PositionIndex from './PositionIndex';
 import transformer, { DEFAULT_EXPAND_LEVEL } from './transformer';
 import {
@@ -18,5 +20,7 @@ export {
   highlightNodeById,
   getNodePosition,
   PositionIndex,
-  makePositionIndexHook
+  makePositionIndexHook,
+  Editor,
+  withUASTEditor
 };

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Node from './Node';
 import { hoverNodeById } from '../helpers';
+import splitProps from '../splitProps';
 
 class UASTViewer extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class UASTViewer extends Component {
     }
 
     this.onMouseMove = this.onMouseMove.bind(this);
+    this.unHoverNode = this.unHoverNode.bind(this);
     this.onToggle = this.onToggle.bind(this);
 
     this.lastOverId = null;
@@ -53,6 +55,10 @@ class UASTViewer extends Component {
     this.lastOverId = id;
   }
 
+  unHoverNode() {
+    this.onMouseMove(null);
+  }
+
   onToggle(id) {
     if (this.props.onNodeToggle) {
       this.props.onNodeToggle(id);
@@ -74,11 +80,16 @@ class UASTViewer extends Component {
   }
 
   render() {
-    const { showLocations, rootId } = this.props;
+    const [props, childProps] = splitProps(this.props, UASTViewer);
+    const { showLocations, rootId } = props;
     const uast = this.getUast();
 
     return (
-      <div className="uast-viewer">
+      <div
+        className="uast-viewer"
+        onMouseOut={this.unHoverNode}
+        {...childProps}
+      >
         <Node
           id={rootId}
           uast={uast}
