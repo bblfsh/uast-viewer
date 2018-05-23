@@ -19,6 +19,9 @@ class Editor extends Component {
     super(props);
 
     this.bookmark = null;
+
+    this.onCursor = this.onCursor.bind(this);
+    this.onChange = this.onChange.bind(this);
   }
 
   get document() {
@@ -66,7 +69,7 @@ class Editor extends Component {
     }
   }
 
-  onCursor(pos) {
+  onCursor(_, pos) {
     if (!this.props.onCursorChanged) {
       return;
     }
@@ -74,9 +77,15 @@ class Editor extends Component {
     this.props.onCursorChanged(pos);
   }
 
+  onChange(editor, data, value) {
+    if (this.props.onChange) {
+      this.props.onChange(value);
+    }
+  }
+
   render() {
     const [props, childProps] = splitProps(this.props, Editor);
-    const { code, languageMode, theme, onChange } = props;
+    const { code, languageMode, theme } = props;
 
     const options = {
       mode: languageMode,
@@ -92,8 +101,8 @@ class Editor extends Component {
           }}
           value={code || ''}
           options={options}
-          onBeforeChange={(editor, data, v) => onChange(v)}
-          onCursor={(_, pos) => this.onCursor(pos)}
+          onBeforeChange={this.onChange}
+          onCursor={this.onCursor}
         />
         <div
           className="uast-editor-bookmark"
