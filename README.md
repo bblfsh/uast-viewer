@@ -2,7 +2,7 @@
 
 # UAST Viewer
 
-`uast-viewer` is the simplest way to visualize [UAST](https://doc.bblf.sh/uast/specification.html).
+`uast-viewer` is the simplest way to visualize [Universal Abstract Syntax Trees (UASTs)](https://doc.bblf.sh/uast/specification.html).
 
 ## Features
 
