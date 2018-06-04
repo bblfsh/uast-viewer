@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/src-d/uast-viewer.svg)](https://travis-ci.org/src-d/uast-viewer)
+[![Build Status](https://travis-ci.org/bblfsh/uast-viewer.svg)](https://travis-ci.org/bblfsh/uast-viewer)
 
 # UAST Viewer
 
@@ -48,12 +48,12 @@ See the [documentation](#link-placeholder) with live examples.
 
 ## Contribute
 
-[Contributions](https://github.com/src-d/uast-viewer/issues) are more than welcome, if you are interested please take a look to our [Contributing Guidelines](CONTRIBUTING.md).
+[Contributions](https://github.com/bblfsh/uast-viewer/issues) are more than welcome, if you are interested please take a look to our [Contributing Guidelines](CONTRIBUTING.md).
 
 
 ## Code of Conduct
 
-All activities under source{d} projects are governed by the [source{d} code of conduct](https://github.com/src-d/guide/blob/master/.github/CODE_OF_CONDUCT.md).
+All activities under source{d} projects are governed by the [source{d} code of conduct](https://github.com/bblfsh/guide/blob/master/.github/CODE_OF_CONDUCT.md).
 
 
 ## License

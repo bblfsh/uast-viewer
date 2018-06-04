@@ -2,9 +2,10 @@
   "name": "uast-viewer",
   "version": "0.0.1",
   "description": "reusable component for displaying uast",
+  "homepage": "https://github.com/bblfsh/uast-viewer",
   "main": "lib/index.js",
   "module": "es/index.js",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "scripts": {
     "build": "npm-run-all build:*",
     "build:cjs": "babel src --out-dir lib --source-maps inline",
