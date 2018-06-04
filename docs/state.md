@@ -1,6 +1,8 @@
-The UAST has tree structure which is difficult to operate on and nodes don't have unique identifier.
+All components use flat object representation of UAST, instead of default UAST tree structure.
 
-That's why components require transformation to flat object.
+The rationale is that in default UAST tree structure:
+ - nodes don't have unique identifiers
+ - it is quite complex to operate on
 
 For example, original json with 6 nodes:
 
@@ -22,7 +24,7 @@ For example, original json with 6 nodes:
 }
 ```
 
-Must be transformed to the structure:
+In flat object representation will look like:
 
 ```js static
 {
