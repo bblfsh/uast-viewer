@@ -1,16 +1,17 @@
 {
+    "plugins": ["transform-object-rest-spread"],
     "env": {
         "development": {
-            "presets": [["env", { "modules": "commonjs" }], "react"],
-            "plugins": ["transform-object-rest-spread"]
+            "presets": [["env", { "modules": "commonjs" }], "react"]
         },
         "es": {
-            "presets": [["env", { "modules": false }], "react"],
-            "plugins": ["transform-object-rest-spread"]
+            "presets": [["env", { "modules": false }], "react"]
         },
         "test": {
-            "presets": [["env"], "react"],
-            "plugins": ["transform-object-rest-spread"]
+            "presets": [["env"], "react"]
+        },
+        "production": {
+            "presets": [["env"], "react"]
         }
     }
 }
