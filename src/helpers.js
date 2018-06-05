@@ -112,5 +112,6 @@ export function makePositionIndexHook(posIndex) {
       start: node.StartPosition,
       end: node.EndPosition
     });
+    return node;
   };
 }
