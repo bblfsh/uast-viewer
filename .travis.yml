@@ -1,15 +1,24 @@
 language: node_js
 node_js:
   - "6"
+
 script:
   - yarn lint
   - yarn test
+
 before_deploy:
   - yarn build
+
 deploy:
-  provider: npm
-  email: $NPM_EMAIL
-  api_key: $NPM_KEY
-  skip_cleanup: true
-  on:
-    tags: true
+  - provider: npm
+    email: $NPM_EMAIL
+    api_key: $NPM_KEY
+    skip_cleanup: true
+    on:
+      tags: true
+  - provider: pages
+    github-token: $GITHUB_TOKEN
+    local-dir: styleguide
+    skip-cleanup: true
+    on:
+      branch: master
