@@ -15,7 +15,7 @@ const Viewer = withUASTEditor(({ editorProps, uastViewerProps }) => {
       </div>
     </div>
   );
-})
+});
 
 class App extends React.Component {
   constructor() {
@@ -23,32 +23,31 @@ class App extends React.Component {
 
     this.state = { code: null, lang: null, uast: null };
 
-    this.handleDrop = this.handleDrop.bind(this);
+    this.handleFile = this.handleFile.bind(this);
   }
 
-  handleDrop(e) {
-    e.preventDefault();
+  handleFile(e) {
     const input = document.querySelector('input');
     const file = input.files[0];
-    
-    var reader = new FileReader();
+
+    let reader = new FileReader();
     reader.onload = () => {
       // content of dropped file `{ code: '...', lang: '...', uast: {...} }`
       const inputJSON = JSON.parse(reader.result);
       this.setState(inputJSON);
-    }
+    };
     reader.readAsText(file);
   }
 
   render() {
     const { code, lang, uast } = this.state;
     return (
-      <div onDrop={this.handleDrop}>
+      <div>
         {code ? <Viewer
           code={code}
           languageMode={lang}
           uast={uast}
-        /> : <input onChange={this.handleDrop} type="file"></input>}
+        /> : <input onChange={this.handleFile} type="file"></input>}
       </div>
     );
   }
