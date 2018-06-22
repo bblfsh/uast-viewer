@@ -1,6 +1,10 @@
 export const DEFAULT_EXPAND_LEVEL = 2;
 
 function transformer(uastJson, expandLevel = DEFAULT_EXPAND_LEVEL, ...hooks) {
+  if (!uastJson) {
+    return null;
+  }
+
   const tree = {};
   let id = 0;
 
