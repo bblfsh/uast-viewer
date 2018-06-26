@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 
 import UASTViewer, { Editor, withUASTEditor } from 'uast-viewer';
 import 'uast-viewer/dist/default-theme.css';
