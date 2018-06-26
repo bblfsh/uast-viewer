@@ -6,13 +6,13 @@
 
 ## Features
 
- - Drop-in component to display a UAST. [Example](#!/Uncontrolled)
- - Get full control of the tree. [Example](#!/Controlled)
- - Integration with online source code editor [Example](#!/With%20source%20code)
+ - Drop-in component to display a UAST. [Example](https://uast-viewer.bblf.sh/#!/Uncontrolled)
+ - Get full control of the tree. [Example](https://uast-viewer.bblf.sh/#!/Controlled)
+ - Integration with online source code editor [Example](https://uast-viewer.bblf.sh/#!/With%20source%20code)
 
 ## Documentation
 
-See the [documentation](#link-placeholder) with live examples.
+See the [documentation](https://uast-viewer.bblf.sh/) with live examples.
 
 ## Installation
 
