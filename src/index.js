@@ -8,7 +8,8 @@ import {
   toggleNodeById,
   highlightNodeById,
   getNodePosition,
-  makePositionIndexHook
+  makePositionIndexHook,
+  languageToMode
 } from './helpers';
 
 export default UASTViewer;
@@ -22,5 +23,6 @@ export {
   PositionIndex,
   makePositionIndexHook,
   Editor,
-  withUASTEditor
+  withUASTEditor,
+  languageToMode
 };
