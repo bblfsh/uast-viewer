@@ -87,7 +87,7 @@ class UASTViewer extends Component {
     return (
       <div
         className="uast-viewer"
-        onMouseOut={this.unHoverNode}
+        onMouseLeave={this.unHoverNode}
         {...childProps}
       >
         {rootIds.map(id => (

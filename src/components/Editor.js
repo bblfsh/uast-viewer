@@ -62,9 +62,8 @@ class Editor extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    this.bookmark.remove();
-
     if (prevProps.markRange !== this.props.markRange) {
+      this.bookmark.remove();
       this.selectCode(this.props.markRange);
     }
   }
