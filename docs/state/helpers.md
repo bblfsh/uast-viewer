@@ -46,3 +46,28 @@ const pos = getNodePosition(nodeWithoutPosition);
 const pos = getNodePosition(nodeWithStartPosition);
 // pos = { from: { line: N, ch: N }, to: null}
 ```
+
+### languageToMode
+
+Maps language name to MIME Mode recognizable by code-mirror.
+
+Example usage:
+
+```js
+const { languageToMode } = require('uast-viewer');
+
+const langs = ['java', 'bash', 'javascript'];
+
+<table>
+    <tr>
+        <th>Language</th>
+        <th>Mode</th>
+    </tr>
+{langs.map(lang => (
+    <tr key={lang}>
+        <td>{lang}</td>
+        <td>-&gt; {languageToMode(lang)}</td>
+    </tr>)
+)}
+</table>
+```

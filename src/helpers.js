@@ -115,3 +115,20 @@ export function makePositionIndexHook(posIndex) {
     return node;
   };
 }
+
+const langToMimeModesMapping = {
+  css: 'text/css',
+  ecmascript: 'text/ecmascript',
+  html: 'text/html',
+  javascript: 'text/javascript',
+  typescript: 'text/typescript',
+  cpp: 'text/x-c++src',
+  xml: 'text/xml',
+  bash: 'text/x-sh',
+  shell: 'text/x-sh'
+};
+
+// maps language name to MIME Mode recognizable by code-mirror
+export function languageToMode(lang) {
+  return langToMimeModesMapping[lang] || `text/x-${lang}`;
+}
