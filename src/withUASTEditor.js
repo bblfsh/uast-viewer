@@ -19,6 +19,7 @@ function withUASTEditor(WrappedComponent) {
 
       this.onNodeHover = this.onNodeHover.bind(this);
       this.onNodeToggle = this.onNodeToggle.bind(this);
+      this.onNodeClick = this.onNodeClick.bind(this);
       this.onCursorChanged = this.onCursorChanged.bind(this);
     }
 
@@ -39,8 +40,9 @@ function withUASTEditor(WrappedComponent) {
         ),
         // control highlighted node
         lastHighlighted: null,
-        // position of hovered node
-        pos: null
+        // position (line, ch) of nodes
+        hoverPos: null,
+        clickPos: null
       };
     }
 
@@ -52,14 +54,14 @@ function withUASTEditor(WrappedComponent) {
       if (!node) {
         this.setState({
           uast: newUast,
-          pos: null
+          hoverPos: null
         });
         return;
       }
 
-      const pos = getNodePosition(node);
+      const hoverPos = getNodePosition(node);
 
-      this.setState({ uast: newUast, pos });
+      this.setState({ uast: newUast, hoverPos });
     }
 
     onNodeToggle(id) {
@@ -72,6 +74,19 @@ function withUASTEditor(WrappedComponent) {
         }
       };
       this.setState({ uast: newUast });
+    }
+
+    onNodeClick(id) {
+      const { uast } = this.state;
+      const node = uast[id];
+
+      if (!node) {
+        this.setState({ clickPos: null });
+        return;
+      }
+
+      const clickPos = getNodePosition(node);
+      this.setState({ clickPos });
     }
 
     onCursorChanged(cursorPos) {
@@ -98,13 +113,15 @@ function withUASTEditor(WrappedComponent) {
           editorProps={{
             code,
             languageMode,
-            markRange: this.state.pos,
+            markRange: this.state.hoverPos,
+            scrollToPos: this.state.clickPos,
             onCursorChanged: this.onCursorChanged
           }}
           uastViewerProps={{
             uast: this.state.uast,
             onNodeHover: this.onNodeHover,
-            onNodeToggle: this.onNodeToggle
+            onNodeToggle: this.onNodeToggle,
+            onNodeClick: this.onNodeClick
           }}
           {...rest}
         />

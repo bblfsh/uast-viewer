@@ -9,6 +9,7 @@ class Node extends Component {
 
     this.handleMouseMove = this.handleMouseMove.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleMouseMove(e) {
@@ -28,8 +29,25 @@ class Node extends Component {
     }
   }
 
+  handleClick(e) {
+    // prevent propagation to parent nodes
+    e.stopPropagation();
+
+    const { id, onClick } = this.props;
+    if (onClick) {
+      onClick(id);
+    }
+  }
+
   render() {
-    const { id, uast, showLocations, onToggle, onMouseMove } = this.props;
+    const {
+      id,
+      uast,
+      showLocations,
+      onToggle,
+      onClick,
+      onMouseMove
+    } = this.props;
     const node = uast[id];
 
     if (!node) {
@@ -44,6 +62,7 @@ class Node extends Component {
         highlighted={node.highlighted}
         toggle={this.handleToggle}
         onMouseMove={this.handleMouseMove}
+        onClick={this.handleClick}
       >
         <Property name="internal_type" value={node.InternalType} />
         <Properties properties={node.Properties} />
@@ -61,6 +80,7 @@ class Node extends Component {
           showLocations={showLocations}
           onToggle={onToggle}
           onMouseMove={onMouseMove}
+          onClick={onClick}
         />
       </CollapsibleItem>
     );
@@ -72,7 +92,8 @@ Node.propTypes = {
   uast: PropTypes.object.isRequired,
   showLocations: PropTypes.bool,
   onMouseMove: PropTypes.func,
-  onToggle: PropTypes.func
+  onToggle: PropTypes.func,
+  onClick: PropTypes.func
 };
 
 Node.defaultProps = {
@@ -99,7 +120,14 @@ Roles.propTypes = {
 
 class Children extends Component {
   render() {
-    const { items, uast, showLocations, onMouseMove, onToggle } = this.props;
+    const {
+      items,
+      uast,
+      showLocations,
+      onMouseMove,
+      onToggle,
+      onClick
+    } = this.props;
 
     if (!Array.isArray(items)) {
       return null;
@@ -115,6 +143,7 @@ class Children extends Component {
             showLocations={showLocations}
             onMouseMove={onMouseMove}
             onToggle={onToggle}
+            onClick={onClick}
           />
         ))}
       </CollapsibleItem>
@@ -127,7 +156,8 @@ Children.propTypes = {
   items: PropTypes.arrayOf(PropTypes.number),
   showLocations: PropTypes.bool,
   onMouseMove: PropTypes.func,
-  onToggle: PropTypes.func
+  onToggle: PropTypes.func,
+  onClick: PropTypes.func
 };
 
 function coordinates(position) {
