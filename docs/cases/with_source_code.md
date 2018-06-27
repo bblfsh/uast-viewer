@@ -2,6 +2,12 @@ _Node: [codemirror](https://codemirror.net/) and [react-codemirror2](https://git
 
 The library provides Source Code Editor and High Ordered Component to connect it to UAST Viewer.
 
+Features:
+
+- Highlight related code on node hover
+- Highlight related node on change of cursor
+- Scroll code to highlighted position on click on node
+
 ```js
 const { Editor, withUASTEditor } = require('uast-viewer');
 
@@ -26,7 +32,7 @@ public class Hello extends GenericServlet {
 // define layout for source code editor and UAST Viewer
 function Layout({ editorProps, uastViewerProps }) {
   return (
-    <div style={{display: 'flex'}}>
+    <div style={{display: 'flex', height: '300px'}}>
       <div style={{ width: '50%' }}>
         <Editor {...editorProps} />
       </div>
