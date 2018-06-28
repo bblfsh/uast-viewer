@@ -119,6 +119,7 @@ function withUASTEditor(WrappedComponent) {
           }}
           uastViewerProps={{
             uast: this.state.uast,
+            scrollToNode: this.state.lastHighlighted,
             onNodeHover: this.onNodeHover,
             onNodeToggle: this.onNodeToggle,
             onNodeClick: this.onNodeClick

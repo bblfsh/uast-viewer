@@ -33,12 +33,8 @@ public class Hello extends GenericServlet {
 function Layout({ editorProps, uastViewerProps }) {
   return (
     <div style={{display: 'flex', height: '300px'}}>
-      <div style={{ width: '50%' }}>
-        <Editor {...editorProps} />
-      </div>
-      <div className="viewer" style={{ width: '50%', overflow: 'auto' }}>
-        <UASTViewer {...uastViewerProps} />
-      </div>
+      <Editor {...editorProps} style={{ width: '50%' }}/>
+      <UASTViewer {...uastViewerProps} />
     </div>
   );
 }

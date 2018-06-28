@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import CollapsibleItem from './CollapsibleItem';
 import { Property, Properties } from './properties';
 
+export function nodeClassById(id) {
+  return `uast-viewer__node-${id}`;
+}
+
 class Node extends Component {
   constructor(props) {
     super(props);
@@ -56,6 +60,7 @@ class Node extends Component {
 
     return (
       <CollapsibleItem
+        className={nodeClassById(node.id)}
         label="Node"
         collapsed={!node.expanded}
         hovered={node.hovered}

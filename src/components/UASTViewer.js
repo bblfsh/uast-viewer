@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Node from './Node';
+import Node, { nodeClassById } from './Node';
 import { hoverNodeById } from '../helpers';
 import splitProps from '../splitProps';
 
@@ -17,8 +17,10 @@ class UASTViewer extends Component {
     this.onMouseMove = this.onMouseMove.bind(this);
     this.unHoverNode = this.unHoverNode.bind(this);
     this.onToggle = this.onToggle.bind(this);
+    this.scrollToId = this.scrollToId.bind(this);
 
     this.lastOverId = null;
+    this.el = null;
   }
 
   // TODO(max): make sure there are no problems with this.lastOverId
@@ -31,6 +33,26 @@ class UASTViewer extends Component {
     if (this.props.uast !== nextProps.uast) {
       this.setState({ uast: nextProps.uast });
     }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.scrollToNode !== prevProps.scrollToNode) {
+      this.scrollToId(this.props.scrollToNode);
+    }
+  }
+
+  scrollToId(id) {
+    if (!id || !this.el) {
+      return;
+    }
+
+    const nodeEl = this.el.getElementsByClassName(nodeClassById(id))[0];
+
+    if (!nodeEl) {
+      return;
+    }
+
+    this.el.scrollTop = nodeEl.offsetTop;
   }
 
   getUast() {
@@ -88,6 +110,9 @@ class UASTViewer extends Component {
       <div
         className="uast-viewer"
         onMouseLeave={this.unHoverNode}
+        ref={r => {
+          this.el = r;
+        }}
         {...childProps}
       >
         {rootIds.map(id => (
@@ -112,6 +137,7 @@ UASTViewer.propTypes = {
   uast: PropTypes.object.isRequired,
   rootIds: PropTypes.arrayOf(PropTypes.number).isRequired,
   showLocations: PropTypes.bool.isRequired,
+  scrollToNode: PropTypes.number,
   onNodeHover: PropTypes.func,
   onNodeToggle: PropTypes.func,
   onNodeClick: PropTypes.func
