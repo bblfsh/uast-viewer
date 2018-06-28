@@ -11,24 +11,6 @@ Features:
 ```js
 const { Editor, withUASTEditor } = require('uast-viewer');
 
-// source code as string for example UAST
-const sourceCode = `// hello.java
-import java.io.*;
-import javax.servlet.*;
-
-public class Hello extends GenericServlet {
-    public void service(final ServletRequest request, final ServletResponse response)
-    throws ServletException, IOException {
-        response.setContentType("text/html");
-        final PrintWriter pw = response.getWriter();
-        try {
-            pw.println("Hello, world!");
-        } finally {
-            pw.close();
-        }
-    }
-}`;
-
 // define layout for source code editor and UAST Viewer
 function Layout({ editorProps, uastViewerProps }) {
   return (
@@ -44,7 +26,7 @@ const LayoutWithComponents = withUASTEditor(Layout);
 
 // Render both components
 <LayoutWithComponents
-    code={sourceCode}
+    code={sourceCode.default}
     languageMode="text/x-java"
     uast={uast}
 />

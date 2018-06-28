@@ -4,7 +4,8 @@ module.exports = {
   title: 'Uast Viewer',
   require: [path.resolve(__dirname, 'dist/default-theme.css')],
   context: {
-    uast: path.resolve(__dirname, 'docs/example_uast.json')
+    uast: path.resolve(__dirname, 'docs/example_uast.json'),
+    sourceCode: path.resolve(__dirname, 'docs/example_java_source.js')
   },
   sections: [
     {
