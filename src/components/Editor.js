@@ -55,16 +55,31 @@ class Editor extends Component {
     }
   }
 
+  scrollToPos(pos) {
+    // don't change scroll without position
+    if (!pos) {
+      return;
+    }
+
+    // try to position line in the center of viewport
+    const { clientHeight } = this.editor.getScrollInfo();
+    this.editor.scrollIntoView(pos, clientHeight / 2);
+  }
+
   componentDidMount() {
     this.bookmark.remove();
 
     this.selectCode(this.props.markRange);
+    this.scrollToPos(this.props.scrollToPos);
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.markRange !== this.props.markRange) {
       this.bookmark.remove();
       this.selectCode(this.props.markRange);
+    }
+    if (prevProps.scrollToPos !== this.props.scrollToPos) {
+      this.scrollToPos(this.props.scrollToPos);
     }
   }
 
@@ -126,6 +141,10 @@ Editor.propTypes = {
       line: PropTypes.number,
       ch: PropTypes.number
     })
+  }),
+  scrollToPos: PropTypes.shape({
+    line: PropTypes.number,
+    ch: PropTypes.number
   }),
   theme: PropTypes.string.isRequired,
   onChange: PropTypes.func,

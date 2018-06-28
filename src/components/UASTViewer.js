@@ -98,6 +98,7 @@ class UASTViewer extends Component {
             showLocations={showLocations}
             onToggle={this.onToggle}
             onMouseMove={this.onMouseMove}
+            onClick={props.onNodeClick}
           />
         ))}
       </div>
@@ -112,7 +113,8 @@ UASTViewer.propTypes = {
   rootIds: PropTypes.arrayOf(PropTypes.number).isRequired,
   showLocations: PropTypes.bool.isRequired,
   onNodeHover: PropTypes.func,
-  onNodeToggle: PropTypes.func
+  onNodeToggle: PropTypes.func,
+  onNodeClick: PropTypes.func
 };
 
 UASTViewer.defaultProps = {
