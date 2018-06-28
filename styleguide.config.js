@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   title: 'Uast Viewer',
-  require: [path.resolve(__dirname, 'dist/default-theme.css')],
+  require: [path.resolve(__dirname, 'styles/default-theme.scss')],
   context: {
     uast: path.resolve(__dirname, 'docs/example_uast.json'),
     sourceCode: path.resolve(__dirname, 'docs/example_java_source.js')
@@ -70,6 +70,10 @@ module.exports = {
           test: /\.jsx?$/,
           exclude: /node_modules/,
           loader: 'babel-loader'
+        },
+        {
+          test: /\.scss$/,
+          use: ['style-loader', 'css-loader', 'sass-loader']
         },
         {
           test: /\.css$/,
