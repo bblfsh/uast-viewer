@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import transformer, { DEFAULT_EXPAND_LEVEL } from './transformer';
+import defaultTransformer, { DEFAULT_EXPAND_LEVEL } from './transformer';
 import PositionIndex from './PositionIndex';
 import {
   hoverNodeById,
@@ -10,7 +10,7 @@ import {
   getNodePosition
 } from './helpers';
 
-function withUASTEditor(WrappedComponent) {
+function withUASTEditor(WrappedComponent, transformer = defaultTransformer) {
   class UASTEditorWrapper extends Component {
     constructor(props) {
       super(props);
@@ -29,12 +29,12 @@ function withUASTEditor(WrappedComponent) {
       }
     }
 
-    stateFromUast(json) {
+    stateFromUast(uast) {
       this.posIndex = new PositionIndex();
 
       return {
         uast: transformer(
-          json,
+          uast,
           DEFAULT_EXPAND_LEVEL,
           makePositionIndexHook(this.posIndex)
         ),
