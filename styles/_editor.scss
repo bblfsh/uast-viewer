@@ -1,4 +1,9 @@
 .uast-editor {
+    .react-codemirror2,
+    .CodeViewer {
+        height: 100%;
+    }
+
     &-mark {
         background: $background-highlight;
     }
