@@ -1,5 +1,7 @@
 Renders a UAST node recursively.
 
+The component must be wrapped with `TreeContext.Provider` containing flat UAST JSON.
+
 ```js
 const someUast = {
     1: {
@@ -20,7 +22,9 @@ const someUast = {
     }
 };
 
-<Node uast={someUast} id={1} />
+<TreeContext.Provider value={someUast}>
+    <Node id={1} />
+</TreeContext.Provider>
 ```
 
 With location:
@@ -36,5 +40,8 @@ const someUast = {
         expanded: true
     }
 };
-<Node uast={someUast} id={1} showLocations={true} />
+
+<TreeContext.Provider value={someUast}>
+    <Node id={1} showLocations={true} />
+</TreeContext.Provider>
 ```

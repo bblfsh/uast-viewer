@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Node, { nodeClassById } from './Node';
 import { hoverNodeById } from '../helpers';
 import splitProps from '../splitProps';
+import TreeContext from './TreeContext';
 
 class UASTViewer extends Component {
   constructor(props) {
@@ -115,18 +116,19 @@ class UASTViewer extends Component {
         }}
         {...childProps}
       >
-        {rootIds.map(id => (
-          <Node
-            key={id}
-            id={id}
-            uast={uast}
-            schema={schema}
-            showLocations={showLocations}
-            onToggle={this.onToggle}
-            onMouseMove={this.onMouseMove}
-            onClick={props.onNodeClick}
-          />
-        ))}
+        <TreeContext.Provider value={uast}>
+          {rootIds.map(id => (
+            <Node
+              key={id}
+              id={id}
+              schema={schema}
+              showLocations={showLocations}
+              onToggle={this.onToggle}
+              onMouseMove={this.onMouseMove}
+              onClick={props.onNodeClick}
+            />
+          ))}
+        </TreeContext.Provider>
       </div>
     );
   }
