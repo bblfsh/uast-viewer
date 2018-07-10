@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CollapsibleItem from './CollapsibleItem';
+import Position from './Position';
 import { Property, Properties } from './properties';
 
 export function nodeClassById(id) {
@@ -47,6 +48,7 @@ class Node extends Component {
     const {
       id,
       uast,
+      schema,
       showLocations,
       onToggle,
       onClick,
@@ -69,19 +71,49 @@ class Node extends Component {
         onMouseMove={this.handleMouseMove}
         onClick={this.handleClick}
       >
-        <Property name="internal_type" value={node.InternalType} />
-        <Properties properties={node.Properties} />
-        <Property name="token" value={node.Token} />
-        {showLocations ? (
-          <Position name="start_position" position={node.StartPosition} />
-        ) : null}
-        {showLocations ? (
-          <Position name="end_position" position={node.EndPosition} />
-        ) : null}
-        <Roles roles={node.Roles} />
+        {schema.map(field => {
+          const value = field.attr(node);
+          if (!field.showEmpty && !value) {
+            return null;
+          }
+          if (field.type === 'object') {
+            return (
+              <Properties
+                key={field.name}
+                properties={value}
+                name={field.name}
+                label={field.label}
+              />
+            );
+          }
+          if (field.type === 'array') {
+            if (!Array.isArray(value)) {
+              return null;
+            }
+            return (
+              <CollapsibleItem
+                name={field.name}
+                label={field.label}
+                key={field.name}
+              >
+                {value.map((role, i) => <Property key={i} value={role} />)}
+              </CollapsibleItem>
+            );
+          }
+          if (field.type === 'location') {
+            if (!showLocations) {
+              return null;
+            }
+            return (
+              <Position name={field.name} position={value} key={field.name} />
+            );
+          }
+          return <Property name={field.name} value={value} key={field.name} />;
+        })}
         <Children
           items={node.Children}
           uast={uast}
+          schema={schema}
           showLocations={showLocations}
           onToggle={onToggle}
           onMouseMove={onMouseMove}
@@ -95,6 +127,15 @@ class Node extends Component {
 Node.propTypes = {
   id: PropTypes.number.isRequired,
   uast: PropTypes.object.isRequired,
+  schema: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      attr: PropTypes.func.isRequired,
+      type: PropTypes.oneOf(['array', 'object', 'location']),
+      label: PropTypes.string,
+      showEmpty: PropTypes.bool
+    })
+  ).isRequired,
   showLocations: PropTypes.bool,
   onMouseMove: PropTypes.func,
   onToggle: PropTypes.func,
@@ -102,32 +143,25 @@ Node.propTypes = {
 };
 
 Node.defaultProps = {
+  schema: [
+    { name: 'internal_type', attr: n => n.InternalType },
+    { name: 'properties', type: 'object', attr: n => n.Properties },
+    { name: 'token', attr: n => n.Token },
+    { name: 'start_position', type: 'location', attr: n => n.StartPosition },
+    { name: 'end_position', type: 'location', attr: n => n.EndPosition },
+    { name: 'roles', type: 'array', label: '[]Role', attr: n => n.Roles }
+  ],
   showLocations: false
 };
 
 export default Node;
-
-export function Roles({ roles }) {
-  if (Array.isArray(roles)) {
-    return (
-      <CollapsibleItem name="roles" label="[]Role">
-        {roles.map((role, i) => <Property key={i} value={role} />)}
-      </CollapsibleItem>
-    );
-  }
-
-  return null;
-}
-
-Roles.propTypes = {
-  roles: PropTypes.arrayOf(PropTypes.string)
-};
 
 class Children extends Component {
   render() {
     const {
       items,
       uast,
+      schema,
       showLocations,
       onMouseMove,
       onToggle,
@@ -145,6 +179,7 @@ class Children extends Component {
             key={i}
             id={id}
             uast={uast}
+            schema={schema}
             showLocations={showLocations}
             onMouseMove={onMouseMove}
             onToggle={onToggle}
@@ -159,44 +194,9 @@ class Children extends Component {
 Children.propTypes = {
   uast: PropTypes.object.isRequired,
   items: PropTypes.arrayOf(PropTypes.number),
+  schema: Node.propTypes.schema,
   showLocations: PropTypes.bool,
   onMouseMove: PropTypes.func,
   onToggle: PropTypes.func,
   onClick: PropTypes.func
-};
-
-function coordinates(position) {
-  if (!position) {
-    return [];
-  }
-
-  const values = ['Offset', 'Line', 'Col'];
-
-  return values
-    .filter(name => typeof position[name] !== 'undefined')
-    .map((name, i) => (
-      <Property key={i} name={name.toLowerCase()} value={position[name]} />
-    ));
-}
-
-function Position({ name, position }) {
-  const coords = coordinates(position);
-  if (position && coordinates.length > 0) {
-    return (
-      <CollapsibleItem name={name} label="Position">
-        {coords}
-      </CollapsibleItem>
-    );
-  }
-
-  return <Property name={name} value={null} />;
-}
-
-Position.propTypes = {
-  name: PropTypes.string,
-  position: PropTypes.shape({
-    Offset: PropTypes.number,
-    Line: PropTypes.number,
-    Col: PropTypes.number
-  })
 };

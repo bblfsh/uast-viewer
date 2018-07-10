@@ -33,20 +33,27 @@ Property.propTypes = {
   value: PropTypes.any
 };
 
-export function Properties({ properties }) {
+export function Properties({ properties, name, label }) {
   if (!properties || !Object.keys(properties).length) {
     return null;
   }
 
   return (
-    <CollapsibleItem name="properties" label="map<string, string>">
-      {Object.keys(properties).map((name, i) => (
-        <Property key={i} name={name} value={properties[name]} />
+    <CollapsibleItem name={name} label={label}>
+      {Object.keys(properties).map((prop, i) => (
+        <Property key={i} name={prop} value={properties[prop]} />
       ))}
     </CollapsibleItem>
   );
 }
 
 Properties.propTypes = {
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
   properties: PropTypes.object
+};
+
+Properties.defaultProps = {
+  name: 'properties',
+  label: 'map<string, string>'
 };

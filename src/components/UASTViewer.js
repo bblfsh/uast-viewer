@@ -103,7 +103,7 @@ class UASTViewer extends Component {
 
   render() {
     const [props, childProps] = splitProps(this.props, UASTViewer);
-    const { showLocations, rootIds } = props;
+    const { showLocations, rootIds, schema } = props;
     const uast = this.getUast();
 
     return (
@@ -120,6 +120,7 @@ class UASTViewer extends Component {
             key={id}
             id={id}
             uast={uast}
+            schema={schema}
             showLocations={showLocations}
             onToggle={this.onToggle}
             onMouseMove={this.onMouseMove}
@@ -136,6 +137,7 @@ UASTViewer.propTypes = {
   // don't use PropTypes.shape due to possible extra properties in a node
   uast: PropTypes.object.isRequired,
   rootIds: PropTypes.arrayOf(PropTypes.number).isRequired,
+  schema: PropTypes.array,
   showLocations: PropTypes.bool.isRequired,
   scrollToNode: PropTypes.number,
   onNodeHover: PropTypes.func,
