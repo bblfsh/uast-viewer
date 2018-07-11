@@ -14,8 +14,8 @@ const { Editor, withUASTEditor } = require('uast-viewer');
 // define layout for source code editor and UAST Viewer
 function Layout({ editorProps, uastViewerProps }) {
   return (
-    <div style={{display: 'flex', height: '300px'}}>
-      <Editor {...editorProps} style={{ width: '50%' }}/>
+    <div style={{display: 'flex', height: '300px', overflow: 'hidden'}}>
+      <Editor {...editorProps} style={{ width: '50%', height: '100%' }}/>
       <UASTViewer {...uastViewerProps} />
     </div>
   );
