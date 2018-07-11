@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import CollapsibleItem from './CollapsibleItem';
 import Position from './Position';
 import { Property, Properties } from './properties';
+import TreeContext from './TreeContext';
 
 export function nodeClassById(id) {
   return `uast-viewer__node-${id}`;
 }
 
-class Node extends Component {
+class PureNode extends PureComponent {
   constructor(props) {
     super(props);
 
@@ -47,22 +48,17 @@ class Node extends Component {
   render() {
     const {
       id,
-      uast,
+      node,
       schema,
       showLocations,
       onToggle,
       onClick,
       onMouseMove
     } = this.props;
-    const node = uast[id];
-
-    if (!node) {
-      return null;
-    }
 
     return (
       <CollapsibleItem
-        className={nodeClassById(node.id)}
+        className={nodeClassById(id)}
         label="Node"
         collapsed={!node.expanded}
         hovered={node.hovered}
@@ -112,7 +108,6 @@ class Node extends Component {
         })}
         <Children
           items={node.Children}
-          uast={uast}
           schema={schema}
           showLocations={showLocations}
           onToggle={onToggle}
@@ -124,9 +119,9 @@ class Node extends Component {
   }
 }
 
-Node.propTypes = {
+PureNode.propTypes = {
   id: PropTypes.number.isRequired,
-  uast: PropTypes.object.isRequired,
+  node: PropTypes.object.isRequired,
   schema: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
@@ -142,6 +137,32 @@ Node.propTypes = {
   onClick: PropTypes.func
 };
 
+class Node extends Component {
+  renderPureNode(uast) {
+    const node = uast[this.props.id];
+
+    if (!node) {
+      return null;
+    }
+    return <PureNode {...this.props} node={node} />;
+  }
+
+  render() {
+    return (
+      <TreeContext.Consumer>
+        {uast => this.renderPureNode(uast)}
+      </TreeContext.Consumer>
+    );
+  }
+}
+
+Node.propTypes = Object.keys(PureNode.propTypes).reduce((acc, k) => {
+  if (k !== 'node') {
+    acc[k] = PureNode.propTypes[k];
+  }
+  return acc;
+}, {});
+
 Node.defaultProps = {
   schema: [
     { name: 'internal_type', attr: n => n.InternalType },
@@ -156,11 +177,10 @@ Node.defaultProps = {
 
 export default Node;
 
-class Children extends Component {
+class Children extends PureComponent {
   render() {
     const {
       items,
-      uast,
       schema,
       showLocations,
       onMouseMove,
@@ -178,7 +198,6 @@ class Children extends Component {
           <Node
             key={i}
             id={id}
-            uast={uast}
             schema={schema}
             showLocations={showLocations}
             onMouseMove={onMouseMove}
@@ -192,7 +211,6 @@ class Children extends Component {
 }
 
 Children.propTypes = {
-  uast: PropTypes.object.isRequired,
   items: PropTypes.arrayOf(PropTypes.number),
   schema: Node.propTypes.schema,
   showLocations: PropTypes.bool,

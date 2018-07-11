@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Item from './Item';
 import { PropertyName } from './properties';
 import splitProps from '../splitProps';
 
-class CollapsibleItem extends Component {
+class CollapsibleItem extends PureComponent {
   constructor(props) {
     super(props);
     // component can be controlled or uncontrolled depends on did we pass collapsed state on init or not
