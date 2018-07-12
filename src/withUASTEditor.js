@@ -90,18 +90,15 @@ function withUASTEditor(WrappedComponent, transformer = defaultTransformer) {
     }
 
     onCursorChanged(cursorPos) {
-      const pos = this.posIndex.get({
-        Line: cursorPos.line + 1,
-        Col: cursorPos.ch + 1
-      });
-      if (!pos) {
+      const nodeId = this.posIndex.get(cursorPos.line + 1, cursorPos.ch + 1);
+      if (!nodeId) {
         return;
       }
       const { uast, lastHighlighted } = this.state;
-      const newUast = highlightNodeById(uast, pos.id, lastHighlighted);
+      const newUast = highlightNodeById(uast, nodeId, lastHighlighted);
       this.setState({
-        uast: expandToNodeId(newUast, pos.id),
-        lastHighlighted: pos.id
+        uast: expandToNodeId(newUast, nodeId),
+        lastHighlighted: nodeId
       });
     }
 
