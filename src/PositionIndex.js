@@ -1,127 +1,89 @@
-function hasEnd(node) {
-  return node.end && node.end.Line && node.end.Col;
-}
+function findClosestNode(nodes, endIndex, targetLine, targetCol) {
+  let closestEndLine = Infinity;
+  let closestEndCol = Infinity;
 
-function endsAfter(node, targetLine, targetCol) {
-  return (
-    node.end.Line > targetLine ||
-    (node.end.Line === targetLine && node.end.Col > targetCol)
-  );
-}
-
-function findSmallerContainerInColNodes(columnNodes, targetLine, targetCol) {
-  let candidateNode;
-  let closestEndLine = Number.MAX_VALUE;
-  let closestEndCol = Number.MAX_VALUE;
-
-  columnNodes.forEach(node => {
-    if (!hasEnd(node) || !endsAfter(node, targetLine, targetCol)) {
-      return;
-    }
+  return nodes.reduce((prev, node) => {
+    const [endLine, endCol] = endIndex[node];
 
     if (
-      node.end.Line < closestEndLine ||
-      (node.end.Line === closestEndLine && node.end.Col < closestEndCol)
+      endLine < targetLine ||
+      (endLine === targetLine && endCol <= targetCol) ||
+      (endLine === closestEndLine && endCol > closestEndCol)
     ) {
-      candidateNode = node;
-      closestEndLine = node.end.Line;
-      closestEndCol = node.end.Col;
-    }
-  });
-
-  return candidateNode;
-}
-
-function findContainerInLineNodes(
-  lineNodes,
-  targetLine,
-  targetCol,
-  startFromTargetCol
-) {
-  let candidate;
-  for (
-    let col = startFromTargetCol ? targetCol : lineNodes.length - 1;
-    col > 0;
-    col--
-  ) {
-    if (!lineNodes[col]) {
-      continue;
+      return prev;
     }
 
-    candidate = findSmallerContainerInColNodes(
-      lineNodes[col],
-      targetLine,
-      targetCol
-    );
-    if (candidate) {
-      break;
-    }
-  }
+    closestEndLine = endLine;
+    closestEndCol = endCol;
 
-  return candidate;
-}
-
-function findContainer(idx, targetLine, targetCol) {
-  let candidate;
-  let firstLookup = true;
-  for (let line = targetLine; line > 0; line--) {
-    if (!idx[line]) {
-      continue;
-    }
-
-    candidate = findContainerInLineNodes(
-      idx[line],
-      targetLine,
-      targetCol,
-      firstLookup
-    );
-    if (candidate) {
-      break;
-    }
-
-    firstLookup = false;
-  }
-
-  return candidate;
+    return node;
+  }, undefined);
 }
 
 export default class PositionIndex {
   constructor() {
     this.index = [];
+    this.endIndex = {};
   }
 
   clear() {
     this.index = [];
+    this.endIndex = {};
   }
 
-  add(node) {
-    if (!node.end || !node.end.Line || !node.end.Col) {
+  add(node, [startLine, startCol] = [], [endLine, endCol] = []) {
+    if (!startLine || !startCol || !endLine || !endCol) {
       return;
     }
 
-    const { Line: line, Col: col } = node.start;
     const idx = this.index;
+    this.endIndex[node] = [endLine, endCol];
 
-    if (!idx[line]) {
-      idx[line] = [];
-      idx[line][col] = [node];
+    if (!idx[startLine]) {
+      idx[startLine] = [];
+      idx[startLine][startCol] = [node];
       return;
     }
 
-    if (!idx[line][col]) {
-      idx[line][col] = [node];
+    if (!idx[startLine][startCol]) {
+      idx[startLine][startCol] = [node];
       return;
     }
 
     // prevent duplicates on the index
-    if (idx[line][col].indexOf(node) >= 0) {
+    if (idx[startLine][startCol].indexOf(node) >= 0) {
       return;
     }
 
-    idx[line][col].push(node);
+    idx[startLine][startCol].push(node);
   }
 
-  get({ Line: line, Col: col }) {
-    return findContainer(this.index, line, col);
+  get(targetLine, targetCol) {
+    for (let line = targetLine; line >= 0; line--) {
+      const lineNodes = this.index[line];
+      if (!lineNodes) {
+        continue;
+      }
+
+      let col = line === targetLine ? targetCol : lineNodes.length - 1;
+      for (col; col >= 0; col--) {
+        const colNodes = lineNodes[col];
+        if (!colNodes) {
+          continue;
+        }
+
+        const found = findClosestNode(
+          colNodes,
+          this.endIndex,
+          targetLine,
+          targetCol
+        );
+        if (found) {
+          return found;
+        }
+      }
+    }
+
+    return undefined;
   }
 }
