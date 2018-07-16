@@ -107,11 +107,9 @@ export function getNodePosition(node) {
 
 export function makePositionIndexHook(posIndex) {
   return function posIndexHook(node) {
-    posIndex.add({
-      id: node.id,
-      start: node.StartPosition,
-      end: node.EndPosition
-    });
+    const start = node.StartPosition || {};
+    const end = node.EndPosition || {};
+    posIndex.add(node.id, [start.Line, start.Col], [end.Line, end.Col]);
     return node;
   };
 }
