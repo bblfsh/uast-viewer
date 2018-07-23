@@ -7,6 +7,7 @@ import {
   hoverNodeById,
   toggleNodeById,
   highlightNodeById,
+  expandToNodeId,
   getNodePosition,
   makePositionIndexHook,
   languageToMode
@@ -19,6 +20,7 @@ export {
   hoverNodeById,
   toggleNodeById,
   highlightNodeById,
+  expandToNodeId,
   getNodePosition,
   PositionIndex,
   makePositionIndexHook,
