@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/bblfsh/uast-viewer.svg)](https://travis-ci.org/bblfsh/uast-viewer)
+[![Build Status](https://travis-ci.org/bblfsh/uast-viewer.svg)](https://travis-ci.org/bblfsh/uast-viewer) [![Greenkeeper badge](https://badges.greenkeeper.io/bblfsh/uast-viewer.svg)](https://greenkeeper.io/)
 
 # UAST Viewer
 
