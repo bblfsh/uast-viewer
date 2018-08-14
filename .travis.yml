@@ -20,6 +20,5 @@ deploy:
     github-token: $GITHUB_TOKEN
     local-dir: styleguide
     skip-cleanup: true
-    fqdn: uast-viewer.bblf.sh
     on:
       branch: master
