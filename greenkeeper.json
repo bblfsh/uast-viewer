@@ -1,0 +1,10 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "examples/file-viewer/package.json",
+        "package.json"
+      ]
+    }
+  }
+}
