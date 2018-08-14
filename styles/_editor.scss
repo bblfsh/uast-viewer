@@ -17,10 +17,8 @@
         &::before {
             content: '';
             position: absolute;
-            bottom: -5px;
             left: -3px;
             width: 3px;
-            height: 19px;
             border: 1px solid $border-accent;
             border-right-width: 0 !important;
             border-left-width: 2px !important;
