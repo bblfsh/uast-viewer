@@ -83,37 +83,6 @@ export function expandToNodeId(uast, id) {
   return newUast;
 }
 
-export function getNodePosition(node) {
-  const { StartPosition: start, EndPosition: end } = node;
-
-  let from = null;
-  let to = null;
-  if (start && start.Line && start.Col) {
-    from = {
-      line: start.Line - 1,
-      ch: start.Col - 1
-    };
-  }
-
-  if (end && end.Line && end.Col) {
-    to = {
-      line: end.Line - 1,
-      ch: end.Col - 1
-    };
-  }
-
-  return { from, to };
-}
-
-export function makePositionIndexHook(posIndex) {
-  return function posIndexHook(node) {
-    const start = node.StartPosition || {};
-    const end = node.EndPosition || {};
-    posIndex.add(node.id, [start.Line, start.Col], [end.Line, end.Col]);
-    return node;
-  };
-}
-
 const langToMimeModesMapping = {
   css: 'text/css',
   ecmascript: 'text/ecmascript',
