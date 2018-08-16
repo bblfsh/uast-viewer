@@ -4,7 +4,7 @@ The original UAST must be converted to a flat structure.
 The library provides a default transformer function for this purpose.
 
 ```js
-const { transformer } = require('uast-viewer');
+const { uastV1 } = require('uast-viewer');
 
-<UASTViewer uast={transformer(uast)} />
+<UASTViewer uast={uastV1.transformer(uast)} />
 ```

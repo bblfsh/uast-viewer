@@ -35,17 +35,19 @@ In flat object representation will look like:
     },
     2: {
         id: 2,
+        parent: 1,
         ...<node properties>,
         Children: []
     },
     3: {
         id: 3,
+        parent: 1,
         ...<node properties>,
         Children: [4, 5, 6]
     },
-    4: { id: 4, ...<node properties> },
-    5: { id: 5, ...<node properties> },
-    6: { id: 6, ...<node properties> },
+    4: { id: 4, parent: 3, ...<node properties> },
+    5: { id: 5, parent: 3, ...<node properties> },
+    6: { id: 6, parent: 3, ...<node properties> },
 }
 ```
 
