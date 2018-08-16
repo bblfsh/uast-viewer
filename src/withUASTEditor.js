@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import PositionIndex from './PositionIndex';
-import { hoverNodeById, highlightNodeById, expandToNodeId } from './helpers';
+import {
+  hoverNodeById,
+  highlightNodeById,
+  expandToNodeId,
+  expandRootIds
+} from './helpers';
 import { hocOptions as uastV1Options } from './uast-v1';
 
 function isEqualArray(a1, a2) {
@@ -35,22 +40,6 @@ function withUASTEditor(WrappedComponent, options = uastV1Options) {
   };
 
   const { getNodePosition, getChildrenIds } = options;
-
-  function collectExpandIds(nodes, children, level) {
-    if (level === 0) {
-      return children;
-    }
-    if (!children.length) {
-      return [];
-    }
-
-    const ids = children.reduce(
-      (acc, id) => acc.concat(getChildrenIds(nodes[id])),
-      []
-    );
-
-    return children.concat(ids).concat(collectExpandIds(nodes, ids, level - 1));
-  }
 
   class UASTEditorWrapper extends Component {
     constructor(props) {
@@ -106,20 +95,9 @@ function withUASTEditor(WrappedComponent, options = uastV1Options) {
     }
 
     resetUast(uast, rootIds, levelsToExpand) {
-      const idsToExpand = collectExpandIds(uast, rootIds, levelsToExpand);
-      const newUast = Object.keys(uast).reduce((acc, id) => {
-        const expanded = idsToExpand.includes(+id);
-        acc[id] = {
-          ...uast[id],
-          expanded,
-          highlighted: false
-        };
-        return acc;
-      }, {});
-
       return {
         ...initialState,
-        uast: newUast
+        uast: expandRootIds(uast, rootIds, levelsToExpand, getChildrenIds)
       };
     }
 

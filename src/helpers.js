@@ -83,6 +83,43 @@ export function expandToNodeId(uast, id) {
   return newUast;
 }
 
+function collectExpandIds(nodes, children, level, getChildrenIds) {
+  if (level === 0) {
+    return children;
+  }
+  if (!children.length) {
+    return [];
+  }
+
+  const ids = children.reduce(
+    (acc, id) => acc.concat(getChildrenIds(nodes[id])),
+    []
+  );
+
+  return children
+    .concat(ids)
+    .concat(collectExpandIds(nodes, ids, level - 1, getChildrenIds));
+}
+
+// expands levelsToExpand nodes from rootIds
+export function expandRootIds(uast, rootIds, levelsToExpand, getChildrenIds) {
+  const idsToExpand = collectExpandIds(
+    uast,
+    rootIds,
+    levelsToExpand,
+    getChildrenIds
+  );
+  return Object.keys(uast).reduce((acc, id) => {
+    const expanded = idsToExpand.includes(+id);
+    acc[id] = {
+      ...uast[id],
+      expanded,
+      highlighted: false
+    };
+    return acc;
+  }, {});
+}
+
 const langToMimeModesMapping = {
   css: 'text/css',
   ecmascript: 'text/ecmascript',

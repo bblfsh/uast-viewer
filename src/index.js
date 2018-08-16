@@ -8,6 +8,7 @@ import {
   toggleNodeById,
   highlightNodeById,
   expandToNodeId,
+  expandRootIds,
   languageToMode
 } from './helpers';
 
@@ -21,6 +22,7 @@ export {
   toggleNodeById,
   highlightNodeById,
   expandToNodeId,
+  expandRootIds,
   // converts language to codemirror language mode
   languageToMode,
   // build-in functions to operate on UAST
