@@ -60,6 +60,18 @@ export function getChildrenIds(node) {
   return node.Children;
 }
 
+export function nodeSchema() {
+  return [
+    { name: 'internal_type', attr: n => n.InternalType },
+    { name: 'properties', type: 'object', attr: n => n.Properties },
+    { name: 'token', attr: n => n.Token },
+    { name: 'start_position', type: 'location', attr: n => n.StartPosition },
+    { name: 'end_position', type: 'location', attr: n => n.EndPosition },
+    { name: 'roles', type: 'array', label: '[]Role', attr: n => n.Roles },
+    { name: 'children', type: 'children', attr: n => n.Children }
+  ];
+}
+
 export const hocOptions = {
   transformer,
   getNodePosition,

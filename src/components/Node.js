@@ -5,6 +5,7 @@ import Position from './Position';
 import Property from './Property';
 import Properties from './Properties';
 import TreeContext from './TreeContext';
+import { nodeSchema as uast1schema } from '../uast-v1';
 
 export function nodeClassById(id) {
   return `uast-viewer__node-${id}`;
@@ -68,7 +69,7 @@ class PureNode extends PureComponent {
         onMouseMove={this.handleMouseMove}
         onClick={this.handleClick}
       >
-        {schema.map(field => {
+        {schema(node).map(field => {
           const value = field.attr(node);
           if (!field.showEmpty && !value) {
             return null;
@@ -105,16 +106,22 @@ class PureNode extends PureComponent {
               <Position name={field.name} position={value} key={field.name} />
             );
           }
+          if (field.type === 'children') {
+            return (
+              <Children
+                key={field.name}
+                name={field.name}
+                items={value}
+                schema={schema}
+                showLocations={showLocations}
+                onToggle={onToggle}
+                onMouseMove={onMouseMove}
+                onClick={onClick}
+              />
+            );
+          }
           return <Property name={field.name} value={value} key={field.name} />;
         })}
-        <Children
-          items={node.Children}
-          schema={schema}
-          showLocations={showLocations}
-          onToggle={onToggle}
-          onMouseMove={onMouseMove}
-          onClick={onClick}
-        />
       </CollapsibleItem>
     );
   }
@@ -123,15 +130,7 @@ class PureNode extends PureComponent {
 PureNode.propTypes = {
   id: PropTypes.number.isRequired,
   node: PropTypes.object.isRequired,
-  schema: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      attr: PropTypes.func.isRequired,
-      type: PropTypes.oneOf(['array', 'object', 'location']),
-      label: PropTypes.string,
-      showEmpty: PropTypes.bool
-    })
-  ).isRequired,
+  schema: PropTypes.func.isRequired,
   showLocations: PropTypes.bool,
   onMouseMove: PropTypes.func,
   onToggle: PropTypes.func,
@@ -165,14 +164,7 @@ Node.propTypes = Object.keys(PureNode.propTypes).reduce((acc, k) => {
 }, {});
 
 Node.defaultProps = {
-  schema: [
-    { name: 'internal_type', attr: n => n.InternalType },
-    { name: 'properties', type: 'object', attr: n => n.Properties },
-    { name: 'token', attr: n => n.Token },
-    { name: 'start_position', type: 'location', attr: n => n.StartPosition },
-    { name: 'end_position', type: 'location', attr: n => n.EndPosition },
-    { name: 'roles', type: 'array', label: '[]Role', attr: n => n.Roles }
-  ],
+  schema: uast1schema,
   showLocations: false
 };
 
@@ -181,6 +173,7 @@ export default Node;
 class Children extends PureComponent {
   render() {
     const {
+      name,
       items,
       schema,
       showLocations,
@@ -194,7 +187,7 @@ class Children extends PureComponent {
     }
 
     return (
-      <CollapsibleItem name="children" label="[]Node">
+      <CollapsibleItem name={name} label="[]Node">
         {items.map((id, i) => (
           <Node
             key={i}
@@ -212,6 +205,7 @@ class Children extends PureComponent {
 }
 
 Children.propTypes = {
+  name: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(PropTypes.number),
   schema: Node.propTypes.schema,
   showLocations: PropTypes.bool,
