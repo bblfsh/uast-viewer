@@ -75,9 +75,13 @@ function withUASTEditor(WrappedComponent, options = uastV1Options) {
     }
 
     stateFromProps({ uast, rootIds, levelsToExpand }) {
-      const flatUast = options.transformer(uast);
-
       this.posIndex = new PositionIndex();
+
+      if (!uast) {
+        return initialState;
+      }
+
+      const flatUast = options.transformer(uast);
 
       if (getNodePosition) {
         Object.keys(flatUast).forEach(id => {
