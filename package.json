@@ -49,6 +49,7 @@
     "react-codemirror2": "^5.0.1",
     "react-dom": "^16.3.2",
     "react-styleguidist": "^7.1.0",
+    "react-test-renderer": "^16.4.2",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
     "webpack": "^3.0.0"
@@ -60,5 +61,11 @@
     "react": ">=16.3.0",
     "react-codemirror2": "^5.0.1",
     "react-dom": ">=16.3.0"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/setupTests.js",
+    "moduleNameMapper": {
+      "\\.(css|saas)$": "<rootDir>/__mocks__/styleMock.js"
+    }
   }
 }
