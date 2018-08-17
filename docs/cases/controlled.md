@@ -3,13 +3,13 @@ The `UASTViewer` component supports controlled mode when the application needs t
 The application is responsible for setting the `hovered` and `expanded` properties in such case.
 
 ```js
-const { transformer, hoverNodeById, toggleNodeById } = require('uast-viewer');
+const { uastV1, hoverNodeById, toggleNodeById } = require('uast-viewer');
 
 class ControlledExample extends React.Component {
     constructor() {
         this.state = {
             // transform uast.json expanding only the first level nodes
-            uast: transformer(uast, 1),
+            uast: uastV1.transformer(uast, 1),
             hoveredId: null,
             highlighted: false
         };

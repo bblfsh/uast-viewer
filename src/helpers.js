@@ -83,35 +83,41 @@ export function expandToNodeId(uast, id) {
   return newUast;
 }
 
-export function getNodePosition(node) {
-  const { StartPosition: start, EndPosition: end } = node;
-
-  let from = null;
-  let to = null;
-  if (start && start.Line && start.Col) {
-    from = {
-      line: start.Line - 1,
-      ch: start.Col - 1
-    };
+function collectExpandIds(nodes, children, level, getChildrenIds) {
+  if (level === 0) {
+    return children;
+  }
+  if (!children.length) {
+    return [];
   }
 
-  if (end && end.Line && end.Col) {
-    to = {
-      line: end.Line - 1,
-      ch: end.Col - 1
-    };
-  }
+  const ids = children.reduce(
+    (acc, id) => acc.concat(getChildrenIds(nodes[id])),
+    []
+  );
 
-  return { from, to };
+  return children
+    .concat(ids)
+    .concat(collectExpandIds(nodes, ids, level - 1, getChildrenIds));
 }
 
-export function makePositionIndexHook(posIndex) {
-  return function posIndexHook(node) {
-    const start = node.StartPosition || {};
-    const end = node.EndPosition || {};
-    posIndex.add(node.id, [start.Line, start.Col], [end.Line, end.Col]);
-    return node;
-  };
+// expands levelsToExpand nodes from rootIds
+export function expandRootIds(uast, rootIds, levelsToExpand, getChildrenIds) {
+  const idsToExpand = collectExpandIds(
+    uast,
+    rootIds,
+    levelsToExpand,
+    getChildrenIds
+  );
+  return Object.keys(uast).reduce((acc, id) => {
+    const expanded = idsToExpand.includes(+id);
+    acc[id] = {
+      ...uast[id],
+      expanded,
+      highlighted: false
+    };
+    return acc;
+  }, {});
 }
 
 const langToMimeModesMapping = {

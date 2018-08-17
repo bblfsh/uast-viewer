@@ -30,23 +30,6 @@ import { highlightNodeById } from 'uast-viewer';
 const newUast = highlightNodeById(uast, id, prevId);
 ```
 
-### getNodePosition
-
-Returns position of the node in the source code started with *zero* (opposite to bblfsh which starts counting from 1).
-
-```js static
-import { getNodePosition } from 'uast-viewer';
-
-const pos = getNodePosition(nodeWithCorrectPosition);
-// pos = { from: { line: N, ch: N }, to: { line: N, ch: N }}
-
-const pos = getNodePosition(nodeWithoutPosition);
-// pos = { from: null, to: null }
-
-const pos = getNodePosition(nodeWithStartPosition);
-// pos = { from: { line: N, ch: N }, to: null}
-```
-
 ### languageToMode
 
 Maps language name to MIME Mode recognizable by code-mirror.

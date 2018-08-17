@@ -38,16 +38,16 @@ module.exports = {
       content: 'docs/state.md',
       sections: [
         {
-          name: 'JSON convertor',
-          content: 'docs/state/transformer.md'
-        },
-        {
           name: 'Helpers',
           content: 'docs/state/helpers.md'
         },
         {
           name: 'Position index',
           content: 'docs/state/position_index.md'
+        },
+        {
+          name: 'UAST v1',
+          content: 'docs/state/uast-v1.md'
         }
       ]
     }
