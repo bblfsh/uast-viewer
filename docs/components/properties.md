@@ -1,11 +1,5 @@
-Renders some property:
+Renders object of properties as collapsible item.
 
 ```js
-<Property name="name" value="value" />
-```
-
-Name is optional:
-
-```js
-<Property value="value" />
+<Properties properties={{int: 1, string: "value"}} name="group" label="Object" />
 ```

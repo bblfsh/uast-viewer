@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CollapsibleItem from './CollapsibleItem';
-import { Property } from './properties';
+import Property from './Property';
 
 function coordinates(position) {
   if (!position) {
