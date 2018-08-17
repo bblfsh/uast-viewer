@@ -130,6 +130,19 @@ class PureNode extends PureComponent {
 PureNode.propTypes = {
   id: PropTypes.number.isRequired,
   node: PropTypes.object.isRequired,
+  /*
+  return value of the schema function must be in the shape:
+
+  PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      attr: PropTypes.func.isRequired,
+      type: PropTypes.oneOf(['array', 'object', 'location', 'children]),
+      label: PropTypes.string,
+      showEmpty: PropTypes.bool
+    })
+  )
+  */
   schema: PropTypes.func.isRequired,
   showLocations: PropTypes.bool,
   onMouseMove: PropTypes.func,
