@@ -63,7 +63,12 @@ export function getChildrenIds(node) {
 export function nodeSchema() {
   return [
     { name: 'internal_type', attr: n => n.InternalType },
-    { name: 'properties', type: 'object', attr: n => n.Properties },
+    {
+      name: 'properties',
+      type: 'object',
+      label: 'map<string, string>',
+      attr: n => n.Properties
+    },
     { name: 'token', attr: n => n.Token },
     { name: 'start_position', type: 'location', attr: n => n.StartPosition },
     { name: 'end_position', type: 'location', attr: n => n.EndPosition },
