@@ -1,0 +1,2099 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`uast-v1 1`] = `
+<div>
+  <div
+    className="uast-editor"
+  >
+    <div
+      className="react-codemirror2"
+    />
+    <div
+      className="uast-editor-bookmark"
+    />
+  </div>
+  <div
+    className="uast-viewer"
+    onMouseLeave={[Function]}
+  >
+    <div
+      className="uast-viewer__node-1 uast-item"
+      onClick={[Function]}
+      onMouseMove={[Function]}
+    >
+      <div
+        className="uast-title uast-title-collapsible "
+        onClick={[Function]}
+      >
+        <summary
+          className="uast-label"
+        >
+          Node
+        </summary>
+      </div>
+      <div
+        className="uast-content"
+      >
+        <div
+          className="undefined uast-item"
+        >
+          <div
+            className="uast-title"
+          >
+            <span
+              className="uast-property-name"
+            >
+              internal_type
+            </span>
+            <span
+              className="uast-value string"
+            >
+              CompilationUnit
+            </span>
+          </div>
+        </div>
+        <div
+          className="undefined uast-item"
+        >
+          <div
+            className="uast-title uast-title-collapsible "
+            onClick={[Function]}
+          >
+            <span
+              className="uast-property-name"
+            >
+              roles
+            </span>
+            <summary
+              className="uast-label"
+            >
+              []Role
+            </summary>
+          </div>
+          <div
+            className="uast-content"
+          >
+            <div
+              className="undefined uast-item"
+            >
+              <div
+                className="uast-title"
+              >
+                <span
+                  className="uast-value string"
+                >
+                  File
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="undefined uast-item"
+        >
+          <div
+            className="uast-title uast-title-collapsible "
+            onClick={[Function]}
+          >
+            <span
+              className="uast-property-name"
+            >
+              children
+            </span>
+            <summary
+              className="uast-label"
+            >
+              []Node
+            </summary>
+          </div>
+          <div
+            className="uast-content"
+          >
+            <div
+              className="uast-viewer__node-2 uast-item"
+              onClick={[Function]}
+              onMouseMove={[Function]}
+            >
+              <div
+                className="uast-title uast-title-collapsible "
+                onClick={[Function]}
+              >
+                <summary
+                  className="uast-label"
+                >
+                  Node
+                </summary>
+              </div>
+              <div
+                className="uast-content"
+              >
+                <div
+                  className="undefined uast-item"
+                >
+                  <div
+                    className="uast-title"
+                  >
+                    <span
+                      className="uast-property-name"
+                    >
+                      internal_type
+                    </span>
+                    <span
+                      className="uast-value string"
+                    >
+                      LineComment
+                    </span>
+                  </div>
+                </div>
+                <div
+                  className="undefined uast-item"
+                >
+                  <div
+                    className="uast-title uast-title-collapsible "
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="uast-property-name"
+                    >
+                      properties
+                    </span>
+                    <summary
+                      className="uast-label"
+                    >
+                      map&lt;string, string&gt;
+                    </summary>
+                  </div>
+                  <div
+                    className="uast-content"
+                  >
+                    <div
+                      className="undefined uast-item"
+                    >
+                      <div
+                        className="uast-title"
+                      >
+                        <span
+                          className="uast-property-name"
+                        >
+                          internalRole
+                        </span>
+                        <span
+                          className="uast-value string"
+                        >
+                          comments
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      className="undefined uast-item"
+                    >
+                      <div
+                        className="uast-title"
+                      >
+                        <span
+                          className="uast-property-name"
+                        >
+                          text
+                        </span>
+                        <span
+                          className="uast-value string"
+                        >
+                           hello.java
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="undefined uast-item"
+                >
+                  <div
+                    className="uast-title uast-title-collapsible "
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="uast-property-name"
+                    >
+                      roles
+                    </span>
+                    <summary
+                      className="uast-label"
+                    >
+                      []Role
+                    </summary>
+                  </div>
+                  <div
+                    className="uast-content"
+                  >
+                    <div
+                      className="undefined uast-item"
+                    >
+                      <div
+                        className="uast-title"
+                      >
+                        <span
+                          className="uast-value string"
+                        >
+                          Comment
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="undefined uast-item"
+                >
+                  <div
+                    className="uast-title uast-title-collapsible "
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="uast-property-name"
+                    >
+                      children
+                    </span>
+                    <summary
+                      className="uast-label"
+                    >
+                      []Node
+                    </summary>
+                  </div>
+                  <div
+                    className="uast-content"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              className="uast-viewer__node-3 uast-item"
+              onClick={[Function]}
+              onMouseMove={[Function]}
+            >
+              <div
+                className="uast-title uast-title-collapsible "
+                onClick={[Function]}
+              >
+                <summary
+                  className="uast-label"
+                >
+                  Node
+                </summary>
+              </div>
+              <div
+                className="uast-content"
+              >
+                <div
+                  className="undefined uast-item"
+                >
+                  <div
+                    className="uast-title"
+                  >
+                    <span
+                      className="uast-property-name"
+                    >
+                      internal_type
+                    </span>
+                    <span
+                      className="uast-value string"
+                    >
+                      ImportDeclaration
+                    </span>
+                  </div>
+                </div>
+                <div
+                  className="undefined uast-item"
+                >
+                  <div
+                    className="uast-title uast-title-collapsible "
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="uast-property-name"
+                    >
+                      properties
+                    </span>
+                    <summary
+                      className="uast-label"
+                    >
+                      map&lt;string, string&gt;
+                    </summary>
+                  </div>
+                  <div
+                    className="uast-content"
+                  >
+                    <div
+                      className="undefined uast-item"
+                    >
+                      <div
+                        className="uast-title"
+                      >
+                        <span
+                          className="uast-property-name"
+                        >
+                          internalRole
+                        </span>
+                        <span
+                          className="uast-value string"
+                        >
+                          imports
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      className="undefined uast-item"
+                    >
+                      <div
+                        className="uast-title"
+                      >
+                        <span
+                          className="uast-property-name"
+                        >
+                          onDemand
+                        </span>
+                        <span
+                          className="uast-value string"
+                        >
+                          true
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      className="undefined uast-item"
+                    >
+                      <div
+                        className="uast-title"
+                      >
+                        <span
+                          className="uast-property-name"
+                        >
+                          static
+                        </span>
+                        <span
+                          className="uast-value string"
+                        >
+                          false
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="undefined uast-item"
+                >
+                  <div
+                    className="uast-title uast-title-collapsible "
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="uast-property-name"
+                    >
+                      roles
+                    </span>
+                    <summary
+                      className="uast-label"
+                    >
+                      []Role
+                    </summary>
+                  </div>
+                  <div
+                    className="uast-content"
+                  >
+                    <div
+                      className="undefined uast-item"
+                    >
+                      <div
+                        className="uast-title"
+                      >
+                        <span
+                          className="uast-value string"
+                        >
+                          Declaration
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      className="undefined uast-item"
+                    >
+                      <div
+                        className="uast-title"
+                      >
+                        <span
+                          className="uast-value string"
+                        >
+                          Import
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="undefined uast-item"
+                >
+                  <div
+                    className="uast-title uast-title-collapsible "
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="uast-property-name"
+                    >
+                      children
+                    </span>
+                    <summary
+                      className="uast-label"
+                    >
+                      []Node
+                    </summary>
+                  </div>
+                  <div
+                    className="uast-content"
+                  >
+                    <div
+                      className="uast-viewer__node-4 uast-item"
+                      onClick={[Function]}
+                      onMouseMove={[Function]}
+                    >
+                      <div
+                        className="uast-title uast-title-collapsible "
+                        onClick={[Function]}
+                      >
+                        <summary
+                          className="uast-label"
+                        >
+                          Node
+                        </summary>
+                      </div>
+                      <div
+                        className="uast-content"
+                      >
+                        <div
+                          className="undefined uast-item"
+                        >
+                          <div
+                            className="uast-title"
+                          >
+                            <span
+                              className="uast-property-name"
+                            >
+                              internal_type
+                            </span>
+                            <span
+                              className="uast-value string"
+                            >
+                              QualifiedName
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          className="undefined uast-item"
+                        >
+                          <div
+                            className="uast-title uast-title-collapsible "
+                            onClick={[Function]}
+                          >
+                            <span
+                              className="uast-property-name"
+                            >
+                              properties
+                            </span>
+                            <summary
+                              className="uast-label"
+                            >
+                              map&lt;string, string&gt;
+                            </summary>
+                          </div>
+                          <div
+                            className="uast-content"
+                          >
+                            <div
+                              className="undefined uast-item"
+                            >
+                              <div
+                                className="uast-title"
+                              >
+                                <span
+                                  className="uast-property-name"
+                                >
+                                  internalRole
+                                </span>
+                                <span
+                                  className="uast-value string"
+                                >
+                                  name
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className="undefined uast-item"
+                        >
+                          <div
+                            className="uast-title uast-title-collapsible "
+                            onClick={[Function]}
+                          >
+                            <span
+                              className="uast-property-name"
+                            >
+                              roles
+                            </span>
+                            <summary
+                              className="uast-label"
+                            >
+                              []Role
+                            </summary>
+                          </div>
+                          <div
+                            className="uast-content"
+                          >
+                            <div
+                              className="undefined uast-item"
+                            >
+                              <div
+                                className="uast-title"
+                              >
+                                <span
+                                  className="uast-value string"
+                                >
+                                  Expression
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              className="undefined uast-item"
+                            >
+                              <div
+                                className="uast-title"
+                              >
+                                <span
+                                  className="uast-value string"
+                                >
+                                  Identifier
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              className="undefined uast-item"
+                            >
+                              <div
+                                className="uast-title"
+                              >
+                                <span
+                                  className="uast-value string"
+                                >
+                                  Qualified
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              className="undefined uast-item"
+                            >
+                              <div
+                                className="uast-title"
+                              >
+                                <span
+                                  className="uast-value string"
+                                >
+                                  Pathname
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              className="undefined uast-item"
+                            >
+                              <div
+                                className="uast-title"
+                              >
+                                <span
+                                  className="uast-value string"
+                                >
+                                  Import
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className="undefined uast-item"
+                        >
+                          <div
+                            className="uast-title uast-title-collapsible "
+                            onClick={[Function]}
+                          >
+                            <span
+                              className="uast-property-name"
+                            >
+                              children
+                            </span>
+                            <summary
+                              className="uast-label"
+                            >
+                              []Node
+                            </summary>
+                          </div>
+                          <div
+                            className="uast-content"
+                          >
+                            <div
+                              className="uast-viewer__node-5 uast-item"
+                              onClick={[Function]}
+                              onMouseMove={[Function]}
+                            >
+                              <div
+                                className="uast-title uast-title-collapsible collapsed"
+                                onClick={[Function]}
+                              >
+                                <summary
+                                  className="uast-label"
+                                >
+                                  Node
+                                </summary>
+                              </div>
+                            </div>
+                            <div
+                              className="uast-viewer__node-6 uast-item"
+                              onClick={[Function]}
+                              onMouseMove={[Function]}
+                            >
+                              <div
+                                className="uast-title uast-title-collapsible collapsed"
+                                onClick={[Function]}
+                              >
+                                <summary
+                                  className="uast-label"
+                                >
+                                  Node
+                                </summary>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="uast-viewer__node-7 uast-item"
+              onClick={[Function]}
+              onMouseMove={[Function]}
+            >
+              <div
+                className="uast-title uast-title-collapsible "
+                onClick={[Function]}
+              >
+                <summary
+                  className="uast-label"
+                >
+                  Node
+                </summary>
+              </div>
+              <div
+                className="uast-content"
+              >
+                <div
+                  className="undefined uast-item"
+                >
+                  <div
+                    className="uast-title"
+                  >
+                    <span
+                      className="uast-property-name"
+                    >
+                      internal_type
+                    </span>
+                    <span
+                      className="uast-value string"
+                    >
+                      ImportDeclaration
+                    </span>
+                  </div>
+                </div>
+                <div
+                  className="undefined uast-item"
+                >
+                  <div
+                    className="uast-title uast-title-collapsible "
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="uast-property-name"
+                    >
+                      properties
+                    </span>
+                    <summary
+                      className="uast-label"
+                    >
+                      map&lt;string, string&gt;
+                    </summary>
+                  </div>
+                  <div
+                    className="uast-content"
+                  >
+                    <div
+                      className="undefined uast-item"
+                    >
+                      <div
+                        className="uast-title"
+                      >
+                        <span
+                          className="uast-property-name"
+                        >
+                          internalRole
+                        </span>
+                        <span
+                          className="uast-value string"
+                        >
+                          imports
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      className="undefined uast-item"
+                    >
+                      <div
+                        className="uast-title"
+                      >
+                        <span
+                          className="uast-property-name"
+                        >
+                          onDemand
+                        </span>
+                        <span
+                          className="uast-value string"
+                        >
+                          true
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      className="undefined uast-item"
+                    >
+                      <div
+                        className="uast-title"
+                      >
+                        <span
+                          className="uast-property-name"
+                        >
+                          static
+                        </span>
+                        <span
+                          className="uast-value string"
+                        >
+                          false
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="undefined uast-item"
+                >
+                  <div
+                    className="uast-title uast-title-collapsible "
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="uast-property-name"
+                    >
+                      roles
+                    </span>
+                    <summary
+                      className="uast-label"
+                    >
+                      []Role
+                    </summary>
+                  </div>
+                  <div
+                    className="uast-content"
+                  >
+                    <div
+                      className="undefined uast-item"
+                    >
+                      <div
+                        className="uast-title"
+                      >
+                        <span
+                          className="uast-value string"
+                        >
+                          Declaration
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      className="undefined uast-item"
+                    >
+                      <div
+                        className="uast-title"
+                      >
+                        <span
+                          className="uast-value string"
+                        >
+                          Import
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="undefined uast-item"
+                >
+                  <div
+                    className="uast-title uast-title-collapsible "
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="uast-property-name"
+                    >
+                      children
+                    </span>
+                    <summary
+                      className="uast-label"
+                    >
+                      []Node
+                    </summary>
+                  </div>
+                  <div
+                    className="uast-content"
+                  >
+                    <div
+                      className="uast-viewer__node-8 uast-item"
+                      onClick={[Function]}
+                      onMouseMove={[Function]}
+                    >
+                      <div
+                        className="uast-title uast-title-collapsible "
+                        onClick={[Function]}
+                      >
+                        <summary
+                          className="uast-label"
+                        >
+                          Node
+                        </summary>
+                      </div>
+                      <div
+                        className="uast-content"
+                      >
+                        <div
+                          className="undefined uast-item"
+                        >
+                          <div
+                            className="uast-title"
+                          >
+                            <span
+                              className="uast-property-name"
+                            >
+                              internal_type
+                            </span>
+                            <span
+                              className="uast-value string"
+                            >
+                              QualifiedName
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          className="undefined uast-item"
+                        >
+                          <div
+                            className="uast-title uast-title-collapsible "
+                            onClick={[Function]}
+                          >
+                            <span
+                              className="uast-property-name"
+                            >
+                              properties
+                            </span>
+                            <summary
+                              className="uast-label"
+                            >
+                              map&lt;string, string&gt;
+                            </summary>
+                          </div>
+                          <div
+                            className="uast-content"
+                          >
+                            <div
+                              className="undefined uast-item"
+                            >
+                              <div
+                                className="uast-title"
+                              >
+                                <span
+                                  className="uast-property-name"
+                                >
+                                  internalRole
+                                </span>
+                                <span
+                                  className="uast-value string"
+                                >
+                                  name
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className="undefined uast-item"
+                        >
+                          <div
+                            className="uast-title uast-title-collapsible "
+                            onClick={[Function]}
+                          >
+                            <span
+                              className="uast-property-name"
+                            >
+                              roles
+                            </span>
+                            <summary
+                              className="uast-label"
+                            >
+                              []Role
+                            </summary>
+                          </div>
+                          <div
+                            className="uast-content"
+                          >
+                            <div
+                              className="undefined uast-item"
+                            >
+                              <div
+                                className="uast-title"
+                              >
+                                <span
+                                  className="uast-value string"
+                                >
+                                  Expression
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              className="undefined uast-item"
+                            >
+                              <div
+                                className="uast-title"
+                              >
+                                <span
+                                  className="uast-value string"
+                                >
+                                  Identifier
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              className="undefined uast-item"
+                            >
+                              <div
+                                className="uast-title"
+                              >
+                                <span
+                                  className="uast-value string"
+                                >
+                                  Qualified
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              className="undefined uast-item"
+                            >
+                              <div
+                                className="uast-title"
+                              >
+                                <span
+                                  className="uast-value string"
+                                >
+                                  Pathname
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              className="undefined uast-item"
+                            >
+                              <div
+                                className="uast-title"
+                              >
+                                <span
+                                  className="uast-value string"
+                                >
+                                  Import
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className="undefined uast-item"
+                        >
+                          <div
+                            className="uast-title uast-title-collapsible "
+                            onClick={[Function]}
+                          >
+                            <span
+                              className="uast-property-name"
+                            >
+                              children
+                            </span>
+                            <summary
+                              className="uast-label"
+                            >
+                              []Node
+                            </summary>
+                          </div>
+                          <div
+                            className="uast-content"
+                          >
+                            <div
+                              className="uast-viewer__node-9 uast-item"
+                              onClick={[Function]}
+                              onMouseMove={[Function]}
+                            >
+                              <div
+                                className="uast-title uast-title-collapsible collapsed"
+                                onClick={[Function]}
+                              >
+                                <summary
+                                  className="uast-label"
+                                >
+                                  Node
+                                </summary>
+                              </div>
+                            </div>
+                            <div
+                              className="uast-viewer__node-10 uast-item"
+                              onClick={[Function]}
+                              onMouseMove={[Function]}
+                            >
+                              <div
+                                className="uast-title uast-title-collapsible collapsed"
+                                onClick={[Function]}
+                              >
+                                <summary
+                                  className="uast-label"
+                                >
+                                  Node
+                                </summary>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="uast-viewer__node-11 uast-item"
+              onClick={[Function]}
+              onMouseMove={[Function]}
+            >
+              <div
+                className="uast-title uast-title-collapsible "
+                onClick={[Function]}
+              >
+                <summary
+                  className="uast-label"
+                >
+                  Node
+                </summary>
+              </div>
+              <div
+                className="uast-content"
+              >
+                <div
+                  className="undefined uast-item"
+                >
+                  <div
+                    className="uast-title"
+                  >
+                    <span
+                      className="uast-property-name"
+                    >
+                      internal_type
+                    </span>
+                    <span
+                      className="uast-value string"
+                    >
+                      TypeDeclaration
+                    </span>
+                  </div>
+                </div>
+                <div
+                  className="undefined uast-item"
+                >
+                  <div
+                    className="uast-title uast-title-collapsible "
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="uast-property-name"
+                    >
+                      properties
+                    </span>
+                    <summary
+                      className="uast-label"
+                    >
+                      map&lt;string, string&gt;
+                    </summary>
+                  </div>
+                  <div
+                    className="uast-content"
+                  >
+                    <div
+                      className="undefined uast-item"
+                    >
+                      <div
+                        className="uast-title"
+                      >
+                        <span
+                          className="uast-property-name"
+                        >
+                          interface
+                        </span>
+                        <span
+                          className="uast-value string"
+                        >
+                          false
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      className="undefined uast-item"
+                    >
+                      <div
+                        className="uast-title"
+                      >
+                        <span
+                          className="uast-property-name"
+                        >
+                          internalRole
+                        </span>
+                        <span
+                          className="uast-value string"
+                        >
+                          types
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="undefined uast-item"
+                >
+                  <div
+                    className="uast-title uast-title-collapsible "
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="uast-property-name"
+                    >
+                      roles
+                    </span>
+                    <summary
+                      className="uast-label"
+                    >
+                      []Role
+                    </summary>
+                  </div>
+                  <div
+                    className="uast-content"
+                  >
+                    <div
+                      className="undefined uast-item"
+                    >
+                      <div
+                        className="uast-title"
+                      >
+                        <span
+                          className="uast-value string"
+                        >
+                          Visibility
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      className="undefined uast-item"
+                    >
+                      <div
+                        className="uast-title"
+                      >
+                        <span
+                          className="uast-value string"
+                        >
+                          World
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      className="undefined uast-item"
+                    >
+                      <div
+                        className="uast-title"
+                      >
+                        <span
+                          className="uast-value string"
+                        >
+                          Declaration
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      className="undefined uast-item"
+                    >
+                      <div
+                        className="uast-title"
+                      >
+                        <span
+                          className="uast-value string"
+                        >
+                          Type
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="undefined uast-item"
+                >
+                  <div
+                    className="uast-title uast-title-collapsible "
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="uast-property-name"
+                    >
+                      children
+                    </span>
+                    <summary
+                      className="uast-label"
+                    >
+                      []Node
+                    </summary>
+                  </div>
+                  <div
+                    className="uast-content"
+                  >
+                    <div
+                      className="uast-viewer__node-12 uast-item"
+                      onClick={[Function]}
+                      onMouseMove={[Function]}
+                    >
+                      <div
+                        className="uast-title uast-title-collapsible "
+                        onClick={[Function]}
+                      >
+                        <summary
+                          className="uast-label"
+                        >
+                          Node
+                        </summary>
+                      </div>
+                      <div
+                        className="uast-content"
+                      >
+                        <div
+                          className="undefined uast-item"
+                        >
+                          <div
+                            className="uast-title"
+                          >
+                            <span
+                              className="uast-property-name"
+                            >
+                              internal_type
+                            </span>
+                            <span
+                              className="uast-value string"
+                            >
+                              Modifier
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          className="undefined uast-item"
+                        >
+                          <div
+                            className="uast-title uast-title-collapsible "
+                            onClick={[Function]}
+                          >
+                            <span
+                              className="uast-property-name"
+                            >
+                              properties
+                            </span>
+                            <summary
+                              className="uast-label"
+                            >
+                              map&lt;string, string&gt;
+                            </summary>
+                          </div>
+                          <div
+                            className="uast-content"
+                          >
+                            <div
+                              className="undefined uast-item"
+                            >
+                              <div
+                                className="uast-title"
+                              >
+                                <span
+                                  className="uast-property-name"
+                                >
+                                  internalRole
+                                </span>
+                                <span
+                                  className="uast-value string"
+                                >
+                                  modifiers
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className="undefined uast-item"
+                        >
+                          <div
+                            className="uast-title"
+                          >
+                            <span
+                              className="uast-property-name"
+                            >
+                              token
+                            </span>
+                            <span
+                              className="uast-value string"
+                            >
+                              public
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          className="undefined uast-item"
+                        >
+                          <div
+                            className="uast-title uast-title-collapsible "
+                            onClick={[Function]}
+                          >
+                            <span
+                              className="uast-property-name"
+                            >
+                              roles
+                            </span>
+                            <summary
+                              className="uast-label"
+                            >
+                              []Role
+                            </summary>
+                          </div>
+                          <div
+                            className="uast-content"
+                          >
+                            <div
+                              className="undefined uast-item"
+                            >
+                              <div
+                                className="uast-title"
+                              >
+                                <span
+                                  className="uast-value string"
+                                >
+                                  Visibility
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              className="undefined uast-item"
+                            >
+                              <div
+                                className="uast-title"
+                              >
+                                <span
+                                  className="uast-value string"
+                                >
+                                  World
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className="undefined uast-item"
+                        >
+                          <div
+                            className="uast-title uast-title-collapsible "
+                            onClick={[Function]}
+                          >
+                            <span
+                              className="uast-property-name"
+                            >
+                              children
+                            </span>
+                            <summary
+                              className="uast-label"
+                            >
+                              []Node
+                            </summary>
+                          </div>
+                          <div
+                            className="uast-content"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="uast-viewer__node-13 uast-item"
+                      onClick={[Function]}
+                      onMouseMove={[Function]}
+                    >
+                      <div
+                        className="uast-title uast-title-collapsible "
+                        onClick={[Function]}
+                      >
+                        <summary
+                          className="uast-label"
+                        >
+                          Node
+                        </summary>
+                      </div>
+                      <div
+                        className="uast-content"
+                      >
+                        <div
+                          className="undefined uast-item"
+                        >
+                          <div
+                            className="uast-title"
+                          >
+                            <span
+                              className="uast-property-name"
+                            >
+                              internal_type
+                            </span>
+                            <span
+                              className="uast-value string"
+                            >
+                              SimpleName
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          className="undefined uast-item"
+                        >
+                          <div
+                            className="uast-title uast-title-collapsible "
+                            onClick={[Function]}
+                          >
+                            <span
+                              className="uast-property-name"
+                            >
+                              properties
+                            </span>
+                            <summary
+                              className="uast-label"
+                            >
+                              map&lt;string, string&gt;
+                            </summary>
+                          </div>
+                          <div
+                            className="uast-content"
+                          >
+                            <div
+                              className="undefined uast-item"
+                            >
+                              <div
+                                className="uast-title"
+                              >
+                                <span
+                                  className="uast-property-name"
+                                >
+                                  internalRole
+                                </span>
+                                <span
+                                  className="uast-value string"
+                                >
+                                  name
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className="undefined uast-item"
+                        >
+                          <div
+                            className="uast-title"
+                          >
+                            <span
+                              className="uast-property-name"
+                            >
+                              token
+                            </span>
+                            <span
+                              className="uast-value string"
+                            >
+                              Hello
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          className="undefined uast-item"
+                        >
+                          <div
+                            className="uast-title uast-title-collapsible "
+                            onClick={[Function]}
+                          >
+                            <span
+                              className="uast-property-name"
+                            >
+                              roles
+                            </span>
+                            <summary
+                              className="uast-label"
+                            >
+                              []Role
+                            </summary>
+                          </div>
+                          <div
+                            className="uast-content"
+                          >
+                            <div
+                              className="undefined uast-item"
+                            >
+                              <div
+                                className="uast-title"
+                              >
+                                <span
+                                  className="uast-value string"
+                                >
+                                  Expression
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              className="undefined uast-item"
+                            >
+                              <div
+                                className="uast-title"
+                              >
+                                <span
+                                  className="uast-value string"
+                                >
+                                  Identifier
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className="undefined uast-item"
+                        >
+                          <div
+                            className="uast-title uast-title-collapsible "
+                            onClick={[Function]}
+                          >
+                            <span
+                              className="uast-property-name"
+                            >
+                              children
+                            </span>
+                            <summary
+                              className="uast-label"
+                            >
+                              []Node
+                            </summary>
+                          </div>
+                          <div
+                            className="uast-content"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="uast-viewer__node-14 uast-item"
+                      onClick={[Function]}
+                      onMouseMove={[Function]}
+                    >
+                      <div
+                        className="uast-title uast-title-collapsible "
+                        onClick={[Function]}
+                      >
+                        <summary
+                          className="uast-label"
+                        >
+                          Node
+                        </summary>
+                      </div>
+                      <div
+                        className="uast-content"
+                      >
+                        <div
+                          className="undefined uast-item"
+                        >
+                          <div
+                            className="uast-title"
+                          >
+                            <span
+                              className="uast-property-name"
+                            >
+                              internal_type
+                            </span>
+                            <span
+                              className="uast-value string"
+                            >
+                              SimpleType
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          className="undefined uast-item"
+                        >
+                          <div
+                            className="uast-title uast-title-collapsible "
+                            onClick={[Function]}
+                          >
+                            <span
+                              className="uast-property-name"
+                            >
+                              properties
+                            </span>
+                            <summary
+                              className="uast-label"
+                            >
+                              map&lt;string, string&gt;
+                            </summary>
+                          </div>
+                          <div
+                            className="uast-content"
+                          >
+                            <div
+                              className="undefined uast-item"
+                            >
+                              <div
+                                className="uast-title"
+                              >
+                                <span
+                                  className="uast-property-name"
+                                >
+                                  internalRole
+                                </span>
+                                <span
+                                  className="uast-value string"
+                                >
+                                  superclassType
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className="undefined uast-item"
+                        >
+                          <div
+                            className="uast-title uast-title-collapsible "
+                            onClick={[Function]}
+                          >
+                            <span
+                              className="uast-property-name"
+                            >
+                              roles
+                            </span>
+                            <summary
+                              className="uast-label"
+                            >
+                              []Role
+                            </summary>
+                          </div>
+                          <div
+                            className="uast-content"
+                          >
+                            <div
+                              className="undefined uast-item"
+                            >
+                              <div
+                                className="uast-title"
+                              >
+                                <span
+                                  className="uast-value string"
+                                >
+                                  Type
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className="undefined uast-item"
+                        >
+                          <div
+                            className="uast-title uast-title-collapsible "
+                            onClick={[Function]}
+                          >
+                            <span
+                              className="uast-property-name"
+                            >
+                              children
+                            </span>
+                            <summary
+                              className="uast-label"
+                            >
+                              []Node
+                            </summary>
+                          </div>
+                          <div
+                            className="uast-content"
+                          >
+                            <div
+                              className="uast-viewer__node-15 uast-item"
+                              onClick={[Function]}
+                              onMouseMove={[Function]}
+                            >
+                              <div
+                                className="uast-title uast-title-collapsible collapsed"
+                                onClick={[Function]}
+                              >
+                                <summary
+                                  className="uast-label"
+                                >
+                                  Node
+                                </summary>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="uast-viewer__node-16 uast-item"
+                      onClick={[Function]}
+                      onMouseMove={[Function]}
+                    >
+                      <div
+                        className="uast-title uast-title-collapsible "
+                        onClick={[Function]}
+                      >
+                        <summary
+                          className="uast-label"
+                        >
+                          Node
+                        </summary>
+                      </div>
+                      <div
+                        className="uast-content"
+                      >
+                        <div
+                          className="undefined uast-item"
+                        >
+                          <div
+                            className="uast-title"
+                          >
+                            <span
+                              className="uast-property-name"
+                            >
+                              internal_type
+                            </span>
+                            <span
+                              className="uast-value string"
+                            >
+                              MethodDeclaration
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          className="undefined uast-item"
+                        >
+                          <div
+                            className="uast-title uast-title-collapsible "
+                            onClick={[Function]}
+                          >
+                            <span
+                              className="uast-property-name"
+                            >
+                              properties
+                            </span>
+                            <summary
+                              className="uast-label"
+                            >
+                              map&lt;string, string&gt;
+                            </summary>
+                          </div>
+                          <div
+                            className="uast-content"
+                          >
+                            <div
+                              className="undefined uast-item"
+                            >
+                              <div
+                                className="uast-title"
+                              >
+                                <span
+                                  className="uast-property-name"
+                                >
+                                  constructor
+                                </span>
+                                <span
+                                  className="uast-value string"
+                                >
+                                  false
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              className="undefined uast-item"
+                            >
+                              <div
+                                className="uast-title"
+                              >
+                                <span
+                                  className="uast-property-name"
+                                >
+                                  internalRole
+                                </span>
+                                <span
+                                  className="uast-value string"
+                                >
+                                  bodyDeclarations
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className="undefined uast-item"
+                        >
+                          <div
+                            className="uast-title uast-title-collapsible "
+                            onClick={[Function]}
+                          >
+                            <span
+                              className="uast-property-name"
+                            >
+                              roles
+                            </span>
+                            <summary
+                              className="uast-label"
+                            >
+                              []Role
+                            </summary>
+                          </div>
+                          <div
+                            className="uast-content"
+                          >
+                            <div
+                              className="undefined uast-item"
+                            >
+                              <div
+                                className="uast-title"
+                              >
+                                <span
+                                  className="uast-value string"
+                                >
+                                  Visibility
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              className="undefined uast-item"
+                            >
+                              <div
+                                className="uast-title"
+                              >
+                                <span
+                                  className="uast-value string"
+                                >
+                                  World
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              className="undefined uast-item"
+                            >
+                              <div
+                                className="uast-title"
+                              >
+                                <span
+                                  className="uast-value string"
+                                >
+                                  Declaration
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              className="undefined uast-item"
+                            >
+                              <div
+                                className="uast-title"
+                              >
+                                <span
+                                  className="uast-value string"
+                                >
+                                  Function
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className="undefined uast-item"
+                        >
+                          <div
+                            className="uast-title uast-title-collapsible "
+                            onClick={[Function]}
+                          >
+                            <span
+                              className="uast-property-name"
+                            >
+                              children
+                            </span>
+                            <summary
+                              className="uast-label"
+                            >
+                              []Node
+                            </summary>
+                          </div>
+                          <div
+                            className="uast-content"
+                          >
+                            <div
+                              className="uast-viewer__node-17 uast-item"
+                              onClick={[Function]}
+                              onMouseMove={[Function]}
+                            >
+                              <div
+                                className="uast-title uast-title-collapsible collapsed"
+                                onClick={[Function]}
+                              >
+                                <summary
+                                  className="uast-label"
+                                >
+                                  Node
+                                </summary>
+                              </div>
+                            </div>
+                            <div
+                              className="uast-viewer__node-18 uast-item"
+                              onClick={[Function]}
+                              onMouseMove={[Function]}
+                            >
+                              <div
+                                className="uast-title uast-title-collapsible collapsed"
+                                onClick={[Function]}
+                              >
+                                <summary
+                                  className="uast-label"
+                                >
+                                  Node
+                                </summary>
+                              </div>
+                            </div>
+                            <div
+                              className="uast-viewer__node-19 uast-item"
+                              onClick={[Function]}
+                              onMouseMove={[Function]}
+                            >
+                              <div
+                                className="uast-title uast-title-collapsible collapsed"
+                                onClick={[Function]}
+                              >
+                                <summary
+                                  className="uast-label"
+                                >
+                                  Node
+                                </summary>
+                              </div>
+                            </div>
+                            <div
+                              className="uast-viewer__node-20 uast-item"
+                              onClick={[Function]}
+                              onMouseMove={[Function]}
+                            >
+                              <div
+                                className="uast-title uast-title-collapsible collapsed"
+                                onClick={[Function]}
+                              >
+                                <summary
+                                  className="uast-label"
+                                >
+                                  Node
+                                </summary>
+                              </div>
+                            </div>
+                            <div
+                              className="uast-viewer__node-25 uast-item"
+                              onClick={[Function]}
+                              onMouseMove={[Function]}
+                            >
+                              <div
+                                className="uast-title uast-title-collapsible collapsed"
+                                onClick={[Function]}
+                              >
+                                <summary
+                                  className="uast-label"
+                                >
+                                  Node
+                                </summary>
+                              </div>
+                            </div>
+                            <div
+                              className="uast-viewer__node-30 uast-item"
+                              onClick={[Function]}
+                              onMouseMove={[Function]}
+                            >
+                              <div
+                                className="uast-title uast-title-collapsible collapsed"
+                                onClick={[Function]}
+                              >
+                                <summary
+                                  className="uast-label"
+                                >
+                                  Node
+                                </summary>
+                              </div>
+                            </div>
+                            <div
+                              className="uast-viewer__node-32 uast-item"
+                              onClick={[Function]}
+                              onMouseMove={[Function]}
+                            >
+                              <div
+                                className="uast-title uast-title-collapsible collapsed"
+                                onClick={[Function]}
+                              >
+                                <summary
+                                  className="uast-label"
+                                >
+                                  Node
+                                </summary>
+                              </div>
+                            </div>
+                            <div
+                              className="uast-viewer__node-34 uast-item"
+                              onClick={[Function]}
+                              onMouseMove={[Function]}
+                            >
+                              <div
+                                className="uast-title uast-title-collapsible collapsed"
+                                onClick={[Function]}
+                              >
+                                <summary
+                                  className="uast-label"
+                                >
+                                  Node
+                                </summary>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

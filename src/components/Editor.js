@@ -67,7 +67,9 @@ class Editor extends Component {
   }
 
   componentDidMount() {
-    this.bookmark.remove();
+    if (this.bookmark) {
+      this.bookmark.remove();
+    }
 
     this.selectCode(this.props.markRange);
     this.scrollToPos(this.props.scrollToPos);
