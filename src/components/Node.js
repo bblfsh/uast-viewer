@@ -2,7 +2,8 @@ import React, { Component, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import CollapsibleItem from './CollapsibleItem';
 import Position from './Position';
-import { Property, Properties } from './properties';
+import Property from './Property';
+import Properties from './Properties';
 import TreeContext from './TreeContext';
 
 export function nodeClassById(id) {

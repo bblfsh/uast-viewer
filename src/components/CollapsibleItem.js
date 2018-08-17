@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Item from './Item';
-import { PropertyName } from './properties';
+import PropertyName from './PropertyName';
 import splitProps from '../splitProps';
 
 class CollapsibleItem extends PureComponent {
