@@ -112,19 +112,6 @@ class PureNode extends PureComponent {
             label={field.label}
           />
         );
-      case 'children':
-        return (
-          <Children
-            key={field.name}
-            name={field.name}
-            items={value}
-            schema={schema}
-            showLocations={showLocations}
-            onToggle={onToggle}
-            onMouseMove={onMouseMove}
-            onClick={onClick}
-          />
-        );
       case 'location':
         if (!showLocations) {
           return null;
@@ -166,30 +153,6 @@ class PureNode extends PureComponent {
   }
 }
 
-PureNode.propTypes = {
-  id: PropTypes.number.isRequired,
-  node: PropTypes.object.isRequired,
-  label: PropTypes.string.isRequired,
-  /*
-  return value of the schema function must be in the shape:
-
-  PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      attr: PropTypes.func.isRequired,
-      type: PropTypes.oneOf(['array', 'object', 'location', 'children', 'node']),
-      label: PropTypes.string,
-      showEmpty: PropTypes.bool
-    })
-  )
-  */
-  schema: PropTypes.func.isRequired,
-  showLocations: PropTypes.bool,
-  onMouseMove: PropTypes.func,
-  onToggle: PropTypes.func,
-  onClick: PropTypes.func
-};
-
 class Node extends Component {
   renderPureNode(uast) {
     const node = uast[this.props.id];
@@ -209,12 +172,33 @@ class Node extends Component {
   }
 }
 
-Node.propTypes = Object.keys(PureNode.propTypes).reduce((acc, k) => {
-  if (k !== 'node') {
-    acc[k] = PureNode.propTypes[k];
-  }
-  return acc;
-}, {});
+Node.propTypes = {
+  id: PropTypes.number.isRequired,
+  label: PropTypes.string.isRequired,
+  /*
+  return value of the schema function must be in the shape:
+
+  PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      attr: PropTypes.func.isRequired,
+      type: PropTypes.oneOf(['array', 'object', 'location', 'node']),
+      label: PropTypes.string,
+      showEmpty: PropTypes.bool
+    })
+  )
+  */
+  schema: PropTypes.func.isRequired,
+  showLocations: PropTypes.bool,
+  onMouseMove: PropTypes.func,
+  onToggle: PropTypes.func,
+  onClick: PropTypes.func
+};
+
+PureNode.propTypes = {
+  ...Node.propTypes,
+  node: PropTypes.object.isRequired
+};
 
 Node.defaultProps = {
   label: 'Node',
@@ -223,47 +207,3 @@ Node.defaultProps = {
 };
 
 export default Node;
-
-class Children extends PureComponent {
-  render() {
-    const {
-      name,
-      items,
-      schema,
-      showLocations,
-      onMouseMove,
-      onToggle,
-      onClick
-    } = this.props;
-
-    if (!Array.isArray(items)) {
-      return null;
-    }
-
-    return (
-      <CollapsibleItem name={name} label="[]Node">
-        {items.map((id, i) => (
-          <Node
-            key={i}
-            id={id}
-            schema={schema}
-            showLocations={showLocations}
-            onMouseMove={onMouseMove}
-            onToggle={onToggle}
-            onClick={onClick}
-          />
-        ))}
-      </CollapsibleItem>
-    );
-  }
-}
-
-Children.propTypes = {
-  name: PropTypes.string.isRequired,
-  items: PropTypes.arrayOf(PropTypes.number),
-  schema: Node.propTypes.schema,
-  showLocations: PropTypes.bool,
-  onMouseMove: PropTypes.func,
-  onToggle: PropTypes.func,
-  onClick: PropTypes.func
-};
