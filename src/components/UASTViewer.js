@@ -139,7 +139,7 @@ UASTViewer.propTypes = {
   // don't use PropTypes.shape due to possible extra properties in a node
   uast: PropTypes.object.isRequired,
   rootIds: PropTypes.arrayOf(PropTypes.number).isRequired,
-  schema: PropTypes.array,
+  schema: PropTypes.func,
   showLocations: PropTypes.bool.isRequired,
   scrollToNode: PropTypes.number,
   onNodeHover: PropTypes.func,
