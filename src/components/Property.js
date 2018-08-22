@@ -8,13 +8,24 @@ function Property({ name, value }) {
     return null;
   }
 
+  let valueEl;
+  if (React.isValidElement(value)) {
+    valueEl = value;
+  } else {
+    let valueStr = value;
+    if (value === null) {
+      valueStr = 'null';
+    } else if (typeof value === 'boolean') {
+      valueStr = value ? 'true' : 'false';
+    }
+    valueEl = <span className={`uast-value ${typeof value}`}>{valueStr}</span>;
+  }
+
   return (
     <Item>
       <div className="uast-title">
         {name ? <PropertyName name={name} /> : null}
-        <span className={`uast-value ${typeof value}`}>
-          {value !== null ? value : 'null'}
-        </span>
+        {valueEl}
       </div>
     </Item>
   );
