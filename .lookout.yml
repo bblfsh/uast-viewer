@@ -1,0 +1,3 @@
+analyzers:
+  - name: dummy
+    disabled: true
