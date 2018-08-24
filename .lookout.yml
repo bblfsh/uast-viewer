@@ -1,3 +1,3 @@
 analyzers:
-  - name: dummy
+  - name: Dummy
     disabled: true
