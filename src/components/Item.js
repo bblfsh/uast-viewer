@@ -2,12 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Item({ children, hovered, highlighted, className, ...rest }) {
-  let newClassName = `${className} uast-item`;
+  let newClassName = 'uast-item';
   if (hovered) {
     newClassName += ' hovered';
   }
   if (highlighted) {
     newClassName += ' highlighted';
+  }
+  if (className) {
+    newClassName += ` ${className}`;
   }
 
   return (

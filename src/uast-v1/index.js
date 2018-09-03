@@ -60,20 +60,46 @@ export function getChildrenIds(node) {
   return node.Children;
 }
 
-export function nodeSchema() {
+function transformPosAttr(pos) {
+  return Object.keys(pos).reduce((acc, key) => {
+    acc[key.toLowerCase()] = pos[key];
+    return acc;
+  }, {});
+}
+
+export function nodeSchema(n) {
   return [
-    { name: 'internal_type', attr: n => n.InternalType },
+    { name: 'internal_type', attr: () => n.InternalType },
     {
       name: 'properties',
       type: 'object',
       label: 'map<string, string>',
-      attr: n => n.Properties
+      attr: () => n.Properties
     },
-    { name: 'token', attr: n => n.Token },
-    { name: 'start_position', type: 'location', attr: n => n.StartPosition },
-    { name: 'end_position', type: 'location', attr: n => n.EndPosition },
-    { name: 'roles', type: 'array', label: '[]Role', attr: n => n.Roles },
-    { name: 'children', type: 'children', attr: n => n.Children }
+    { name: 'token', attr: () => n.Token },
+    {
+      name: 'start_position',
+      type: 'location',
+      label: 'Position',
+      attr: () => transformPosAttr(n.StartPosition)
+    },
+    {
+      name: 'end_position',
+      type: 'location',
+      label: 'Position',
+      attr: () => transformPosAttr(n.EndPosition)
+    },
+    { name: 'roles', type: 'array', label: '[]Role', attr: () => n.Roles },
+    {
+      name: 'children',
+      type: 'array',
+      label: '[]Node',
+      attr: () =>
+        n.Children.map(id => ({
+          type: 'node',
+          attr: () => id
+        }))
+    }
   ];
 }
 

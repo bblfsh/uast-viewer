@@ -17,7 +17,7 @@ exports[`uast-v1 1`] = `
     onMouseLeave={[Function]}
   >
     <div
-      className="uast-viewer__node-1 uast-item"
+      className="uast-item uast-viewer__node-1"
       onClick={[Function]}
       onMouseMove={[Function]}
     >
@@ -35,7 +35,7 @@ exports[`uast-v1 1`] = `
         className="uast-content"
       >
         <div
-          className="undefined uast-item"
+          className="uast-item"
         >
           <div
             className="uast-title"
@@ -53,7 +53,7 @@ exports[`uast-v1 1`] = `
           </div>
         </div>
         <div
-          className="undefined uast-item"
+          className="uast-item"
         >
           <div
             className="uast-title uast-title-collapsible "
@@ -74,7 +74,7 @@ exports[`uast-v1 1`] = `
             className="uast-content"
           >
             <div
-              className="undefined uast-item"
+              className="uast-item"
             >
               <div
                 className="uast-title"
@@ -89,7 +89,7 @@ exports[`uast-v1 1`] = `
           </div>
         </div>
         <div
-          className="undefined uast-item"
+          className="uast-item"
         >
           <div
             className="uast-title uast-title-collapsible "
@@ -110,7 +110,7 @@ exports[`uast-v1 1`] = `
             className="uast-content"
           >
             <div
-              className="uast-viewer__node-2 uast-item"
+              className="uast-item uast-viewer__node-2"
               onClick={[Function]}
               onMouseMove={[Function]}
             >
@@ -128,7 +128,7 @@ exports[`uast-v1 1`] = `
                 className="uast-content"
               >
                 <div
-                  className="undefined uast-item"
+                  className="uast-item"
                 >
                   <div
                     className="uast-title"
@@ -146,7 +146,7 @@ exports[`uast-v1 1`] = `
                   </div>
                 </div>
                 <div
-                  className="undefined uast-item"
+                  className="uast-item"
                 >
                   <div
                     className="uast-title uast-title-collapsible "
@@ -167,7 +167,7 @@ exports[`uast-v1 1`] = `
                     className="uast-content"
                   >
                     <div
-                      className="undefined uast-item"
+                      className="uast-item"
                     >
                       <div
                         className="uast-title"
@@ -185,7 +185,7 @@ exports[`uast-v1 1`] = `
                       </div>
                     </div>
                     <div
-                      className="undefined uast-item"
+                      className="uast-item"
                     >
                       <div
                         className="uast-title"
@@ -205,7 +205,7 @@ exports[`uast-v1 1`] = `
                   </div>
                 </div>
                 <div
-                  className="undefined uast-item"
+                  className="uast-item"
                 >
                   <div
                     className="uast-title uast-title-collapsible "
@@ -226,7 +226,7 @@ exports[`uast-v1 1`] = `
                     className="uast-content"
                   >
                     <div
-                      className="undefined uast-item"
+                      className="uast-item"
                     >
                       <div
                         className="uast-title"
@@ -241,7 +241,7 @@ exports[`uast-v1 1`] = `
                   </div>
                 </div>
                 <div
-                  className="undefined uast-item"
+                  className="uast-item"
                 >
                   <div
                     className="uast-title uast-title-collapsible "
@@ -265,7 +265,7 @@ exports[`uast-v1 1`] = `
               </div>
             </div>
             <div
-              className="uast-viewer__node-3 uast-item"
+              className="uast-item uast-viewer__node-3"
               onClick={[Function]}
               onMouseMove={[Function]}
             >
@@ -283,7 +283,7 @@ exports[`uast-v1 1`] = `
                 className="uast-content"
               >
                 <div
-                  className="undefined uast-item"
+                  className="uast-item"
                 >
                   <div
                     className="uast-title"
@@ -301,7 +301,7 @@ exports[`uast-v1 1`] = `
                   </div>
                 </div>
                 <div
-                  className="undefined uast-item"
+                  className="uast-item"
                 >
                   <div
                     className="uast-title uast-title-collapsible "
@@ -322,7 +322,7 @@ exports[`uast-v1 1`] = `
                     className="uast-content"
                   >
                     <div
-                      className="undefined uast-item"
+                      className="uast-item"
                     >
                       <div
                         className="uast-title"
@@ -340,7 +340,7 @@ exports[`uast-v1 1`] = `
                       </div>
                     </div>
                     <div
-                      className="undefined uast-item"
+                      className="uast-item"
                     >
                       <div
                         className="uast-title"
@@ -358,7 +358,7 @@ exports[`uast-v1 1`] = `
                       </div>
                     </div>
                     <div
-                      className="undefined uast-item"
+                      className="uast-item"
                     >
                       <div
                         className="uast-title"
@@ -378,7 +378,7 @@ exports[`uast-v1 1`] = `
                   </div>
                 </div>
                 <div
-                  className="undefined uast-item"
+                  className="uast-item"
                 >
                   <div
                     className="uast-title uast-title-collapsible "
@@ -399,7 +399,7 @@ exports[`uast-v1 1`] = `
                     className="uast-content"
                   >
                     <div
-                      className="undefined uast-item"
+                      className="uast-item"
                     >
                       <div
                         className="uast-title"
@@ -412,7 +412,7 @@ exports[`uast-v1 1`] = `
                       </div>
                     </div>
                     <div
-                      className="undefined uast-item"
+                      className="uast-item"
                     >
                       <div
                         className="uast-title"
@@ -427,7 +427,7 @@ exports[`uast-v1 1`] = `
                   </div>
                 </div>
                 <div
-                  className="undefined uast-item"
+                  className="uast-item"
                 >
                   <div
                     className="uast-title uast-title-collapsible "
@@ -448,7 +448,7 @@ exports[`uast-v1 1`] = `
                     className="uast-content"
                   >
                     <div
-                      className="uast-viewer__node-4 uast-item"
+                      className="uast-item uast-viewer__node-4"
                       onClick={[Function]}
                       onMouseMove={[Function]}
                     >
@@ -466,7 +466,7 @@ exports[`uast-v1 1`] = `
                         className="uast-content"
                       >
                         <div
-                          className="undefined uast-item"
+                          className="uast-item"
                         >
                           <div
                             className="uast-title"
@@ -484,7 +484,7 @@ exports[`uast-v1 1`] = `
                           </div>
                         </div>
                         <div
-                          className="undefined uast-item"
+                          className="uast-item"
                         >
                           <div
                             className="uast-title uast-title-collapsible "
@@ -505,7 +505,7 @@ exports[`uast-v1 1`] = `
                             className="uast-content"
                           >
                             <div
-                              className="undefined uast-item"
+                              className="uast-item"
                             >
                               <div
                                 className="uast-title"
@@ -525,7 +525,7 @@ exports[`uast-v1 1`] = `
                           </div>
                         </div>
                         <div
-                          className="undefined uast-item"
+                          className="uast-item"
                         >
                           <div
                             className="uast-title uast-title-collapsible "
@@ -546,7 +546,7 @@ exports[`uast-v1 1`] = `
                             className="uast-content"
                           >
                             <div
-                              className="undefined uast-item"
+                              className="uast-item"
                             >
                               <div
                                 className="uast-title"
@@ -559,7 +559,7 @@ exports[`uast-v1 1`] = `
                               </div>
                             </div>
                             <div
-                              className="undefined uast-item"
+                              className="uast-item"
                             >
                               <div
                                 className="uast-title"
@@ -572,7 +572,7 @@ exports[`uast-v1 1`] = `
                               </div>
                             </div>
                             <div
-                              className="undefined uast-item"
+                              className="uast-item"
                             >
                               <div
                                 className="uast-title"
@@ -585,7 +585,7 @@ exports[`uast-v1 1`] = `
                               </div>
                             </div>
                             <div
-                              className="undefined uast-item"
+                              className="uast-item"
                             >
                               <div
                                 className="uast-title"
@@ -598,7 +598,7 @@ exports[`uast-v1 1`] = `
                               </div>
                             </div>
                             <div
-                              className="undefined uast-item"
+                              className="uast-item"
                             >
                               <div
                                 className="uast-title"
@@ -613,7 +613,7 @@ exports[`uast-v1 1`] = `
                           </div>
                         </div>
                         <div
-                          className="undefined uast-item"
+                          className="uast-item"
                         >
                           <div
                             className="uast-title uast-title-collapsible "
@@ -634,7 +634,7 @@ exports[`uast-v1 1`] = `
                             className="uast-content"
                           >
                             <div
-                              className="uast-viewer__node-5 uast-item"
+                              className="uast-item uast-viewer__node-5"
                               onClick={[Function]}
                               onMouseMove={[Function]}
                             >
@@ -650,7 +650,7 @@ exports[`uast-v1 1`] = `
                               </div>
                             </div>
                             <div
-                              className="uast-viewer__node-6 uast-item"
+                              className="uast-item uast-viewer__node-6"
                               onClick={[Function]}
                               onMouseMove={[Function]}
                             >
@@ -674,7 +674,7 @@ exports[`uast-v1 1`] = `
               </div>
             </div>
             <div
-              className="uast-viewer__node-7 uast-item"
+              className="uast-item uast-viewer__node-7"
               onClick={[Function]}
               onMouseMove={[Function]}
             >
@@ -692,7 +692,7 @@ exports[`uast-v1 1`] = `
                 className="uast-content"
               >
                 <div
-                  className="undefined uast-item"
+                  className="uast-item"
                 >
                   <div
                     className="uast-title"
@@ -710,7 +710,7 @@ exports[`uast-v1 1`] = `
                   </div>
                 </div>
                 <div
-                  className="undefined uast-item"
+                  className="uast-item"
                 >
                   <div
                     className="uast-title uast-title-collapsible "
@@ -731,7 +731,7 @@ exports[`uast-v1 1`] = `
                     className="uast-content"
                   >
                     <div
-                      className="undefined uast-item"
+                      className="uast-item"
                     >
                       <div
                         className="uast-title"
@@ -749,7 +749,7 @@ exports[`uast-v1 1`] = `
                       </div>
                     </div>
                     <div
-                      className="undefined uast-item"
+                      className="uast-item"
                     >
                       <div
                         className="uast-title"
@@ -767,7 +767,7 @@ exports[`uast-v1 1`] = `
                       </div>
                     </div>
                     <div
-                      className="undefined uast-item"
+                      className="uast-item"
                     >
                       <div
                         className="uast-title"
@@ -787,7 +787,7 @@ exports[`uast-v1 1`] = `
                   </div>
                 </div>
                 <div
-                  className="undefined uast-item"
+                  className="uast-item"
                 >
                   <div
                     className="uast-title uast-title-collapsible "
@@ -808,7 +808,7 @@ exports[`uast-v1 1`] = `
                     className="uast-content"
                   >
                     <div
-                      className="undefined uast-item"
+                      className="uast-item"
                     >
                       <div
                         className="uast-title"
@@ -821,7 +821,7 @@ exports[`uast-v1 1`] = `
                       </div>
                     </div>
                     <div
-                      className="undefined uast-item"
+                      className="uast-item"
                     >
                       <div
                         className="uast-title"
@@ -836,7 +836,7 @@ exports[`uast-v1 1`] = `
                   </div>
                 </div>
                 <div
-                  className="undefined uast-item"
+                  className="uast-item"
                 >
                   <div
                     className="uast-title uast-title-collapsible "
@@ -857,7 +857,7 @@ exports[`uast-v1 1`] = `
                     className="uast-content"
                   >
                     <div
-                      className="uast-viewer__node-8 uast-item"
+                      className="uast-item uast-viewer__node-8"
                       onClick={[Function]}
                       onMouseMove={[Function]}
                     >
@@ -875,7 +875,7 @@ exports[`uast-v1 1`] = `
                         className="uast-content"
                       >
                         <div
-                          className="undefined uast-item"
+                          className="uast-item"
                         >
                           <div
                             className="uast-title"
@@ -893,7 +893,7 @@ exports[`uast-v1 1`] = `
                           </div>
                         </div>
                         <div
-                          className="undefined uast-item"
+                          className="uast-item"
                         >
                           <div
                             className="uast-title uast-title-collapsible "
@@ -914,7 +914,7 @@ exports[`uast-v1 1`] = `
                             className="uast-content"
                           >
                             <div
-                              className="undefined uast-item"
+                              className="uast-item"
                             >
                               <div
                                 className="uast-title"
@@ -934,7 +934,7 @@ exports[`uast-v1 1`] = `
                           </div>
                         </div>
                         <div
-                          className="undefined uast-item"
+                          className="uast-item"
                         >
                           <div
                             className="uast-title uast-title-collapsible "
@@ -955,7 +955,7 @@ exports[`uast-v1 1`] = `
                             className="uast-content"
                           >
                             <div
-                              className="undefined uast-item"
+                              className="uast-item"
                             >
                               <div
                                 className="uast-title"
@@ -968,7 +968,7 @@ exports[`uast-v1 1`] = `
                               </div>
                             </div>
                             <div
-                              className="undefined uast-item"
+                              className="uast-item"
                             >
                               <div
                                 className="uast-title"
@@ -981,7 +981,7 @@ exports[`uast-v1 1`] = `
                               </div>
                             </div>
                             <div
-                              className="undefined uast-item"
+                              className="uast-item"
                             >
                               <div
                                 className="uast-title"
@@ -994,7 +994,7 @@ exports[`uast-v1 1`] = `
                               </div>
                             </div>
                             <div
-                              className="undefined uast-item"
+                              className="uast-item"
                             >
                               <div
                                 className="uast-title"
@@ -1007,7 +1007,7 @@ exports[`uast-v1 1`] = `
                               </div>
                             </div>
                             <div
-                              className="undefined uast-item"
+                              className="uast-item"
                             >
                               <div
                                 className="uast-title"
@@ -1022,7 +1022,7 @@ exports[`uast-v1 1`] = `
                           </div>
                         </div>
                         <div
-                          className="undefined uast-item"
+                          className="uast-item"
                         >
                           <div
                             className="uast-title uast-title-collapsible "
@@ -1043,7 +1043,7 @@ exports[`uast-v1 1`] = `
                             className="uast-content"
                           >
                             <div
-                              className="uast-viewer__node-9 uast-item"
+                              className="uast-item uast-viewer__node-9"
                               onClick={[Function]}
                               onMouseMove={[Function]}
                             >
@@ -1059,7 +1059,7 @@ exports[`uast-v1 1`] = `
                               </div>
                             </div>
                             <div
-                              className="uast-viewer__node-10 uast-item"
+                              className="uast-item uast-viewer__node-10"
                               onClick={[Function]}
                               onMouseMove={[Function]}
                             >
@@ -1083,7 +1083,7 @@ exports[`uast-v1 1`] = `
               </div>
             </div>
             <div
-              className="uast-viewer__node-11 uast-item"
+              className="uast-item uast-viewer__node-11"
               onClick={[Function]}
               onMouseMove={[Function]}
             >
@@ -1101,7 +1101,7 @@ exports[`uast-v1 1`] = `
                 className="uast-content"
               >
                 <div
-                  className="undefined uast-item"
+                  className="uast-item"
                 >
                   <div
                     className="uast-title"
@@ -1119,7 +1119,7 @@ exports[`uast-v1 1`] = `
                   </div>
                 </div>
                 <div
-                  className="undefined uast-item"
+                  className="uast-item"
                 >
                   <div
                     className="uast-title uast-title-collapsible "
@@ -1140,7 +1140,7 @@ exports[`uast-v1 1`] = `
                     className="uast-content"
                   >
                     <div
-                      className="undefined uast-item"
+                      className="uast-item"
                     >
                       <div
                         className="uast-title"
@@ -1158,7 +1158,7 @@ exports[`uast-v1 1`] = `
                       </div>
                     </div>
                     <div
-                      className="undefined uast-item"
+                      className="uast-item"
                     >
                       <div
                         className="uast-title"
@@ -1178,7 +1178,7 @@ exports[`uast-v1 1`] = `
                   </div>
                 </div>
                 <div
-                  className="undefined uast-item"
+                  className="uast-item"
                 >
                   <div
                     className="uast-title uast-title-collapsible "
@@ -1199,7 +1199,7 @@ exports[`uast-v1 1`] = `
                     className="uast-content"
                   >
                     <div
-                      className="undefined uast-item"
+                      className="uast-item"
                     >
                       <div
                         className="uast-title"
@@ -1212,7 +1212,7 @@ exports[`uast-v1 1`] = `
                       </div>
                     </div>
                     <div
-                      className="undefined uast-item"
+                      className="uast-item"
                     >
                       <div
                         className="uast-title"
@@ -1225,7 +1225,7 @@ exports[`uast-v1 1`] = `
                       </div>
                     </div>
                     <div
-                      className="undefined uast-item"
+                      className="uast-item"
                     >
                       <div
                         className="uast-title"
@@ -1238,7 +1238,7 @@ exports[`uast-v1 1`] = `
                       </div>
                     </div>
                     <div
-                      className="undefined uast-item"
+                      className="uast-item"
                     >
                       <div
                         className="uast-title"
@@ -1253,7 +1253,7 @@ exports[`uast-v1 1`] = `
                   </div>
                 </div>
                 <div
-                  className="undefined uast-item"
+                  className="uast-item"
                 >
                   <div
                     className="uast-title uast-title-collapsible "
@@ -1274,7 +1274,7 @@ exports[`uast-v1 1`] = `
                     className="uast-content"
                   >
                     <div
-                      className="uast-viewer__node-12 uast-item"
+                      className="uast-item uast-viewer__node-12"
                       onClick={[Function]}
                       onMouseMove={[Function]}
                     >
@@ -1292,7 +1292,7 @@ exports[`uast-v1 1`] = `
                         className="uast-content"
                       >
                         <div
-                          className="undefined uast-item"
+                          className="uast-item"
                         >
                           <div
                             className="uast-title"
@@ -1310,7 +1310,7 @@ exports[`uast-v1 1`] = `
                           </div>
                         </div>
                         <div
-                          className="undefined uast-item"
+                          className="uast-item"
                         >
                           <div
                             className="uast-title uast-title-collapsible "
@@ -1331,7 +1331,7 @@ exports[`uast-v1 1`] = `
                             className="uast-content"
                           >
                             <div
-                              className="undefined uast-item"
+                              className="uast-item"
                             >
                               <div
                                 className="uast-title"
@@ -1351,7 +1351,7 @@ exports[`uast-v1 1`] = `
                           </div>
                         </div>
                         <div
-                          className="undefined uast-item"
+                          className="uast-item"
                         >
                           <div
                             className="uast-title"
@@ -1369,7 +1369,7 @@ exports[`uast-v1 1`] = `
                           </div>
                         </div>
                         <div
-                          className="undefined uast-item"
+                          className="uast-item"
                         >
                           <div
                             className="uast-title uast-title-collapsible "
@@ -1390,7 +1390,7 @@ exports[`uast-v1 1`] = `
                             className="uast-content"
                           >
                             <div
-                              className="undefined uast-item"
+                              className="uast-item"
                             >
                               <div
                                 className="uast-title"
@@ -1403,7 +1403,7 @@ exports[`uast-v1 1`] = `
                               </div>
                             </div>
                             <div
-                              className="undefined uast-item"
+                              className="uast-item"
                             >
                               <div
                                 className="uast-title"
@@ -1418,7 +1418,7 @@ exports[`uast-v1 1`] = `
                           </div>
                         </div>
                         <div
-                          className="undefined uast-item"
+                          className="uast-item"
                         >
                           <div
                             className="uast-title uast-title-collapsible "
@@ -1442,7 +1442,7 @@ exports[`uast-v1 1`] = `
                       </div>
                     </div>
                     <div
-                      className="uast-viewer__node-13 uast-item"
+                      className="uast-item uast-viewer__node-13"
                       onClick={[Function]}
                       onMouseMove={[Function]}
                     >
@@ -1460,7 +1460,7 @@ exports[`uast-v1 1`] = `
                         className="uast-content"
                       >
                         <div
-                          className="undefined uast-item"
+                          className="uast-item"
                         >
                           <div
                             className="uast-title"
@@ -1478,7 +1478,7 @@ exports[`uast-v1 1`] = `
                           </div>
                         </div>
                         <div
-                          className="undefined uast-item"
+                          className="uast-item"
                         >
                           <div
                             className="uast-title uast-title-collapsible "
@@ -1499,7 +1499,7 @@ exports[`uast-v1 1`] = `
                             className="uast-content"
                           >
                             <div
-                              className="undefined uast-item"
+                              className="uast-item"
                             >
                               <div
                                 className="uast-title"
@@ -1519,7 +1519,7 @@ exports[`uast-v1 1`] = `
                           </div>
                         </div>
                         <div
-                          className="undefined uast-item"
+                          className="uast-item"
                         >
                           <div
                             className="uast-title"
@@ -1537,7 +1537,7 @@ exports[`uast-v1 1`] = `
                           </div>
                         </div>
                         <div
-                          className="undefined uast-item"
+                          className="uast-item"
                         >
                           <div
                             className="uast-title uast-title-collapsible "
@@ -1558,7 +1558,7 @@ exports[`uast-v1 1`] = `
                             className="uast-content"
                           >
                             <div
-                              className="undefined uast-item"
+                              className="uast-item"
                             >
                               <div
                                 className="uast-title"
@@ -1571,7 +1571,7 @@ exports[`uast-v1 1`] = `
                               </div>
                             </div>
                             <div
-                              className="undefined uast-item"
+                              className="uast-item"
                             >
                               <div
                                 className="uast-title"
@@ -1586,7 +1586,7 @@ exports[`uast-v1 1`] = `
                           </div>
                         </div>
                         <div
-                          className="undefined uast-item"
+                          className="uast-item"
                         >
                           <div
                             className="uast-title uast-title-collapsible "
@@ -1610,7 +1610,7 @@ exports[`uast-v1 1`] = `
                       </div>
                     </div>
                     <div
-                      className="uast-viewer__node-14 uast-item"
+                      className="uast-item uast-viewer__node-14"
                       onClick={[Function]}
                       onMouseMove={[Function]}
                     >
@@ -1628,7 +1628,7 @@ exports[`uast-v1 1`] = `
                         className="uast-content"
                       >
                         <div
-                          className="undefined uast-item"
+                          className="uast-item"
                         >
                           <div
                             className="uast-title"
@@ -1646,7 +1646,7 @@ exports[`uast-v1 1`] = `
                           </div>
                         </div>
                         <div
-                          className="undefined uast-item"
+                          className="uast-item"
                         >
                           <div
                             className="uast-title uast-title-collapsible "
@@ -1667,7 +1667,7 @@ exports[`uast-v1 1`] = `
                             className="uast-content"
                           >
                             <div
-                              className="undefined uast-item"
+                              className="uast-item"
                             >
                               <div
                                 className="uast-title"
@@ -1687,7 +1687,7 @@ exports[`uast-v1 1`] = `
                           </div>
                         </div>
                         <div
-                          className="undefined uast-item"
+                          className="uast-item"
                         >
                           <div
                             className="uast-title uast-title-collapsible "
@@ -1708,7 +1708,7 @@ exports[`uast-v1 1`] = `
                             className="uast-content"
                           >
                             <div
-                              className="undefined uast-item"
+                              className="uast-item"
                             >
                               <div
                                 className="uast-title"
@@ -1723,7 +1723,7 @@ exports[`uast-v1 1`] = `
                           </div>
                         </div>
                         <div
-                          className="undefined uast-item"
+                          className="uast-item"
                         >
                           <div
                             className="uast-title uast-title-collapsible "
@@ -1744,7 +1744,7 @@ exports[`uast-v1 1`] = `
                             className="uast-content"
                           >
                             <div
-                              className="uast-viewer__node-15 uast-item"
+                              className="uast-item uast-viewer__node-15"
                               onClick={[Function]}
                               onMouseMove={[Function]}
                             >
@@ -1764,7 +1764,7 @@ exports[`uast-v1 1`] = `
                       </div>
                     </div>
                     <div
-                      className="uast-viewer__node-16 uast-item"
+                      className="uast-item uast-viewer__node-16"
                       onClick={[Function]}
                       onMouseMove={[Function]}
                     >
@@ -1782,7 +1782,7 @@ exports[`uast-v1 1`] = `
                         className="uast-content"
                       >
                         <div
-                          className="undefined uast-item"
+                          className="uast-item"
                         >
                           <div
                             className="uast-title"
@@ -1800,7 +1800,7 @@ exports[`uast-v1 1`] = `
                           </div>
                         </div>
                         <div
-                          className="undefined uast-item"
+                          className="uast-item"
                         >
                           <div
                             className="uast-title uast-title-collapsible "
@@ -1821,7 +1821,7 @@ exports[`uast-v1 1`] = `
                             className="uast-content"
                           >
                             <div
-                              className="undefined uast-item"
+                              className="uast-item"
                             >
                               <div
                                 className="uast-title"
@@ -1839,7 +1839,7 @@ exports[`uast-v1 1`] = `
                               </div>
                             </div>
                             <div
-                              className="undefined uast-item"
+                              className="uast-item"
                             >
                               <div
                                 className="uast-title"
@@ -1859,7 +1859,7 @@ exports[`uast-v1 1`] = `
                           </div>
                         </div>
                         <div
-                          className="undefined uast-item"
+                          className="uast-item"
                         >
                           <div
                             className="uast-title uast-title-collapsible "
@@ -1880,7 +1880,7 @@ exports[`uast-v1 1`] = `
                             className="uast-content"
                           >
                             <div
-                              className="undefined uast-item"
+                              className="uast-item"
                             >
                               <div
                                 className="uast-title"
@@ -1893,7 +1893,7 @@ exports[`uast-v1 1`] = `
                               </div>
                             </div>
                             <div
-                              className="undefined uast-item"
+                              className="uast-item"
                             >
                               <div
                                 className="uast-title"
@@ -1906,7 +1906,7 @@ exports[`uast-v1 1`] = `
                               </div>
                             </div>
                             <div
-                              className="undefined uast-item"
+                              className="uast-item"
                             >
                               <div
                                 className="uast-title"
@@ -1919,7 +1919,7 @@ exports[`uast-v1 1`] = `
                               </div>
                             </div>
                             <div
-                              className="undefined uast-item"
+                              className="uast-item"
                             >
                               <div
                                 className="uast-title"
@@ -1934,7 +1934,7 @@ exports[`uast-v1 1`] = `
                           </div>
                         </div>
                         <div
-                          className="undefined uast-item"
+                          className="uast-item"
                         >
                           <div
                             className="uast-title uast-title-collapsible "
@@ -1955,7 +1955,7 @@ exports[`uast-v1 1`] = `
                             className="uast-content"
                           >
                             <div
-                              className="uast-viewer__node-17 uast-item"
+                              className="uast-item uast-viewer__node-17"
                               onClick={[Function]}
                               onMouseMove={[Function]}
                             >
@@ -1971,7 +1971,7 @@ exports[`uast-v1 1`] = `
                               </div>
                             </div>
                             <div
-                              className="uast-viewer__node-18 uast-item"
+                              className="uast-item uast-viewer__node-18"
                               onClick={[Function]}
                               onMouseMove={[Function]}
                             >
@@ -1987,7 +1987,7 @@ exports[`uast-v1 1`] = `
                               </div>
                             </div>
                             <div
-                              className="uast-viewer__node-19 uast-item"
+                              className="uast-item uast-viewer__node-19"
                               onClick={[Function]}
                               onMouseMove={[Function]}
                             >
@@ -2003,7 +2003,7 @@ exports[`uast-v1 1`] = `
                               </div>
                             </div>
                             <div
-                              className="uast-viewer__node-20 uast-item"
+                              className="uast-item uast-viewer__node-20"
                               onClick={[Function]}
                               onMouseMove={[Function]}
                             >
@@ -2019,7 +2019,7 @@ exports[`uast-v1 1`] = `
                               </div>
                             </div>
                             <div
-                              className="uast-viewer__node-25 uast-item"
+                              className="uast-item uast-viewer__node-25"
                               onClick={[Function]}
                               onMouseMove={[Function]}
                             >
@@ -2035,7 +2035,7 @@ exports[`uast-v1 1`] = `
                               </div>
                             </div>
                             <div
-                              className="uast-viewer__node-30 uast-item"
+                              className="uast-item uast-viewer__node-30"
                               onClick={[Function]}
                               onMouseMove={[Function]}
                             >
@@ -2051,7 +2051,7 @@ exports[`uast-v1 1`] = `
                               </div>
                             </div>
                             <div
-                              className="uast-viewer__node-32 uast-item"
+                              className="uast-item uast-viewer__node-32"
                               onClick={[Function]}
                               onMouseMove={[Function]}
                             >
@@ -2067,7 +2067,7 @@ exports[`uast-v1 1`] = `
                               </div>
                             </div>
                             <div
-                              className="uast-viewer__node-34 uast-item"
+                              className="uast-item uast-viewer__node-34"
                               onClick={[Function]}
                               onMouseMove={[Function]}
                             >

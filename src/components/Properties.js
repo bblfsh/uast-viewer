@@ -10,9 +10,13 @@ function Properties({ properties, name, label }) {
 
   return (
     <CollapsibleItem name={name} label={label}>
-      {Object.keys(properties).map((prop, i) => (
-        <Property key={i} name={prop} value={properties[prop]} />
-      ))}
+      {Object.keys(properties).map((prop, i) => {
+        const v = properties[prop];
+        if (React.isValidElement(v)) {
+          return v;
+        }
+        return <Property key={i} name={prop} value={v} />;
+      })}
     </CollapsibleItem>
   );
 }
