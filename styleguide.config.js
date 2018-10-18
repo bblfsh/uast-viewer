@@ -48,6 +48,10 @@ module.exports = {
         {
           name: 'UAST v1',
           content: 'docs/state/uast-v1.md'
+        },
+        {
+          name: 'UAST v2',
+          content: 'docs/state/uast-v2.md'
         }
       ]
     }

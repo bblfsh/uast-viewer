@@ -1,7 +1,7 @@
 // this file contains functions to operate on UAST v2
 
-// special field in an object which defines type of the object
-const typeField = '_uast_node_type';
+// special field in an object which defines distinguish just an object from a node
+const typeNodeField = '_uast_node_type';
 // special field name to distinguish position from regular object
 const posKey = '@pos';
 
@@ -29,9 +29,9 @@ export function getChildrenIds({ n }) {
     .map(key => {
       const v = n[key];
       if (Array.isArray(v)) {
-        return v.filter(i => i[typeField] === 'child').map(i => i.id);
+        return v.filter(i => i[typeNodeField]).map(i => i.id);
       }
-      if (v && typeof v === 'object' && v[typeField] === 'child') {
+      if (v && typeof v === 'object' && v[typeNodeField]) {
         return v.id;
       }
       return null;
@@ -41,27 +41,64 @@ export function getChildrenIds({ n }) {
   return ids;
 }
 
+// decides if an value is a node or not
+// currently any object with property @type which isn't assigned to key @pos is a node
+function isNode(value, key) {
+  return (
+    key !== posKey &&
+    value !== null &&
+    typeof value === 'object' &&
+    value['@type']
+  );
+}
+
+// we need to wrap nodeId into object to understand it's a node not just an int during render
+function nodeItem(id) {
+  return { id, [typeNodeField]: true };
+}
+
 // converts uast-json produced by go serialization to flat-json
 export function transformer(uastJson) {
   if (!uastJson) {
     return null;
   }
 
-  const parentToChildren = {};
-  const tree = Object.keys(uastJson).reduce((acc, id) => {
-    const node = uastJson[id];
-    parentToChildren[id] = getChildrenIds({ n: node });
+  const tree = {};
+  let id = 0;
 
-    acc[id] = { id: +id, n: node };
-    return acc;
-  }, {});
+  function convertNode(uast, parentId) {
+    const curId = id + 1;
+    id = curId;
 
-  Object.keys(parentToChildren).forEach(pId => {
-    parentToChildren[pId].forEach(cId => {
-      tree[cId].parentId = pId;
+    const node = {
+      n: uast,
+      id: curId,
+      parentId
+    };
+
+    Object.keys(uast).forEach(key => {
+      const v = uast[key];
+
+      if (Array.isArray(v)) {
+        node.n[key] = uast[key].map(child => {
+          if (isNode(child, key)) {
+            return nodeItem(convertNode(child, curId));
+          }
+          return child;
+        });
+      }
+
+      if (isNode(v, key)) {
+        node.n[key] = nodeItem(convertNode(v, curId));
+      }
     });
-  });
 
+    tree[curId] = node;
+
+    return curId;
+  }
+
+  convertNode(uastJson, 0);
   return tree;
 }
 
@@ -103,7 +140,7 @@ function fieldFromValue(value, key) {
     };
   }
 
-  if (value[typeField] === 'child') {
+  if (value[typeNodeField]) {
     return {
       name: key,
       type: 'node',
