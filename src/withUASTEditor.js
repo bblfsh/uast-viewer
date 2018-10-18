@@ -53,7 +53,9 @@ function withUASTEditor(WrappedComponent, options = uastV1Options) {
       this.onCursorChanged = this.onCursorChanged.bind(this);
     }
 
-    componentWillReceiveProps(nextProps) {
+    // wrapper keeps it's own uast but it should be recalculated when props are changed
+    // eslint-disable-next-line
+    UNSAFE_componentWillReceiveProps(nextProps) {
       let { state } = this;
 
       if (nextProps.uast !== this.props.uast) {
