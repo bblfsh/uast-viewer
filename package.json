@@ -66,6 +66,7 @@
     "setupTestFrameworkScriptFile": "<rootDir>/setupTests.js",
     "moduleNameMapper": {
       "\\.(css|saas)$": "<rootDir>/__mocks__/styleMock.js"
-    }
+    },
+    "testURL": "http://localhost/"
   }
 }
