@@ -9,11 +9,12 @@ class UASTViewer extends Component {
   constructor(props) {
     super(props);
 
-    this.controlled = Boolean(props.onNodeToggle || props.onNodeHover);
-
-    if (!this.controlled) {
-      this.state = { uast: props.uast };
-    }
+    const controlled = Boolean(props.onNodeToggle || props.onNodeHover);
+    this.state = {
+      controlled,
+      // keep uast in state only if component is uncontrolled
+      uast: !controlled ? props.uast : undefined
+    };
 
     this.onMouseMove = this.onMouseMove.bind(this);
     this.unHoverNode = this.unHoverNode.bind(this);
@@ -22,18 +23,6 @@ class UASTViewer extends Component {
 
     this.lastOverId = null;
     this.el = null;
-  }
-
-  // TODO(max): make sure there are no problems with this.lastOverId
-  // easier to cover it by tests than manual testing
-  componentWillReceiveProps(nextProps) {
-    if (this.controlled) {
-      return;
-    }
-
-    if (this.props.uast !== nextProps.uast) {
-      this.setState({ uast: nextProps.uast });
-    }
   }
 
   componentDidUpdate(prevProps) {
@@ -57,7 +46,7 @@ class UASTViewer extends Component {
   }
 
   getUast() {
-    if (this.controlled) {
+    if (this.state.controlled) {
       return this.props.uast;
     }
     return this.state.uast;
@@ -70,7 +59,7 @@ class UASTViewer extends Component {
     if (this.props.onNodeHover) {
       this.props.onNodeHover(id, this.lastOverId);
     }
-    if (!this.controlled) {
+    if (!this.state.controlled) {
       const newUast = hoverNodeById(this.state.uast, id, this.lastOverId);
       this.setState({ uast: newUast });
     }
@@ -86,7 +75,7 @@ class UASTViewer extends Component {
     if (this.props.onNodeToggle) {
       this.props.onNodeToggle(id);
     }
-    if (this.controlled) {
+    if (this.state.controlled) {
       return;
     }
 

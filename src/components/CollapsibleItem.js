@@ -1,29 +1,30 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Item from './Item';
 import PropertyName from './PropertyName';
 import splitProps from '../splitProps';
 
-class CollapsibleItem extends PureComponent {
+class CollapsibleItem extends Component {
   constructor(props) {
     super(props);
-    // component can be controlled or uncontrolled depends on did we pass collapsed state on init or not
-    // similar to react input components
-    this.controlled = typeof this.props.collapsed !== 'undefined';
     this.state = {
-      collapsed: this.props.collapsed
+      collapsed: this.props.collapsed,
+      // component can be controlled or uncontrolled depends on did we pass collapsed state on init or not
+      // similar to react input components
+      controlled: typeof this.props.collapsed !== 'undefined'
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (!this.controlled) {
-      return;
+  static getDerivedStateFromProps(props, state) {
+    if (state.controlled && state.collapsed !== props.collapsed) {
+      return { collapsed: props.collapsed };
     }
-    this.setState({ collapsed: nextProps.collapsed });
+
+    return null;
   }
 
   toggle() {
-    if (!this.controlled) {
+    if (!this.state.controlled) {
       this.setState({ collapsed: !this.state.collapsed });
       return;
     }
