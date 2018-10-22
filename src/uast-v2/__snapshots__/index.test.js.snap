@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`transformer does not fail on null values 1`] = `
+Object {
+  "1": Object {
+    "id": 1,
+    "n": Object {
+      "@type": "node",
+      "child": Object {
+        "_uast_node_type": true,
+        "id": 2,
+      },
+      "childNull": null,
+      "children": Array [
+        1,
+        null,
+        Object {
+          "_uast_node_type": true,
+          "id": 3,
+        },
+      ],
+    },
+    "parentId": 0,
+  },
+  "2": Object {
+    "id": 2,
+    "n": Object {
+      "@type": "child",
+    },
+    "parentId": 1,
+  },
+  "3": Object {
+    "id": 3,
+    "n": Object {
+      "@type": "another-child",
+    },
+    "parentId": 1,
+  },
+}
+`;
