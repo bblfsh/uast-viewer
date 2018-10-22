@@ -29,7 +29,7 @@ export function getChildrenIds({ n }) {
     .map(key => {
       const v = n[key];
       if (Array.isArray(v)) {
-        return v.filter(i => i[typeNodeField]).map(i => i.id);
+        return v.filter(i => i !== null && i[typeNodeField]).map(i => i.id);
       }
       if (v && typeof v === 'object' && v[typeNodeField]) {
         return v.id;
@@ -71,7 +71,7 @@ export function transformer(uastJson) {
     id = curId;
 
     const node = {
-      n: uast,
+      n: { ...uast },
       id: curId,
       parentId
     };
@@ -111,7 +111,7 @@ function itemsType(items) {
   let { type } = items[0];
   const valueTypes =
     typeof type === 'undefined' // primitive type like string
-      ? items.map(i => (i.attr ? i.attr() : i)).map(v => typeof v)
+      ? items.map(i => (i !== null && i.attr ? i.attr() : i)).map(v => typeof v)
       : items.map(i => i.type);
 
   if (new Set(valueTypes).size > 1) {
