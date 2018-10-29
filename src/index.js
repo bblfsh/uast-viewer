@@ -12,12 +12,17 @@ import {
   expandRootIds,
   languageToMode
 } from './helpers';
+import { useFlatUast, useUastExpanded, useWithEditor } from './hooks';
 
 export default UASTViewer;
 export {
   Editor,
   PositionIndex,
   withUASTEditor,
+  // hooks
+  useWithEditor,
+  useFlatUast,
+  useUastExpanded,
   // helpers to operate on the uast state
   hoverNodeById,
   toggleNodeById,

@@ -2,9 +2,13 @@ const path = require('path');
 
 module.exports = {
   title: 'Uast Viewer',
-  require: [path.resolve(__dirname, 'styles/default-theme.scss')],
+  require: [
+    path.resolve(__dirname, 'styles/default-theme.scss'),
+    path.resolve(__dirname, 'docs/example.css')
+  ],
   context: {
     uast: path.resolve(__dirname, 'fixtures/uast-v1-java-large.json'),
+    uastSmall: path.resolve(__dirname, 'fixtures/uast-v1-java-small.json'),
     sourceCode: path.resolve(__dirname, 'docs/example_java_source.js')
   },
   sections: [
@@ -37,6 +41,10 @@ module.exports = {
       name: 'State',
       content: 'docs/state.md',
       sections: [
+        {
+          name: 'Hooks',
+          content: 'docs/state/hooks.md'
+        },
         {
           name: 'Helpers',
           content: 'docs/state/helpers.md'

@@ -1,0 +1,10 @@
+.example-layout {
+    display: flex;
+    height: 300px;
+    overflow: hidden;
+}
+
+.example-layout .uast-editor {
+    width: 50%;
+    height: 100%;
+}
