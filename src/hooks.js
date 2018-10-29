@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import PositionIndex from './PositionIndex';
 import {
   hoverNodeById,
@@ -60,6 +60,23 @@ function usePosIndex(
   return useMemo(() => build(), [inputUast, getNodePosition]);
 }
 
+// it is not recommended pattern
+// but it's the best way to keep backward-compatibility
+function useEventCallback(fn, dependencies) {
+  const ref = useRef(() => {
+    throw new Error('Cannot call an event handler while rendering.');
+  });
+
+  useEffect(
+    () => {
+      ref.current = fn;
+    },
+    [fn, ...dependencies]
+  );
+
+  return useCallback((...args) => ref.current(...args), [ref]);
+}
+
 function useUastConnect(
   inputUast,
   getNodePosition = uastV1Options.getNodePosition
@@ -71,50 +88,62 @@ function useUastConnect(
 
   const posIndex = usePosIndex(inputUast, getNodePosition);
 
-  function onNodeHover(id, prevId) {
-    if (!getNodePosition) {
-      return;
-    }
-
-    const node = uast[id];
-    const newUast = hoverNodeById(uast, id, prevId);
-    setUast(newUast);
-
-    const newHoverPos = node ? getNodePosition(node) : null;
-    setHoverPos(newHoverPos);
-  }
-
-  function onNodeToggle(id) {
-    const newUast = {
-      ...uast,
-      [id]: {
-        ...uast[id],
-        expanded: !uast[id].expanded
+  const onNodeHover = useEventCallback(
+    (id, prevId) => {
+      if (!getNodePosition) {
+        return;
       }
-    };
-    setUast(newUast);
-  }
 
-  function onNodeClick(id) {
-    if (!getNodePosition) {
-      return;
-    }
+      const node = uast[id];
+      const newUast = hoverNodeById(uast, id, prevId);
+      setUast(newUast);
 
-    const node = uast[id];
-    const newClickPos = node ? getNodePosition(node) : null;
-    setClickPos(newClickPos);
-  }
+      const newHoverPos = node ? getNodePosition(node) : null;
+      setHoverPos(newHoverPos);
+    },
+    [uast, getNodePosition]
+  );
 
-  function onCursorChanged(cursorPos) {
-    const nodeId = posIndex.get(cursorPos.line, cursorPos.ch);
-    if (!nodeId) {
-      return;
-    }
+  const onNodeToggle = useEventCallback(
+    id => {
+      const newUast = {
+        ...uast,
+        [id]: {
+          ...uast[id],
+          expanded: !uast[id].expanded
+        }
+      };
+      setUast(newUast);
+    },
+    [uast]
+  );
 
-    const newUast = highlightNodeById(uast, nodeId, lastHighlighted);
-    setUast(expandToNodeId(newUast, nodeId));
-    setLastHighlighted(nodeId);
-  }
+  const onNodeClick = useEventCallback(
+    id => {
+      if (!getNodePosition) {
+        return;
+      }
+
+      const node = uast[id];
+      const newClickPos = node ? getNodePosition(node) : null;
+      setClickPos(newClickPos);
+    },
+    [uast, getNodePosition]
+  );
+
+  const onCursorChanged = useEventCallback(
+    cursorPos => {
+      const nodeId = posIndex.get(cursorPos.line, cursorPos.ch);
+      if (!nodeId) {
+        return;
+      }
+
+      const newUast = highlightNodeById(uast, nodeId, lastHighlighted);
+      setUast(expandToNodeId(newUast, nodeId));
+      setLastHighlighted(nodeId);
+    },
+    [uast, posIndex, lastHighlighted]
+  );
 
   return {
     uast,
