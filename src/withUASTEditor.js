@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import PositionIndex from './PositionIndex';
 import {
+  toggleNodeById,
   hoverNodeById,
   highlightNodeById,
   expandToNodeId,
@@ -131,13 +132,7 @@ function withUASTEditor(WrappedComponent, options = uastV2Options) {
 
     onNodeToggle(id) {
       const { uast } = this.state;
-      const newUast = {
-        ...uast,
-        [id]: {
-          ...uast[id],
-          expanded: !uast[id].expanded
-        }
-      };
+      const newUast = toggleNodeById(uast, id);
       this.setState({ uast: newUast });
     }
 
