@@ -30,9 +30,9 @@
     import 'uast-viewer/dist/default-theme.css';
     ```
 
-4. Use the default `transformer` function to feed the UAST JSON to the component
+4. Use the default `transformer` function to feed the [UAST JSON](#!/State) to the component
 
     ```js static
-    import { uastV1 } from 'uast-viewer';
-    <UASTViewer uast={uastV1.transformer(uastJSON)} />
+    import { uastV2 } from 'uast-viewer';
+    <UASTViewer uast={uastV2.transformer(uastJSON)} />
     ```

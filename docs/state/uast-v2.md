@@ -1,5 +1,3 @@
-*Experimental*
-
 The library provides built-in function to transform UAST2 JSON to flat structure:
 
 ```js static

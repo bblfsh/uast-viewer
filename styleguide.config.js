@@ -46,12 +46,12 @@ module.exports = {
           content: 'docs/state/position_index.md'
         },
         {
-          name: 'UAST v1',
-          content: 'docs/state/uast-v1.md'
-        },
-        {
           name: 'UAST v2',
           content: 'docs/state/uast-v2.md'
+        },
+        {
+          name: 'UAST v1',
+          content: 'docs/state/uast-v1.md'
         }
       ]
     }
