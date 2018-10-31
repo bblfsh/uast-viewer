@@ -66,32 +66,46 @@ export function transformer(uastJson) {
   const tree = {};
   let id = 0;
 
+  function convertArray(array, nodeId) {
+    return array.map((child, key) => {
+      if (isNode(child, key)) {
+        // eslint-disable-next-line no-use-before-define
+        return nodeItem(convertNode(child, nodeId));
+      }
+      return child;
+    });
+  }
+
   function convertNode(uast, parentId) {
     const curId = id + 1;
     id = curId;
 
+    let convertedNode;
+
+    if (Array.isArray(uast)) {
+      convertedNode = convertArray(uast, curId);
+    } else {
+      convertedNode = { ...uast };
+
+      Object.keys(convertedNode).forEach(key => {
+        const v = convertedNode[key];
+
+        if (Array.isArray(v)) {
+          convertedNode[key] = convertArray(v, curId);
+          return;
+        }
+
+        if (isNode(v, key)) {
+          convertedNode[key] = nodeItem(convertNode(v, curId));
+        }
+      });
+    }
+
     const node = {
-      n: { ...uast },
+      n: convertedNode,
       id: curId,
       parentId
     };
-
-    Object.keys(uast).forEach(key => {
-      const v = uast[key];
-
-      if (Array.isArray(v)) {
-        node.n[key] = uast[key].map(child => {
-          if (isNode(child, key)) {
-            return nodeItem(convertNode(child, curId));
-          }
-          return child;
-        });
-      }
-
-      if (isNode(v, key)) {
-        node.n[key] = nodeItem(convertNode(v, curId));
-      }
-    });
 
     tree[curId] = node;
 

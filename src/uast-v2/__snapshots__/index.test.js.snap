@@ -38,3 +38,13 @@ Object {
   },
 }
 `;
+
+exports[`transformer empty array should be transformed correctly 1`] = `
+Object {
+  "1": Object {
+    "id": 1,
+    "n": Array [],
+    "parentId": 0,
+  },
+}
+`;

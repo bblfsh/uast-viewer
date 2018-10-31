@@ -41,6 +41,11 @@ describe('transformer', () => {
 
     expect(transformer(input)).toMatchSnapshot();
   });
+
+  it('empty array should be transformed correctly', () => {
+    const input = [];
+    expect(transformer(input)).toMatchSnapshot();
+  });
 });
 
 describe('getChildrenIds', () => {
