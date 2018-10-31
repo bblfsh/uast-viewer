@@ -1,6 +1,6 @@
 {
   "name": "uast-viewer",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "reusable component for displaying uast",
   "homepage": "https://github.com/bblfsh/uast-viewer",
   "main": "lib/index.js",
