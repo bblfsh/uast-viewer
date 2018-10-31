@@ -8,15 +8,17 @@ For example, original json with 6 nodes:
 
 ```js static
 {
+  "@type": "File",
   ...<node properties>
-  Children: [
+  "body": [
     {
+      "@type": "uast:FunctionGroup"
       ...<node properties>
-      Children: []
     },
     {
+      "@type": "Print",
       ...<node properties>
-      Children: [
+      "values": [
         { ...<node properties> },
         { ...<node properties> },
         { ...<node properties> }
@@ -29,26 +31,28 @@ In flat object representation will look like:
 ```js static
 {
     1: {
-        id: 1,
+        "id": 1,
+        "@type": "File",
         ...<node properties>
-        Children: [2, 3]
+        "body": [2, 3]
     },
     2: {
-        id: 2,
-        parent: 1,
+        "id": 2,
+        "parent": 1,
+        "@type": "uast:FunctionGroup"
         ...<node properties>,
-        Children: []
     },
     3: {
-        id: 3,
-        parent: 1,
+        "id": 3,
+        "parent": 1,
+         "@type": "Print",
         ...<node properties>,
-        Children: [4, 5, 6]
+        "values": [4, 5, 6]
     },
-    4: { id: 4, parent: 3, ...<node properties> },
-    5: { id: 5, parent: 3, ...<node properties> },
-    6: { id: 6, parent: 3, ...<node properties> },
+    4: { "id": 4, "parent": 3, ...<node properties> },
+    5: { "id": 5, "parent": 3, ...<node properties> },
+    6: { "id": 6, "parent": 3, ...<node properties> },
 }
 ```
 
-The library provides build-in [function](#!/JSON%20convertor) for it and multiple helpers to manage UAST flat tree state.
+The library provides build-in [function](#/State?id=uast-v2) for it and multiple helpers to manage UAST flat tree state.

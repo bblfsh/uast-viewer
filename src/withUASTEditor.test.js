@@ -3,11 +3,20 @@ import renderer from 'react-test-renderer';
 import UASTViewer from './components/UASTViewer';
 import Editor from './components/Editor';
 import withUASTEditor from './withUASTEditor';
-import { hocOptions as v1hocOptions } from './uast-v1';
+import { hocOptions as v1hocOptions, nodeSchema as v1schema } from './uast-v1';
 import uastV1 from '../fixtures/uast-v1-java-small.json';
+import uastV2 from '../fixtures/uast-v2-java-small.json';
 
-// eslint-disable-next-line
-function Layout({ editorProps, uastViewerProps }) {
+function LayoutV1({ editorProps, uastViewerProps }) {
+  return (
+    <div>
+      <Editor {...editorProps} />
+      <UASTViewer {...uastViewerProps} schema={v1schema} />
+    </div>
+  );
+}
+
+function LayoutV2({ editorProps, uastViewerProps }) {
   return (
     <div>
       <Editor {...editorProps} />
@@ -34,11 +43,23 @@ public class Hello extends GenericServlet {
 }`;
 
 it('uast-v1', () => {
-  const Component = withUASTEditor(Layout, v1hocOptions);
+  const Component = withUASTEditor(LayoutV1, v1hocOptions);
 
   const tree = renderer
     .create(
       <Component code={sourceCode} languageMode="text/x-java" uast={uastV1} />
+    )
+    .toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
+
+it('uast-v2', () => {
+  const Component = withUASTEditor(LayoutV2);
+
+  const tree = renderer
+    .create(
+      <Component code={sourceCode} languageMode="text/x-java" uast={uastV2} />
     )
     .toJSON();
 

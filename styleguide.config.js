@@ -4,7 +4,7 @@ module.exports = {
   title: 'Uast Viewer',
   require: [path.resolve(__dirname, 'styles/default-theme.scss')],
   context: {
-    uast: path.resolve(__dirname, 'fixtures/uast-v1-java-large.json'),
+    uast: path.resolve(__dirname, 'fixtures/uast-v2-java-large.json'),
     sourceCode: path.resolve(__dirname, 'docs/example_java_source.js')
   },
   sections: [
@@ -46,12 +46,12 @@ module.exports = {
           content: 'docs/state/position_index.md'
         },
         {
-          name: 'UAST v1',
-          content: 'docs/state/uast-v1.md'
-        },
-        {
           name: 'UAST v2',
           content: 'docs/state/uast-v2.md'
+        },
+        {
+          name: 'UAST v1',
+          content: 'docs/state/uast-v1.md'
         }
       ]
     }

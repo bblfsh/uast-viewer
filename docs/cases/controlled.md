@@ -3,13 +3,13 @@ The `UASTViewer` component supports controlled mode when the application needs t
 The application is responsible for setting the `hovered` and `expanded` properties in such case.
 
 ```js
-const { uastV1, hoverNodeById, toggleNodeById } = require('uast-viewer');
+const { uastV2, hoverNodeById, toggleNodeById } = require('uast-viewer');
 
 class ControlledExample extends React.Component {
     constructor() {
         this.state = {
             // transform uast.json expanding only the first level nodes
-            uast: uastV1.transformer(uast, 1),
+            uast: uastV2.transformer(uast, 1),
             hoveredId: null,
             highlighted: false
         };
@@ -73,10 +73,10 @@ class ControlledExample extends React.Component {
     // an application can set highlighted property to a node it would affect how the node is displayed
     onHighlight() {
         const { uast, highlighted } = this.state;
-        // modify the tree and toggle highlighted prop to every node with an Identifier role
+        // modify the tree and toggle highlighted prop to every node with an imports
         const newUast = Object.keys(this.state.uast).reduce((acc, key) => {
             const node = uast[key];
-            const newNode = node.Roles.includes('Identifier')
+            const newNode = node.n['@type'] == 'uast:Import'
                 ? {
                     ...node,
                     highlighted: !highlighted
@@ -96,7 +96,7 @@ class ControlledExample extends React.Component {
                     <button onClick={this.onExpandAll}>expand all</button>
                     <button onClick={this.onCollapseAll}>collapse all</button>
                     <button onClick={this.onHighlight}>
-                        Toggle highlight for all nodes with Identifier role
+                        Toggle highlighting for all 'import' nodes
                     </button>
                 </div>
                 <div>
