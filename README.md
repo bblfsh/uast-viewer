@@ -41,8 +41,8 @@ See the [documentation](https://uast-viewer.bblf.sh/) with live examples.
 4. Use the default `transformer` function to feed the UAST JSON to the component
 
     ```js
-    import { uastV1 } from 'uast-viewer';
-    <UASTViewer uast={uastV1.transformer(uastJSON)} />
+    import { uastV2 } from 'uast-viewer';
+    <UASTViewer uast={uastV2.transformer(uastJSON)} />
     ```
 
 
