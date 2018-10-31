@@ -4,7 +4,7 @@ import CollapsibleItem from './CollapsibleItem';
 import Property from './Property';
 import Properties from './Properties';
 import TreeContext from './TreeContext';
-import { nodeSchema as uast1schema } from '../uast-v1';
+import { nodeSchema as uast2schema } from '../uast-v2';
 
 export function nodeClassById(id) {
   return `uast-viewer__node-${id}`;
@@ -202,7 +202,7 @@ PureNode.propTypes = {
 
 Node.defaultProps = {
   label: 'Node',
-  schema: uast1schema,
+  schema: uast2schema,
   showLocations: false
 };
 

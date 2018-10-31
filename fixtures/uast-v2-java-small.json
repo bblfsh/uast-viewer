@@ -1,0 +1,1230 @@
+{
+  "@pos": {
+    "@type": "uast:Positions",
+    "end": { "@type": "uast:Position", "col": 0, "offset": 446 },
+    "start": { "@type": "uast:Position", "col": 1, "line": 1, "offset": 0 }
+  },
+  "@role": ["File"],
+  "@type": "CompilationUnit",
+  "comments": [
+    {
+      "@pos": {
+        "@type": "uast:Positions",
+        "end": {
+          "@type": "uast:Position",
+          "col": 14,
+          "line": 1,
+          "offset": 13
+        },
+        "start": {
+          "@type": "uast:Position",
+          "col": 1,
+          "line": 1,
+          "offset": 0
+        }
+      },
+      "@type": "uast:Comment",
+      "Block": false,
+      "Prefix": " ",
+      "Suffix": "",
+      "Tab": "",
+      "Text": "hello.java"
+    }
+  ],
+  "imports": [
+    {
+      "@pos": {
+        "@type": "uast:Positions",
+        "end": {
+          "@type": "uast:Position",
+          "col": 18,
+          "line": 2,
+          "offset": 31
+        },
+        "start": {
+          "@type": "uast:Position",
+          "col": 1,
+          "line": 2,
+          "offset": 14
+        }
+      },
+      "@type": "uast:Import",
+      "All": true,
+      "Names": [],
+      "Path": {
+        "@pos": {
+          "@type": "uast:Positions",
+          "end": {
+            "@type": "uast:Position",
+            "col": 15,
+            "line": 2,
+            "offset": 28
+          },
+          "start": {
+            "@type": "uast:Position",
+            "col": 8,
+            "line": 2,
+            "offset": 21
+          }
+        },
+        "@type": "uast:QualifiedIdentifier",
+        "Names": [
+          {
+            "@pos": {
+              "@type": "uast:Positions",
+              "end": {
+                "@type": "uast:Position",
+                "col": 12,
+                "line": 2,
+                "offset": 25
+              },
+              "start": {
+                "@type": "uast:Position",
+                "col": 8,
+                "line": 2,
+                "offset": 21
+              }
+            },
+            "@type": "uast:Identifier",
+            "Name": "java"
+          },
+          {
+            "@pos": {
+              "@type": "uast:Positions",
+              "end": {
+                "@type": "uast:Position",
+                "col": 15,
+                "line": 2,
+                "offset": 28
+              },
+              "start": {
+                "@type": "uast:Position",
+                "col": 13,
+                "line": 2,
+                "offset": 26
+              }
+            },
+            "@type": "uast:Identifier",
+            "Name": "io"
+          }
+        ]
+      },
+      "Target": { "static": "false" }
+    },
+    {
+      "@pos": {
+        "@type": "uast:Positions",
+        "end": {
+          "@type": "uast:Position",
+          "col": 24,
+          "line": 3,
+          "offset": 55
+        },
+        "start": {
+          "@type": "uast:Position",
+          "col": 1,
+          "line": 3,
+          "offset": 32
+        }
+      },
+      "@type": "uast:Import",
+      "All": true,
+      "Names": [],
+      "Path": {
+        "@pos": {
+          "@type": "uast:Positions",
+          "end": {
+            "@type": "uast:Position",
+            "col": 21,
+            "line": 3,
+            "offset": 52
+          },
+          "start": {
+            "@type": "uast:Position",
+            "col": 8,
+            "line": 3,
+            "offset": 39
+          }
+        },
+        "@type": "uast:QualifiedIdentifier",
+        "Names": [
+          {
+            "@pos": {
+              "@type": "uast:Positions",
+              "end": {
+                "@type": "uast:Position",
+                "col": 13,
+                "line": 3,
+                "offset": 44
+              },
+              "start": {
+                "@type": "uast:Position",
+                "col": 8,
+                "line": 3,
+                "offset": 39
+              }
+            },
+            "@type": "uast:Identifier",
+            "Name": "javax"
+          },
+          {
+            "@pos": {
+              "@type": "uast:Positions",
+              "end": {
+                "@type": "uast:Position",
+                "col": 21,
+                "line": 3,
+                "offset": 52
+              },
+              "start": {
+                "@type": "uast:Position",
+                "col": 14,
+                "line": 3,
+                "offset": 45
+              }
+            },
+            "@type": "uast:Identifier",
+            "Name": "servlet"
+          }
+        ]
+      },
+      "Target": { "static": "false" }
+    }
+  ],
+  "package": null,
+  "types": [
+    {
+      "@pos": {
+        "@type": "uast:Positions",
+        "end": {
+          "@type": "uast:Position",
+          "col": 2,
+          "line": 16,
+          "offset": 445
+        },
+        "start": {
+          "@type": "uast:Position",
+          "col": 1,
+          "line": 5,
+          "offset": 57
+        }
+      },
+      "@role": ["Visibility", "World", "Declaration", "Type"],
+      "@type": "TypeDeclaration",
+      "bodyDeclarations": [
+        {
+          "@pos": {
+            "@type": "uast:Positions",
+            "end": {
+              "@type": "uast:Position",
+              "col": 6,
+              "line": 15,
+              "offset": 443
+            },
+            "start": {
+              "@type": "uast:Position",
+              "col": 5,
+              "line": 6,
+              "offset": 105
+            }
+          },
+          "@role": ["Visibility", "World", "Declaration", "Function"],
+          "@type": "MethodDeclaration",
+          "body": {
+            "@pos": {
+              "@type": "uast:Positions",
+              "end": {
+                "@type": "uast:Position",
+                "col": 6,
+                "line": 15,
+                "offset": 443
+              },
+              "start": {
+                "@type": "uast:Position",
+                "col": 42,
+                "line": 7,
+                "offset": 228
+              }
+            },
+            "@role": ["Function", "Body"],
+            "@type": "uast:Block",
+            "Statements": [
+              {
+                "@pos": {
+                  "@type": "uast:Positions",
+                  "end": {
+                    "@type": "uast:Position",
+                    "col": 46,
+                    "line": 8,
+                    "offset": 275
+                  },
+                  "start": {
+                    "@type": "uast:Position",
+                    "col": 9,
+                    "line": 8,
+                    "offset": 238
+                  }
+                },
+                "@role": ["Statement"],
+                "@type": "ExpressionStatement",
+                "expression": {
+                  "@pos": {
+                    "@type": "uast:Positions",
+                    "end": {
+                      "@type": "uast:Position",
+                      "col": 45,
+                      "line": 8,
+                      "offset": 274
+                    },
+                    "start": {
+                      "@type": "uast:Position",
+                      "col": 9,
+                      "line": 8,
+                      "offset": 238
+                    }
+                  },
+                  "@role": ["Expression", "Call"],
+                  "@type": "MethodInvocation",
+                  "arguments": [
+                    {
+                      "@pos": {
+                        "@type": "uast:Positions",
+                        "end": {
+                          "@type": "uast:Position",
+                          "col": 44,
+                          "line": 8,
+                          "offset": 273
+                        },
+                        "start": {
+                          "@type": "uast:Position",
+                          "col": 33,
+                          "line": 8,
+                          "offset": 262
+                        }
+                      },
+                      "@role": ["Call", "Argument", "Positional"],
+                      "@type": "uast:String",
+                      "Format": "",
+                      "Value": "text/html"
+                    }
+                  ],
+                  "expression": {
+                    "@pos": {
+                      "@type": "uast:Positions",
+                      "end": {
+                        "@type": "uast:Position",
+                        "col": 17,
+                        "line": 8,
+                        "offset": 246
+                      },
+                      "start": {
+                        "@type": "uast:Position",
+                        "col": 9,
+                        "line": 8,
+                        "offset": 238
+                      }
+                    },
+                    "@role": ["Call", "Receiver"],
+                    "@type": "uast:Identifier",
+                    "Name": "response"
+                  },
+                  "name": {
+                    "@pos": {
+                      "@type": "uast:Positions",
+                      "end": {
+                        "@type": "uast:Position",
+                        "col": 32,
+                        "line": 8,
+                        "offset": 261
+                      },
+                      "start": {
+                        "@type": "uast:Position",
+                        "col": 18,
+                        "line": 8,
+                        "offset": 247
+                      }
+                    },
+                    "@role": ["Call", "Callee"],
+                    "@type": "uast:Identifier",
+                    "Name": "setContentType"
+                  },
+                  "typeArguments": null
+                }
+              },
+              {
+                "@pos": {
+                  "@type": "uast:Positions",
+                  "end": {
+                    "@type": "uast:Position",
+                    "col": 53,
+                    "line": 9,
+                    "offset": 328
+                  },
+                  "start": {
+                    "@type": "uast:Position",
+                    "col": 9,
+                    "line": 9,
+                    "offset": 284
+                  }
+                },
+                "@role": ["Statement", "Declaration", "Variable"],
+                "@type": "VariableDeclarationStatement",
+                "fragments": [
+                  {
+                    "@pos": {
+                      "@type": "uast:Positions",
+                      "end": {
+                        "@type": "uast:Position",
+                        "col": 52,
+                        "line": 9,
+                        "offset": 327
+                      },
+                      "start": {
+                        "@type": "uast:Position",
+                        "col": 27,
+                        "line": 9,
+                        "offset": 302
+                      }
+                    },
+                    "@role": ["Declaration", "Variable"],
+                    "@type": "VariableDeclarationFragment",
+                    "extraDimensions2": null,
+                    "initializer": {
+                      "@pos": {
+                        "@type": "uast:Positions",
+                        "end": {
+                          "@type": "uast:Position",
+                          "col": 52,
+                          "line": 9,
+                          "offset": 327
+                        },
+                        "start": {
+                          "@type": "uast:Position",
+                          "col": 32,
+                          "line": 9,
+                          "offset": 307
+                        }
+                      },
+                      "@role": ["Expression", "Call"],
+                      "@type": "MethodInvocation",
+                      "arguments": null,
+                      "expression": {
+                        "@pos": {
+                          "@type": "uast:Positions",
+                          "end": {
+                            "@type": "uast:Position",
+                            "col": 40,
+                            "line": 9,
+                            "offset": 315
+                          },
+                          "start": {
+                            "@type": "uast:Position",
+                            "col": 32,
+                            "line": 9,
+                            "offset": 307
+                          }
+                        },
+                        "@role": ["Call", "Receiver"],
+                        "@type": "uast:Identifier",
+                        "Name": "response"
+                      },
+                      "name": {
+                        "@pos": {
+                          "@type": "uast:Positions",
+                          "end": {
+                            "@type": "uast:Position",
+                            "col": 50,
+                            "line": 9,
+                            "offset": 325
+                          },
+                          "start": {
+                            "@type": "uast:Position",
+                            "col": 41,
+                            "line": 9,
+                            "offset": 316
+                          }
+                        },
+                        "@role": ["Call", "Callee"],
+                        "@type": "uast:Identifier",
+                        "Name": "getWriter"
+                      },
+                      "typeArguments": null
+                    },
+                    "name": {
+                      "@pos": {
+                        "@type": "uast:Positions",
+                        "end": {
+                          "@type": "uast:Position",
+                          "col": 29,
+                          "line": 9,
+                          "offset": 304
+                        },
+                        "start": {
+                          "@type": "uast:Position",
+                          "col": 27,
+                          "line": 9,
+                          "offset": 302
+                        }
+                      },
+                      "@type": "uast:Identifier",
+                      "Name": "pw"
+                    }
+                  }
+                ],
+                "modifiers": [
+                  {
+                    "@pos": {
+                      "@type": "uast:Positions",
+                      "end": {
+                        "@type": "uast:Position",
+                        "col": 14,
+                        "line": 9,
+                        "offset": 289
+                      },
+                      "start": {
+                        "@type": "uast:Position",
+                        "col": 9,
+                        "line": 9,
+                        "offset": 284
+                      }
+                    },
+                    "@role": ["Incomplete"],
+                    "@token": "final",
+                    "@type": "Modifier"
+                  }
+                ],
+                "type": {
+                  "@pos": {
+                    "@type": "uast:Positions",
+                    "end": {
+                      "@type": "uast:Position",
+                      "col": 26,
+                      "line": 9,
+                      "offset": 301
+                    },
+                    "start": {
+                      "@type": "uast:Position",
+                      "col": 15,
+                      "line": 9,
+                      "offset": 290
+                    }
+                  },
+                  "@role": ["Type"],
+                  "@type": "SimpleType",
+                  "annotations": null,
+                  "name": {
+                    "@pos": {
+                      "@type": "uast:Positions",
+                      "end": {
+                        "@type": "uast:Position",
+                        "col": 26,
+                        "line": 9,
+                        "offset": 301
+                      },
+                      "start": {
+                        "@type": "uast:Position",
+                        "col": 15,
+                        "line": 9,
+                        "offset": 290
+                      }
+                    },
+                    "@type": "uast:Identifier",
+                    "Name": "PrintWriter"
+                  }
+                }
+              },
+              {
+                "@pos": {
+                  "@type": "uast:Positions",
+                  "end": {
+                    "@type": "uast:Position",
+                    "col": 10,
+                    "line": 14,
+                    "offset": 437
+                  },
+                  "start": {
+                    "@type": "uast:Position",
+                    "col": 9,
+                    "line": 10,
+                    "offset": 337
+                  }
+                },
+                "@role": ["Statement", "Try"],
+                "@type": "TryStatement",
+                "body": {
+                  "@pos": {
+                    "@type": "uast:Positions",
+                    "end": {
+                      "@type": "uast:Position",
+                      "col": 10,
+                      "line": 12,
+                      "offset": 393
+                    },
+                    "start": {
+                      "@type": "uast:Position",
+                      "col": 13,
+                      "line": 10,
+                      "offset": 341
+                    }
+                  },
+                  "@role": ["Try", "Body"],
+                  "@type": "uast:Block",
+                  "Statements": [
+                    {
+                      "@pos": {
+                        "@type": "uast:Positions",
+                        "end": {
+                          "@type": "uast:Position",
+                          "col": 41,
+                          "line": 11,
+                          "offset": 383
+                        },
+                        "start": {
+                          "@type": "uast:Position",
+                          "col": 13,
+                          "line": 11,
+                          "offset": 355
+                        }
+                      },
+                      "@role": ["Statement"],
+                      "@type": "ExpressionStatement",
+                      "expression": {
+                        "@pos": {
+                          "@type": "uast:Positions",
+                          "end": {
+                            "@type": "uast:Position",
+                            "col": 40,
+                            "line": 11,
+                            "offset": 382
+                          },
+                          "start": {
+                            "@type": "uast:Position",
+                            "col": 13,
+                            "line": 11,
+                            "offset": 355
+                          }
+                        },
+                        "@role": ["Expression", "Call"],
+                        "@type": "MethodInvocation",
+                        "arguments": [
+                          {
+                            "@pos": {
+                              "@type": "uast:Positions",
+                              "end": {
+                                "@type": "uast:Position",
+                                "col": 39,
+                                "line": 11,
+                                "offset": 381
+                              },
+                              "start": {
+                                "@type": "uast:Position",
+                                "col": 24,
+                                "line": 11,
+                                "offset": 366
+                              }
+                            },
+                            "@role": ["Call", "Argument", "Positional"],
+                            "@type": "uast:String",
+                            "Format": "",
+                            "Value": "Hello, world!"
+                          }
+                        ],
+                        "expression": {
+                          "@pos": {
+                            "@type": "uast:Positions",
+                            "end": {
+                              "@type": "uast:Position",
+                              "col": 15,
+                              "line": 11,
+                              "offset": 357
+                            },
+                            "start": {
+                              "@type": "uast:Position",
+                              "col": 13,
+                              "line": 11,
+                              "offset": 355
+                            }
+                          },
+                          "@role": ["Call", "Receiver"],
+                          "@type": "uast:Identifier",
+                          "Name": "pw"
+                        },
+                        "name": {
+                          "@pos": {
+                            "@type": "uast:Positions",
+                            "end": {
+                              "@type": "uast:Position",
+                              "col": 23,
+                              "line": 11,
+                              "offset": 365
+                            },
+                            "start": {
+                              "@type": "uast:Position",
+                              "col": 16,
+                              "line": 11,
+                              "offset": 358
+                            }
+                          },
+                          "@role": ["Call", "Callee"],
+                          "@type": "uast:Identifier",
+                          "Name": "println"
+                        },
+                        "typeArguments": null
+                      }
+                    }
+                  ]
+                },
+                "catchClauses": null,
+                "finally": {
+                  "@pos": {
+                    "@type": "uast:Positions",
+                    "end": {
+                      "@type": "uast:Position",
+                      "col": 10,
+                      "line": 14,
+                      "offset": 437
+                    },
+                    "start": {
+                      "@type": "uast:Position",
+                      "col": 19,
+                      "line": 12,
+                      "offset": 402
+                    }
+                  },
+                  "@role": ["Try", "Finally"],
+                  "@type": "uast:Block",
+                  "Statements": [
+                    {
+                      "@pos": {
+                        "@type": "uast:Positions",
+                        "end": {
+                          "@type": "uast:Position",
+                          "col": 24,
+                          "line": 13,
+                          "offset": 427
+                        },
+                        "start": {
+                          "@type": "uast:Position",
+                          "col": 13,
+                          "line": 13,
+                          "offset": 416
+                        }
+                      },
+                      "@role": ["Statement"],
+                      "@type": "ExpressionStatement",
+                      "expression": {
+                        "@pos": {
+                          "@type": "uast:Positions",
+                          "end": {
+                            "@type": "uast:Position",
+                            "col": 23,
+                            "line": 13,
+                            "offset": 426
+                          },
+                          "start": {
+                            "@type": "uast:Position",
+                            "col": 13,
+                            "line": 13,
+                            "offset": 416
+                          }
+                        },
+                        "@role": ["Expression", "Call"],
+                        "@type": "MethodInvocation",
+                        "arguments": null,
+                        "expression": {
+                          "@pos": {
+                            "@type": "uast:Positions",
+                            "end": {
+                              "@type": "uast:Position",
+                              "col": 15,
+                              "line": 13,
+                              "offset": 418
+                            },
+                            "start": {
+                              "@type": "uast:Position",
+                              "col": 13,
+                              "line": 13,
+                              "offset": 416
+                            }
+                          },
+                          "@role": ["Call", "Receiver"],
+                          "@type": "uast:Identifier",
+                          "Name": "pw"
+                        },
+                        "name": {
+                          "@pos": {
+                            "@type": "uast:Positions",
+                            "end": {
+                              "@type": "uast:Position",
+                              "col": 21,
+                              "line": 13,
+                              "offset": 424
+                            },
+                            "start": {
+                              "@type": "uast:Position",
+                              "col": 16,
+                              "line": 13,
+                              "offset": 419
+                            }
+                          },
+                          "@role": ["Call", "Callee"],
+                          "@type": "uast:Identifier",
+                          "Name": "close"
+                        },
+                        "typeArguments": null
+                      }
+                    }
+                  ]
+                },
+                "resources": null
+              }
+            ]
+          },
+          "constructor": "false",
+          "extraDimensions2": null,
+          "javadoc": null,
+          "modifiers": [
+            {
+              "@pos": {
+                "@type": "uast:Positions",
+                "end": {
+                  "@type": "uast:Position",
+                  "col": 11,
+                  "line": 6,
+                  "offset": 111
+                },
+                "start": {
+                  "@type": "uast:Position",
+                  "col": 5,
+                  "line": 6,
+                  "offset": 105
+                }
+              },
+              "@role": ["Visibility", "World"],
+              "@token": "public",
+              "@type": "Modifier"
+            }
+          ],
+          "name": {
+            "@pos": {
+              "@type": "uast:Positions",
+              "end": {
+                "@type": "uast:Position",
+                "col": 24,
+                "line": 6,
+                "offset": 124
+              },
+              "start": {
+                "@type": "uast:Position",
+                "col": 17,
+                "line": 6,
+                "offset": 117
+              }
+            },
+            "@role": ["Function", "Name"],
+            "@type": "uast:Identifier",
+            "Name": "service"
+          },
+          "parameters": [
+            {
+              "@pos": {
+                "@type": "uast:Positions",
+                "end": {
+                  "@type": "uast:Position",
+                  "col": 53,
+                  "line": 6,
+                  "offset": 153
+                },
+                "start": {
+                  "@type": "uast:Position",
+                  "col": 25,
+                  "line": 6,
+                  "offset": 125
+                }
+              },
+              "@role": ["Declaration", "Variable", "Function", "Argument"],
+              "@type": "SingleVariableDeclaration",
+              "extraDimensions2": null,
+              "initializer": null,
+              "modifiers": [
+                {
+                  "@pos": {
+                    "@type": "uast:Positions",
+                    "end": {
+                      "@type": "uast:Position",
+                      "col": 30,
+                      "line": 6,
+                      "offset": 130
+                    },
+                    "start": {
+                      "@type": "uast:Position",
+                      "col": 25,
+                      "line": 6,
+                      "offset": 125
+                    }
+                  },
+                  "@role": ["Incomplete"],
+                  "@token": "final",
+                  "@type": "Modifier"
+                }
+              ],
+              "name": {
+                "@pos": {
+                  "@type": "uast:Positions",
+                  "end": {
+                    "@type": "uast:Position",
+                    "col": 53,
+                    "line": 6,
+                    "offset": 153
+                  },
+                  "start": {
+                    "@type": "uast:Position",
+                    "col": 46,
+                    "line": 6,
+                    "offset": 146
+                  }
+                },
+                "@role": ["Function", "Name", "Argument"],
+                "@type": "uast:Identifier",
+                "Name": "request"
+              },
+              "type": {
+                "@pos": {
+                  "@type": "uast:Positions",
+                  "end": {
+                    "@type": "uast:Position",
+                    "col": 45,
+                    "line": 6,
+                    "offset": 145
+                  },
+                  "start": {
+                    "@type": "uast:Position",
+                    "col": 31,
+                    "line": 6,
+                    "offset": 131
+                  }
+                },
+                "@role": ["Type"],
+                "@type": "SimpleType",
+                "annotations": null,
+                "name": {
+                  "@pos": {
+                    "@type": "uast:Positions",
+                    "end": {
+                      "@type": "uast:Position",
+                      "col": 45,
+                      "line": 6,
+                      "offset": 145
+                    },
+                    "start": {
+                      "@type": "uast:Position",
+                      "col": 31,
+                      "line": 6,
+                      "offset": 131
+                    }
+                  },
+                  "@type": "uast:Identifier",
+                  "Name": "ServletRequest"
+                }
+              },
+              "varargs": "false",
+              "varargsAnnotations": null
+            },
+            {
+              "@pos": {
+                "@type": "uast:Positions",
+                "end": {
+                  "@type": "uast:Position",
+                  "col": 85,
+                  "line": 6,
+                  "offset": 185
+                },
+                "start": {
+                  "@type": "uast:Position",
+                  "col": 55,
+                  "line": 6,
+                  "offset": 155
+                }
+              },
+              "@role": ["Declaration", "Variable", "Function", "Argument"],
+              "@type": "SingleVariableDeclaration",
+              "extraDimensions2": null,
+              "initializer": null,
+              "modifiers": [
+                {
+                  "@pos": {
+                    "@type": "uast:Positions",
+                    "end": {
+                      "@type": "uast:Position",
+                      "col": 60,
+                      "line": 6,
+                      "offset": 160
+                    },
+                    "start": {
+                      "@type": "uast:Position",
+                      "col": 55,
+                      "line": 6,
+                      "offset": 155
+                    }
+                  },
+                  "@role": ["Incomplete"],
+                  "@token": "final",
+                  "@type": "Modifier"
+                }
+              ],
+              "name": {
+                "@pos": {
+                  "@type": "uast:Positions",
+                  "end": {
+                    "@type": "uast:Position",
+                    "col": 85,
+                    "line": 6,
+                    "offset": 185
+                  },
+                  "start": {
+                    "@type": "uast:Position",
+                    "col": 77,
+                    "line": 6,
+                    "offset": 177
+                  }
+                },
+                "@role": ["Function", "Name", "Argument"],
+                "@type": "uast:Identifier",
+                "Name": "response"
+              },
+              "type": {
+                "@pos": {
+                  "@type": "uast:Positions",
+                  "end": {
+                    "@type": "uast:Position",
+                    "col": 76,
+                    "line": 6,
+                    "offset": 176
+                  },
+                  "start": {
+                    "@type": "uast:Position",
+                    "col": 61,
+                    "line": 6,
+                    "offset": 161
+                  }
+                },
+                "@role": ["Type"],
+                "@type": "SimpleType",
+                "annotations": null,
+                "name": {
+                  "@pos": {
+                    "@type": "uast:Positions",
+                    "end": {
+                      "@type": "uast:Position",
+                      "col": 76,
+                      "line": 6,
+                      "offset": 176
+                    },
+                    "start": {
+                      "@type": "uast:Position",
+                      "col": 61,
+                      "line": 6,
+                      "offset": 161
+                    }
+                  },
+                  "@type": "uast:Identifier",
+                  "Name": "ServletResponse"
+                }
+              },
+              "varargs": "false",
+              "varargsAnnotations": null
+            }
+          ],
+          "receiverQualifier": null,
+          "receiverType": null,
+          "returnType2": {
+            "@pos": {
+              "@type": "uast:Positions",
+              "end": {
+                "@type": "uast:Position",
+                "col": 16,
+                "line": 6,
+                "offset": 116
+              },
+              "start": {
+                "@type": "uast:Position",
+                "col": 12,
+                "line": 6,
+                "offset": 112
+              }
+            },
+            "@role": ["Type", "Primitive"],
+            "@token": "void",
+            "@type": "PrimitiveType",
+            "annotations": null
+          },
+          "thrownExceptionTypes": [
+            {
+              "@pos": {
+                "@type": "uast:Positions",
+                "end": {
+                  "@type": "uast:Position",
+                  "col": 28,
+                  "line": 7,
+                  "offset": 214
+                },
+                "start": {
+                  "@type": "uast:Position",
+                  "col": 12,
+                  "line": 7,
+                  "offset": 198
+                }
+              },
+              "@role": ["Type"],
+              "@type": "SimpleType",
+              "annotations": null,
+              "name": {
+                "@pos": {
+                  "@type": "uast:Positions",
+                  "end": {
+                    "@type": "uast:Position",
+                    "col": 28,
+                    "line": 7,
+                    "offset": 214
+                  },
+                  "start": {
+                    "@type": "uast:Position",
+                    "col": 12,
+                    "line": 7,
+                    "offset": 198
+                  }
+                },
+                "@type": "uast:Identifier",
+                "Name": "ServletException"
+              }
+            },
+            {
+              "@pos": {
+                "@type": "uast:Positions",
+                "end": {
+                  "@type": "uast:Position",
+                  "col": 41,
+                  "line": 7,
+                  "offset": 227
+                },
+                "start": {
+                  "@type": "uast:Position",
+                  "col": 30,
+                  "line": 7,
+                  "offset": 216
+                }
+              },
+              "@role": ["Type"],
+              "@type": "SimpleType",
+              "annotations": null,
+              "name": {
+                "@pos": {
+                  "@type": "uast:Positions",
+                  "end": {
+                    "@type": "uast:Position",
+                    "col": 41,
+                    "line": 7,
+                    "offset": 227
+                  },
+                  "start": {
+                    "@type": "uast:Position",
+                    "col": 30,
+                    "line": 7,
+                    "offset": 216
+                  }
+                },
+                "@type": "uast:Identifier",
+                "Name": "IOException"
+              }
+            }
+          ],
+          "typeParameters": null
+        }
+      ],
+      "interface": "false",
+      "javadoc": null,
+      "modifiers": [
+        {
+          "@pos": {
+            "@type": "uast:Positions",
+            "end": {
+              "@type": "uast:Position",
+              "col": 7,
+              "line": 5,
+              "offset": 63
+            },
+            "start": {
+              "@type": "uast:Position",
+              "col": 1,
+              "line": 5,
+              "offset": 57
+            }
+          },
+          "@role": ["Visibility", "World"],
+          "@token": "public",
+          "@type": "Modifier"
+        }
+      ],
+      "name": {
+        "@pos": {
+          "@type": "uast:Positions",
+          "end": {
+            "@type": "uast:Position",
+            "col": 19,
+            "line": 5,
+            "offset": 75
+          },
+          "start": {
+            "@type": "uast:Position",
+            "col": 14,
+            "line": 5,
+            "offset": 70
+          }
+        },
+        "@type": "uast:Identifier",
+        "Name": "Hello"
+      },
+      "superInterfaceTypes": null,
+      "superclassType": {
+        "@pos": {
+          "@type": "uast:Positions",
+          "end": {
+            "@type": "uast:Position",
+            "col": 42,
+            "line": 5,
+            "offset": 98
+          },
+          "start": {
+            "@type": "uast:Position",
+            "col": 28,
+            "line": 5,
+            "offset": 84
+          }
+        },
+        "@role": ["Type"],
+        "@type": "SimpleType",
+        "annotations": null,
+        "name": {
+          "@pos": {
+            "@type": "uast:Positions",
+            "end": {
+              "@type": "uast:Position",
+              "col": 42,
+              "line": 5,
+              "offset": 98
+            },
+            "start": {
+              "@type": "uast:Position",
+              "col": 28,
+              "line": 5,
+              "offset": 84
+            }
+          },
+          "@type": "uast:Identifier",
+          "Name": "GenericServlet"
+        }
+      },
+      "typeParameters": null
+    }
+  ]
+}

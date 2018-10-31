@@ -7,7 +7,7 @@ import {
   expandToNodeId,
   expandRootIds
 } from './helpers';
-import { hocOptions as uastV1Options } from './uast-v1';
+import { hocOptions as uastV2Options } from './uast-v2';
 
 function isEqualArray(a1, a2) {
   if (a1.length !== a2.length) {
@@ -29,7 +29,7 @@ function isEqualArray(a1, a2) {
 // options.transformer - function that converts uast to flat-json
 // options.getNodePosition - function that returns position in codemirror format from node
 // options.getChildrenIds - function that returns array of all children ids
-function withUASTEditor(WrappedComponent, options = uastV1Options) {
+function withUASTEditor(WrappedComponent, options = uastV2Options) {
   const initialState = {
     uast: null,
     // control highlighted node
