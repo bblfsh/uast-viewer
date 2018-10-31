@@ -96,7 +96,7 @@ class ControlledExample extends React.Component {
                     <button onClick={this.onExpandAll}>expand all</button>
                     <button onClick={this.onCollapseAll}>collapse all</button>
                     <button onClick={this.onHighlight}>
-                        Toggle highlight for all nodes imports
+                        Toggle highlighting for all 'import' nodes
                     </button>
                 </div>
                 <div>
