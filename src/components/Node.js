@@ -89,13 +89,12 @@ class PureNode extends PureComponent {
             label={field.label}
             key={field.name}
           >
-            {value.map(
-              (v, i) =>
-                isObject(v) ? (
-                  this.renderField(v, i)
-                ) : (
-                  <Property key={i} value={v} />
-                )
+            {value.map((v, i) =>
+              isObject(v) ? (
+                this.renderField(v, i)
+              ) : (
+                <Property key={i} value={v} />
+              )
             )}
           </CollapsibleItem>
         );
