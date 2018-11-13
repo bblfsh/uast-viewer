@@ -13,7 +13,7 @@ class UASTViewer extends Component {
     this.state = {
       controlled,
       // keep uast in state only if component is uncontrolled
-      uast: !controlled ? props.uast : undefined
+      flatUast: !controlled ? props.flatUast : undefined
     };
 
     this.onMouseMove = this.onMouseMove.bind(this);
@@ -45,11 +45,11 @@ class UASTViewer extends Component {
     this.el.scrollTop = nodeEl.offsetTop;
   }
 
-  getUast() {
+  getFlatUast() {
     if (this.state.controlled) {
-      return this.props.uast;
+      return this.props.flatUast;
     }
-    return this.state.uast;
+    return this.state.flatUast;
   }
 
   onMouseMove(id) {
@@ -60,8 +60,12 @@ class UASTViewer extends Component {
       this.props.onNodeHover(id, this.lastOverId);
     }
     if (!this.state.controlled) {
-      const newUast = hoverNodeById(this.state.uast, id, this.lastOverId);
-      this.setState({ uast: newUast });
+      const newFlatUast = hoverNodeById(
+        this.state.flatUast,
+        id,
+        this.lastOverId
+      );
+      this.setState({ flatUast: newFlatUast });
     }
 
     this.lastOverId = id;
@@ -79,22 +83,22 @@ class UASTViewer extends Component {
       return;
     }
 
-    const uast = this.getUast();
-    const node = uast[id];
-    const newUast = {
-      ...uast,
+    const flatUast = this.getFlatUast();
+    const node = flatUast[id];
+    const newFlatUast = {
+      ...flatUast,
       [id]: {
         ...node,
         expanded: !node.expanded
       }
     };
-    this.setState({ uast: newUast });
+    this.setState({ flatUast: newFlatUast });
   }
 
   render() {
     const [props, childProps] = splitProps(this.props, UASTViewer);
     const { showLocations, rootIds, schema } = props;
-    const uast = this.getUast();
+    const flatUast = this.getFlatUast();
 
     return (
       <div
@@ -105,7 +109,7 @@ class UASTViewer extends Component {
         }}
         {...childProps}
       >
-        <TreeContext.Provider value={uast}>
+        <TreeContext.Provider value={flatUast}>
           {rootIds.map(id => (
             <Node
               key={id}
@@ -126,7 +130,7 @@ class UASTViewer extends Component {
 UASTViewer.propTypes = {
   // Object should have {[id]: node} format
   // don't use PropTypes.shape due to possible extra properties in a node
-  uast: PropTypes.object.isRequired,
+  flatUast: PropTypes.object.isRequired,
   rootIds: PropTypes.arrayOf(PropTypes.number).isRequired,
   schema: PropTypes.func,
   showLocations: PropTypes.bool.isRequired,

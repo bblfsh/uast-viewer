@@ -9,7 +9,7 @@ class ControlledExample extends React.Component {
     constructor() {
         this.state = {
             // transform uast.json expanding only the first level nodes
-            uast: uastV2.transformer(uast, 1),
+            flatUast: uastV2.transformer(uast, 1),
             hoveredId: null,
             highlighted: false
         };
@@ -30,7 +30,7 @@ class ControlledExample extends React.Component {
             // an application has access to hovered id
             hoveredId: id,
             // modify tree using provided helper
-            uast: hoverNodeById(this.state.uast, id, prevId)
+            flatUast: hoverNodeById(this.state.flatUast, id, prevId)
         });
     }
 
@@ -39,43 +39,43 @@ class ControlledExample extends React.Component {
         // an application can disallow toggling or run custom code on event
         this.setState({
             // modify tree using provided helper
-            uast: toggleNodeById(this.state.uast, id)
+            flatUast: toggleNodeById(this.state.flatUast, id)
         });
     }
 
     // example of an application-level tree transformer
     // expands all the tree keeping other properties of nodes unchanged (for example highlighting)
     onExpandAll() {
-        const newUast = Object.keys(this.state.uast).reduce((acc, key) => {
+        const newUast = Object.keys(this.state.flatUast).reduce((acc, key) => {
             acc[key] = {
-                ...this.state.uast[key],
+                ...this.state.flatUast[key],
                 expanded: true
             };
             return acc;
         }, {});
 
-        this.setState({ uast: newUast });
+        this.setState({ flatUast: newUast });
     }
 
     // another example of an application-level tree transformer
     onCollapseAll() {
-        const newUast = Object.keys(this.state.uast).reduce((acc, key) => {
+        const newUast = Object.keys(this.state.flatUast).reduce((acc, key) => {
             acc[key] = {
-                ...this.state.uast[key],
+                ...this.state.flatUast[key],
                 expanded: false
             };
             return acc;
         }, {});
 
-        this.setState({ uast: newUast });
+        this.setState({ flatUast: newUast });
     }
 
     // an application can set highlighted property to a node it would affect how the node is displayed
     onHighlight() {
-        const { uast, highlighted } = this.state;
+        const { flatUast, highlighted } = this.state;
         // modify the tree and toggle highlighted prop to every node with an imports
-        const newUast = Object.keys(this.state.uast).reduce((acc, key) => {
-            const node = uast[key];
+        const newUast = Object.keys(this.state.flatUast).reduce((acc, key) => {
+            const node = flatUast[key];
             const newNode = node.n['@type'] == 'uast:Import'
                 ? {
                     ...node,
@@ -86,7 +86,7 @@ class ControlledExample extends React.Component {
             return acc;
         }, {});
 
-        this.setState({ uast: newUast, highlighted: !highlighted });
+        this.setState({ flatUast: newUast, highlighted: !highlighted });
     }
 
     render() {
@@ -106,7 +106,7 @@ class ControlledExample extends React.Component {
                 {/* the component becomes controlled
                     when onNodeHover or onNodeToggle props are passed */}
                 <UASTViewer
-                    uast={this.state.uast}
+                    flatUast={this.state.flatUast}
                     onNodeHover={this.onNodeHover}
                     onNodeToggle={this.onNodeToggle}
                 />

@@ -7,7 +7,7 @@ Sets property `hovered: true` to selected node and `hovered: false` to previousl
 ```js static
 import { hoverNodeById } from 'uast-viewer';
 
-const newUast = hoverNodeById(uast, id, prevId);
+const newUast = hoverNodeById(flatUast, id, prevId);
 ```
 
 ### toggleNodeById
@@ -17,7 +17,7 @@ Sets property `expanded: !expanded` to selected node.
 ```js static
 import { toggleNodeById } from 'uast-viewer';
 
-const newUast = toggleNodeById(uast, id);
+const newUast = toggleNodeById(flatUast, id);
 ```
 
 ### highlightNodeById
@@ -27,7 +27,7 @@ Sets property `highlighted: true` to selected node and `highlighted: false` to p
 ```js static
 import { highlightNodeById } from 'uast-viewer';
 
-const newUast = highlightNodeById(uast, id, prevId);
+const newUast = highlightNodeById(flatUast, id, prevId);
 ```
 
 ### languageToMode
