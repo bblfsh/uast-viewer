@@ -20,5 +20,5 @@ const someUast = {
     }
 };
 
-<UASTViewer uast={someUast} />
+<UASTViewer flatUast={someUast} />
 ```

@@ -1,10 +1,10 @@
-export function hoverNodeById(uast, id, prevId) {
+export function hoverNodeById(flatUast, id, prevId) {
   if (prevId === id) {
-    return uast;
+    return flatUast;
   }
 
-  let newUast = uast;
-  const node = uast[id];
+  let newUast = flatUast;
+  const node = flatUast[id];
   if (node) {
     newUast = {
       ...newUast,
@@ -27,23 +27,23 @@ export function hoverNodeById(uast, id, prevId) {
   return newUast;
 }
 
-export function toggleNodeById(uast, id) {
+export function toggleNodeById(flatUast, id) {
   return {
-    ...uast,
+    ...flatUast,
     [id]: {
-      ...uast[id],
-      expanded: !uast[id].expanded
+      ...flatUast[id],
+      expanded: !flatUast[id].expanded
     }
   };
 }
 
-export function highlightNodeById(uast, id, prevId) {
+export function highlightNodeById(flatUast, id, prevId) {
   if (prevId === id) {
-    return uast;
+    return flatUast;
   }
 
-  let newUast = uast;
-  const node = uast[id];
+  let newUast = flatUast;
+  const node = flatUast[id];
   if (node) {
     newUast = {
       ...newUast,
@@ -67,18 +67,18 @@ export function highlightNodeById(uast, id, prevId) {
 }
 
 // expands all nodes from the root to id
-export function expandToNodeId(uast, id) {
+export function expandToNodeId(flatUast, id) {
   let nodeId = id;
-  let newUast = uast;
+  let newUast = flatUast;
   while (nodeId) {
     newUast = {
       ...newUast,
       [nodeId]: {
-        ...uast[nodeId],
+        ...flatUast[nodeId],
         expanded: true
       }
     };
-    nodeId = uast[nodeId].parentId;
+    nodeId = flatUast[nodeId].parentId;
   }
   return newUast;
 }
@@ -102,17 +102,22 @@ function collectExpandIds(nodes, children, level, getChildrenIds) {
 }
 
 // expands levelsToExpand nodes from rootIds
-export function expandRootIds(uast, rootIds, levelsToExpand, getChildrenIds) {
+export function expandRootIds(
+  flatUast,
+  rootIds,
+  levelsToExpand,
+  getChildrenIds
+) {
   const idsToExpand = collectExpandIds(
-    uast,
+    flatUast,
     rootIds,
     levelsToExpand,
     getChildrenIds
   );
-  return Object.keys(uast).reduce((acc, id) => {
+  return Object.keys(flatUast).reduce((acc, id) => {
     const expanded = idsToExpand.includes(+id);
     acc[id] = {
-      ...uast[id],
+      ...flatUast[id],
       expanded,
       highlighted: false
     };

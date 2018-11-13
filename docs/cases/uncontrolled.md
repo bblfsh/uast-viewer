@@ -6,5 +6,5 @@ The library provides a default transformer function for this purpose.
 ```js
 const { uastV2 } = require('uast-viewer');
 
-<UASTViewer uast={uastV2.transformer(uast)} />
+<UASTViewer flatUast={uastV2.transformer(uast)} />
 ```

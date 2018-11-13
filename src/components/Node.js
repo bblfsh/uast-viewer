@@ -153,8 +153,8 @@ class PureNode extends PureComponent {
 }
 
 class Node extends Component {
-  renderPureNode(uast) {
-    const node = uast[this.props.id];
+  renderPureNode(flatUast) {
+    const node = flatUast[this.props.id];
 
     if (!node) {
       return null;
@@ -165,7 +165,7 @@ class Node extends Component {
   render() {
     return (
       <TreeContext.Consumer>
-        {uast => this.renderPureNode(uast)}
+        {flatUast => this.renderPureNode(flatUast)}
       </TreeContext.Consumer>
     );
   }

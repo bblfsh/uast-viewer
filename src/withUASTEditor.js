@@ -32,7 +32,7 @@ function isEqualArray(a1, a2) {
 // options.getChildrenIds - function that returns array of all children ids
 function withUASTEditor(WrappedComponent, options = uastV2Options) {
   const initialState = {
-    uast: null,
+    flatUast: null,
     // control highlighted node
     lastHighlighted: null,
     // position (line, ch) of nodes
@@ -66,7 +66,7 @@ function withUASTEditor(WrappedComponent, options = uastV2Options) {
         nextProps.levelsToExpand !== this.props.levelsToExpand
       ) {
         state = this.resetUast(
-          state.uast,
+          state.flatUast,
           nextProps.rootIds,
           nextProps.levelsToExpand
         );
@@ -101,10 +101,15 @@ function withUASTEditor(WrappedComponent, options = uastV2Options) {
       return this.resetUast(flatUast, rootIds, levelsToExpand);
     }
 
-    resetUast(uast, rootIds, levelsToExpand) {
+    resetUast(flatUast, rootIds, levelsToExpand) {
       return {
         ...initialState,
-        uast: expandRootIds(uast, rootIds, levelsToExpand, getChildrenIds)
+        flatUast: expandRootIds(
+          flatUast,
+          rootIds,
+          levelsToExpand,
+          getChildrenIds
+        )
       };
     }
 
@@ -113,13 +118,13 @@ function withUASTEditor(WrappedComponent, options = uastV2Options) {
         return;
       }
 
-      const { uast } = this.state;
-      const node = uast[id];
-      const newUast = hoverNodeById(uast, id, prevId);
+      const { flatUast } = this.state;
+      const node = flatUast[id];
+      const newFlatUast = hoverNodeById(flatUast, id, prevId);
 
       if (!node) {
         this.setState({
-          uast: newUast,
+          flatUast: newFlatUast,
           hoverPos: null
         });
         return;
@@ -127,13 +132,13 @@ function withUASTEditor(WrappedComponent, options = uastV2Options) {
 
       const hoverPos = getNodePosition(node);
 
-      this.setState({ uast: newUast, hoverPos });
+      this.setState({ flatUast: newFlatUast, hoverPos });
     }
 
     onNodeToggle(id) {
-      const { uast } = this.state;
-      const newUast = toggleNodeById(uast, id);
-      this.setState({ uast: newUast });
+      const { flatUast } = this.state;
+      const newFlatUast = toggleNodeById(flatUast, id);
+      this.setState({ flatUast: newFlatUast });
     }
 
     onNodeClick(id) {
@@ -141,8 +146,8 @@ function withUASTEditor(WrappedComponent, options = uastV2Options) {
         return;
       }
 
-      const { uast } = this.state;
-      const node = uast[id];
+      const { flatUast } = this.state;
+      const node = flatUast[id];
 
       if (!node) {
         this.setState({ clickPos: null });
@@ -158,10 +163,10 @@ function withUASTEditor(WrappedComponent, options = uastV2Options) {
       if (!nodeId) {
         return;
       }
-      const { uast, lastHighlighted } = this.state;
-      const newUast = highlightNodeById(uast, nodeId, lastHighlighted);
+      const { flatUast, lastHighlighted } = this.state;
+      const newFlatUast = highlightNodeById(flatUast, nodeId, lastHighlighted);
       this.setState({
-        uast: expandToNodeId(newUast, nodeId),
+        flatUast: expandToNodeId(newFlatUast, nodeId),
         lastHighlighted: nodeId
       });
     }
@@ -180,7 +185,7 @@ function withUASTEditor(WrappedComponent, options = uastV2Options) {
           }}
           uastViewerProps={{
             rootIds,
-            uast: this.state.uast,
+            flatUast: this.state.flatUast,
             scrollToNode: this.state.lastHighlighted,
             onNodeHover: this.onNodeHover,
             onNodeToggle: this.onNodeToggle,
