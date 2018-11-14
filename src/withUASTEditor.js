@@ -24,7 +24,7 @@ function isEqualArray(a1, a2) {
   return true;
 }
 
-// withUASTEditor creates High Ordered Component which connects Editor with UASTViewer
+// withUASTEditor creates High Ordered Component which connects Editor with FlatUASTViewer
 // WrappedComponent - layout for componenets
 // options
 // options.transformer - function that converts uast to flat-json

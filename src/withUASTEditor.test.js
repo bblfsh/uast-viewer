@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import UASTViewer from './components/UASTViewer';
+import FlatUASTViewer from './components/FlatUASTViewer';
 import Editor from './components/Editor';
 import withUASTEditor from './withUASTEditor';
 import { hocOptions as v1hocOptions, nodeSchema as v1schema } from './uast-v1';
@@ -11,7 +11,7 @@ function LayoutV1({ editorProps, uastViewerProps }) {
   return (
     <div>
       <Editor {...editorProps} />
-      <UASTViewer {...uastViewerProps} schema={v1schema} />
+      <FlatUASTViewer {...uastViewerProps} schema={v1schema} />
     </div>
   );
 }
@@ -20,7 +20,7 @@ function LayoutV2({ editorProps, uastViewerProps }) {
   return (
     <div>
       <Editor {...editorProps} />
-      <UASTViewer {...uastViewerProps} />
+      <FlatUASTViewer {...uastViewerProps} />
     </div>
   );
 }

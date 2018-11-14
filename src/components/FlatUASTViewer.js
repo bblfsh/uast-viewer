@@ -5,7 +5,7 @@ import { hoverNodeById } from '../helpers';
 import splitProps from '../splitProps';
 import TreeContext from './TreeContext';
 
-class UASTViewer extends Component {
+class FlatUASTViewer extends Component {
   constructor(props) {
     super(props);
 
@@ -96,7 +96,7 @@ class UASTViewer extends Component {
   }
 
   render() {
-    const [props, childProps] = splitProps(this.props, UASTViewer);
+    const [props, childProps] = splitProps(this.props, FlatUASTViewer);
     const { showLocations, rootIds, schema } = props;
     const flatUast = this.getFlatUast();
 
@@ -127,7 +127,7 @@ class UASTViewer extends Component {
   }
 }
 
-UASTViewer.propTypes = {
+FlatUASTViewer.propTypes = {
   // Object should have {[id]: node} format
   // don't use PropTypes.shape due to possible extra properties in a node
   flatUast: PropTypes.object.isRequired,
@@ -140,9 +140,9 @@ UASTViewer.propTypes = {
   onNodeClick: PropTypes.func
 };
 
-UASTViewer.defaultProps = {
+FlatUASTViewer.defaultProps = {
   rootIds: [1],
   showLocations: false
 };
 
-export default UASTViewer;
+export default FlatUASTViewer;
