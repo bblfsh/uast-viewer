@@ -30,6 +30,26 @@ import { highlightNodeById } from 'uast-viewer';
 const newUast = highlightNodeById(flatUast, id, prevId);
 ```
 
+### expandToNodeId
+
+Expands all nodes from the root to id.
+
+```js static
+import { expandToNodeId } from 'uast-viewer';
+
+const newUast = expandToNodeId(flatUast, id);
+```
+
+### expandRootIds
+
+Expands `levelsToExpand` nodes from `rootIds`.
+
+```js static
+import { expandRootIds } from 'uast-viewer';
+
+const newUast = expandRootIds(flatUast, rootIds, levelsToExpand, getChildrenIds);
+```
+
 ### languageToMode
 
 Maps language name to MIME Mode recognizable by code-mirror.
