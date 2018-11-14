@@ -1,4 +1,5 @@
 import FlatUASTViewer from './components/FlatUASTViewer';
+import UASTViewer from './components/UASTViewer';
 import Editor from './components/Editor';
 import withUASTEditor from './withUASTEditor';
 import PositionIndex from './PositionIndex';
@@ -13,8 +14,9 @@ import {
   languageToMode
 } from './helpers';
 
-export default FlatUASTViewer;
+export default UASTViewer;
 export {
+  FlatUASTViewer,
   Editor,
   PositionIndex,
   withUASTEditor,

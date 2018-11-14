@@ -5,6 +5,7 @@ module.exports = {
   require: [path.resolve(__dirname, 'styles/default-theme.scss')],
   context: {
     uast: path.resolve(__dirname, 'fixtures/uast-v2-java-large.json'),
+    smallUast: path.resolve(__dirname, 'fixtures/uast-v2-java-small.json'),
     sourceCode: path.resolve(__dirname, 'docs/example_java_source.js')
   },
   sections: [

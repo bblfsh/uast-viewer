@@ -33,6 +33,5 @@
 4. Use the default `transformer` function to feed the [UAST JSON](#!/State) to the component
 
     ```js static
-    import { uastV2 } from 'uast-viewer';
-    <UASTViewer uast={uastV2.transformer(uastJSON)} />
+    <UASTViewer uast={uastJSON} />
     ```

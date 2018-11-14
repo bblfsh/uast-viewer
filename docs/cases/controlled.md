@@ -1,4 +1,7 @@
-The `UASTViewer` component supports controlled mode when the application needs to control the UAST state.
+The `FlatUASTViewer` component supports controlled mode when the application needs to control the UAST state.
+
+The original UAST must be converted to a flat structure.
+The library provides a default transformer function for this purpose.
 
 The application is responsible for setting the `hovered` and `expanded` properties in such case.
 
@@ -105,7 +108,7 @@ class ControlledExample extends React.Component {
 
                 {/* the component becomes controlled
                     when onNodeHover or onNodeToggle props are passed */}
-                <UASTViewer
+                <FlatUASTViewer
                     flatUast={this.state.flatUast}
                     onNodeHover={this.onNodeHover}
                     onNodeToggle={this.onNodeToggle}
