@@ -18,7 +18,7 @@
     $ npm install uast-viewer
     ```
 
-2. Import `uast-viewer` module
+2. Import `uast-viewer` component
 
     ```js static
     import UASTViewer from 'uast-viewer';
@@ -30,7 +30,7 @@
     import 'uast-viewer/dist/default-theme.css';
     ```
 
-4. Use the default `transformer` function to feed the [UAST JSON](#!/State) to the component
+4. Render component with UAST JSON
 
     ```js static
     <UASTViewer uast={uastJSON} />
