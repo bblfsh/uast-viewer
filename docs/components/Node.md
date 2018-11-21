@@ -5,20 +5,24 @@ The component must be wrapped with `TreeContext.Provider` containing flat UAST J
 ```js
 const someUast = {
     1: {
-        "InternalType": "CompilationUnit",
-        "StartPosition": { "Offset": 0, "Line": 1, "Col": 1 },
-        "EndPosition": { "Offset": 446, "Line": 0, "Col": 0 },
-        "Roles": ["File"],
-        "Children": [2],
+        n: {
+            "InternalType": "CompilationUnit",
+            "@pos": {
+                "StartPosition": { "Offset": 0, "Line": 1, "Col": 1 },
+                "EndPosition": { "Offset": 446, "Line": 0, "Col": 0 },
+            },
+            "Roles": ["File"],
+            "Children": [{ id: 2, "_uast_node_type": true }],
+        },
         expanded: true
     },
     2: {
-        "InternalType": "LineComment",
-        "Properties": { "internalRole": "comments", "text": " hello.java" },
-        "StartPosition": { "Offset": 0, "Line": 1, "Col": 1 },
-        "EndPosition": { "Offset": 13, "Line": 1, "Col": 14 },
-        "Roles": ["Comment"],
-        "Children": []
+        n: {
+            "InternalType": "LineComment",
+            "Properties": { "internalRole": "comments", "text": " hello.java" },
+            "Roles": ["Comment"],
+            "Children": []
+        }
     }
 };
 
@@ -32,11 +36,15 @@ With location:
 ```js
 const someUast = {
     1: {
-        "InternalType": "LineComment",
-        "Properties": { "internalRole": "comments", "text": " hello.java" },
-        "StartPosition": { "Offset": 0, "Line": 1, "Col": 1 },
-        "EndPosition": { "Offset": 13, "Line": 1, "Col": 14 },
-        "Roles": ["Comment"],
+        n: {
+            "InternalType": "LineComment",
+            "Properties": { "internalRole": "comments", "text": " hello.java" },
+            "@pos": {
+                "StartPosition": { "Offset": 0, "Line": 1, "Col": 1 },
+                "EndPosition": { "Offset": 446, "Line": 0, "Col": 0 },
+            },
+            "Roles": ["Comment"],
+        },
         expanded: true
     }
 };
