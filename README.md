@@ -26,7 +26,7 @@ See the [documentation](https://uast-viewer.bblf.sh/) with live examples.
     $ npm install uast-viewer
     ```
 
-2. Import `uast-viewer` module
+2. Import `uast-viewer` component
 
     ```js
     import UASTViewer from 'uast-viewer';
@@ -38,11 +38,10 @@ See the [documentation](https://uast-viewer.bblf.sh/) with live examples.
     import 'uast-viewer/dist/default-theme.css';
     ```
 
-4. Use the default `transformer` function to feed the UAST JSON to the component
+4. Render component with UAST JSON
 
     ```js
-    import { uastV2 } from 'uast-viewer';
-    <UASTViewer uast={uastV2.transformer(uastJSON)} />
+    <UASTViewer uast={uastJSON} />
     ```
 
 
