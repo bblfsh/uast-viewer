@@ -1,4 +1,9 @@
-Renders transformed UAST.
+Low-level component. Renders flat UAST.
+
+You might need it if you need control over the tree.
+Check [controlled example](#/Use cases?id=controlled) for more information.
+
+If you need only render raw UAST without external control, consider using [UASTViewer](#/UI Components?id=uastviewer) component instead.
 
 ```js
 const someUast = {
