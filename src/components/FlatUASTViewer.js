@@ -9,11 +9,19 @@ class FlatUASTViewer extends Component {
   constructor(props) {
     super(props);
 
-    const controlled = Boolean(props.onNodeToggle || props.onNodeHover);
+    if (process.env.NODE_ENV !== 'production') {
+      if (props.initialFlatUast && props.flatUast) {
+        // eslint-disable-next-line no-console
+        console.warn(
+          'FlatUASTViewer: both initialFlatUast and flatUast props are passed ' +
+            'initialFlatUast property will be ignored'
+        );
+      }
+    }
+
     this.state = {
-      controlled,
       // keep uast in state only if component is uncontrolled
-      flatUast: !controlled ? props.flatUast : undefined
+      flatUast: props.initialFlatUast
     };
 
     this.onMouseMove = this.onMouseMove.bind(this);
@@ -46,26 +54,23 @@ class FlatUASTViewer extends Component {
   }
 
   getFlatUast() {
-    if (this.state.controlled) {
-      return this.props.flatUast;
-    }
-    return this.state.flatUast;
+    return this.props.flatUast || this.state.flatUast;
   }
 
   onMouseMove(id) {
     if (this.lastOverId === id) {
       return;
     }
-    if (this.props.onNodeHover) {
-      this.props.onNodeHover(id, this.lastOverId);
-    }
-    if (!this.state.controlled) {
+
+    if (!this.props.flatUast) {
       const newFlatUast = hoverNodeById(
         this.state.flatUast,
         id,
         this.lastOverId
       );
       this.setState({ flatUast: newFlatUast });
+    } else if (this.props.onNodeHover) {
+      this.props.onNodeHover(id, this.lastOverId);
     }
 
     this.lastOverId = id;
@@ -76,23 +81,20 @@ class FlatUASTViewer extends Component {
   }
 
   onToggle(id) {
-    if (this.props.onNodeToggle) {
+    if (!this.props.flatUast) {
+      const { flatUast } = this.state;
+      const node = flatUast[id];
+      const newFlatUast = {
+        ...flatUast,
+        [id]: {
+          ...node,
+          expanded: !node.expanded
+        }
+      };
+      this.setState({ flatUast: newFlatUast });
+    } else if (this.props.onNodeToggle) {
       this.props.onNodeToggle(id);
     }
-    if (this.state.controlled) {
-      return;
-    }
-
-    const flatUast = this.getFlatUast();
-    const node = flatUast[id];
-    const newFlatUast = {
-      ...flatUast,
-      [id]: {
-        ...node,
-        expanded: !node.expanded
-      }
-    };
-    this.setState({ flatUast: newFlatUast });
   }
 
   render() {
@@ -130,7 +132,9 @@ class FlatUASTViewer extends Component {
 FlatUASTViewer.propTypes = {
   // Object should have {[id]: node} format
   // don't use PropTypes.shape due to possible extra properties in a node
-  flatUast: PropTypes.object.isRequired,
+  flatUast: PropTypes.object,
+  // same as flatUast but for uncontrolled mode
+  initialFlatUast: PropTypes.any,
   rootIds: PropTypes.arrayOf(PropTypes.number).isRequired,
   schema: PropTypes.func,
   showLocations: PropTypes.bool.isRequired,

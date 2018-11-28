@@ -6,22 +6,42 @@ import { hocOptions as uastV2Options } from '../uast-v2';
 
 class UASTViewer extends PureComponent {
   render() {
-    const { uast, levelsToExpand, rootIds, options, ...rest } = this.props;
-
-    const flatUast = expandRootIds(
-      options.transformer(uast),
-      rootIds,
+    const {
+      uast,
+      initialUast,
       levelsToExpand,
-      options.getChildrenIds
-    );
+      rootIds,
+      options,
+      ...rest
+    } = this.props;
 
-    return <FlatUASTViewer flatUast={flatUast} rootIds={rootIds} {...rest} />;
+    const toFlat = input =>
+      expandRootIds(
+        options.transformer(input),
+        rootIds,
+        levelsToExpand,
+        options.getChildrenIds
+      );
+
+    const flatUast = uast ? toFlat(uast) : undefined;
+    const initialFlatUast = initialUast ? toFlat(initialUast) : undefined;
+
+    return (
+      <FlatUASTViewer
+        flatUast={flatUast}
+        initialFlatUast={initialFlatUast}
+        rootIds={rootIds}
+        {...rest}
+      />
+    );
   }
 }
 
 UASTViewer.propTypes = {
   // source UAST in the format matching transformer
   uast: PropTypes.any,
+  // same as uast but for uncontrolled mode
+  initialUast: PropTypes.any,
   // array of root nodes ids
   rootIds: PropTypes.array.isRequired,
   // number of node levels to expand from rootIds
