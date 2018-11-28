@@ -13,7 +13,7 @@ class FlatUASTViewer extends Component {
       if (props.initialFlatUast && props.flatUast) {
         // eslint-disable-next-line no-console
         console.warn(
-          'FlatUASTViewer: both initialFlatUast and flatUast props are passed' +
+          'FlatUASTViewer: both initialFlatUast and flatUast props are passed ' +
             'initialFlatUast property will be ignored'
         );
       }
