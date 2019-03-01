@@ -87,7 +87,7 @@ class PureNode extends PureComponent {
           <CollapsibleItem
             name={field.name}
             label={field.label}
-            key={field.name}
+            key={field.name || key}
           >
             {value.map((v, i) =>
               isObject(v) ? (
