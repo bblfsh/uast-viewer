@@ -116,23 +116,36 @@ export function transformer(uastJson) {
   return tree;
 }
 
+function itemType(item) {
+  if (item === null || typeof item === 'undefined') {
+    return 'any';
+  }
+
+  // check only for item.type is not enough because it can be "simple" object
+  // with key type
+  if (item.type && item.attr && typeof item.attr === 'function') {
+    return item.type;
+  }
+
+  if (item.attr) {
+    return itemType(item.attr());
+  }
+
+  return typeof item;
+}
+
 // checks if all items have the same type and return it or 'any'
 function itemsType(items) {
   if (!items.length) {
     return 'any';
   }
 
-  let { type } = items[0];
-  const valueTypes =
-    typeof type === 'undefined' // primitive type like string
-      ? items.map(i => (i !== null && i.attr ? i.attr() : i)).map(v => typeof v)
-      : items.map(i => i.type);
-
+  const valueTypes = items.map(itemType);
   if (new Set(valueTypes).size > 1) {
     return 'any';
   }
 
-  [type] = valueTypes;
+  const [type] = valueTypes;
 
   return type;
 }
