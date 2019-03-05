@@ -57,7 +57,7 @@ Maps language name to MIME Mode recognizable by code-mirror.
 Example usage:
 
 ```js
-const { languageToMode } = require('uast-viewer');
+import { languageToMode } from 'uast-viewer';
 
 const langs = ['java', 'bash', 'javascript'];
 

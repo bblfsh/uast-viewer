@@ -6,7 +6,7 @@ The library provides a default transformer function for this purpose.
 The application is responsible for setting the `hovered` and `expanded` properties in such case.
 
 ```js
-const { uastV2, hoverNodeById, toggleNodeById } = require('uast-viewer');
+import { FlatUASTViewer, uastV2, hoverNodeById, toggleNodeById } from 'uast-viewer';
 
 class ControlledExample extends React.Component {
     constructor() {

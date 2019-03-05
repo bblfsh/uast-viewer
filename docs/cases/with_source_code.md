@@ -9,7 +9,8 @@ Features:
 - Scroll code to highlighted position on click on node
 
 ```js
-const { Editor, withUASTEditor } = require('uast-viewer');
+
+import { FlatUASTViewer, Editor, withUASTEditor } from 'uast-viewer';
 
 // define layout for source code editor and UAST Viewer
 function Layout({ editorProps, uastViewerProps }) {
@@ -26,7 +27,7 @@ const LayoutWithComponents = withUASTEditor(Layout);
 
 // Render both components
 <LayoutWithComponents
-    code={sourceCode.default}
+    code={sourceCode}
     languageMode="text/x-java"
     uast={uast}
 />

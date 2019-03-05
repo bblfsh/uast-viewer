@@ -3,6 +3,9 @@ Renders a UAST node recursively.
 The component must be wrapped with `TreeContext.Provider` containing flat UAST JSON.
 
 ```js
+// consider as internal api, isn't exported through default uast-viewer entrypoint
+import TreeContext from '../../src/components/TreeContext';
+
 const someUast = {
     1: {
         n: {
@@ -34,6 +37,9 @@ const someUast = {
 With location:
 
 ```js
+// consider as internal api, isn't exported through default uast-viewer entrypoint
+import TreeContext from '../../src/components/TreeContext';
+
 const someUast = {
     1: {
         n: {
