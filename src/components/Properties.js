@@ -22,7 +22,7 @@ function Properties({ properties, name, label }) {
 }
 
 Properties.propTypes = {
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   label: PropTypes.string.isRequired,
   properties: PropTypes.object
 };
