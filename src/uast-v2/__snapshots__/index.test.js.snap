@@ -1,5 +1,167 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`nodeSchema array 1`] = `
+Array [
+  Object {
+    "attr": [Function],
+    "label": "[]any",
+    "name": "emptyArray",
+    "type": "array",
+  },
+  Object {
+    "attr": [Function],
+    "label": "[]any",
+    "name": "nullArray",
+    "type": "array",
+  },
+  Object {
+    "attr": [Function],
+    "label": "[]any",
+    "name": "undefinedArray",
+    "type": "array",
+  },
+  Object {
+    "attr": [Function],
+    "label": "[]number",
+    "name": "arrayPrimitives",
+    "type": "array",
+  },
+  Object {
+    "attr": [Function],
+    "label": "[]any",
+    "name": "arrayMixed",
+    "type": "array",
+  },
+  Object {
+    "attr": [Function],
+    "label": "[]node",
+    "name": "arrayOfNodes",
+    "type": "array",
+  },
+  Object {
+    "attr": [Function],
+    "label": "[]object",
+    "name": "arraySimpleObjectWithKeyType",
+    "type": "array",
+  },
+]
+`;
+
+exports[`nodeSchema location object 1`] = `
+Object {
+  "attr": [Function],
+  "label": "Position",
+  "name": "@pos",
+  "type": "location",
+}
+`;
+
+exports[`nodeSchema location object 2`] = `
+Object {
+  "@type": "uast:Positions",
+  "end": Object {
+    "attr": [Function],
+    "label": "map<string,any>",
+    "name": "end",
+    "type": "object",
+  },
+  "start": Object {
+    "attr": [Function],
+    "label": "map<string,any>",
+    "name": "start",
+    "type": "object",
+  },
+}
+`;
+
+exports[`nodeSchema node object 1`] = `
+Array [
+  Object {
+    "attr": [Function],
+    "label": "someNode",
+    "name": "someNode",
+    "type": "node",
+  },
+]
+`;
+
+exports[`nodeSchema primitives types 1`] = `
+Array [
+  Object {
+    "attr": [Function],
+    "name": "string",
+    "showEmpty": true,
+  },
+  Object {
+    "attr": [Function],
+    "name": "integer",
+    "showEmpty": true,
+  },
+  Object {
+    "attr": [Function],
+    "name": "boolean",
+    "showEmpty": true,
+  },
+  Object {
+    "attr": [Function],
+    "name": "null",
+    "showEmpty": true,
+  },
+  Object {
+    "attr": [Function],
+    "name": "undefined",
+    "showEmpty": true,
+  },
+]
+`;
+
+exports[`nodeSchema simple object 1`] = `
+Array [
+  Object {
+    "attr": [Function],
+    "label": "map<string,any>",
+    "name": "objectEmpty",
+    "type": "object",
+  },
+  Object {
+    "attr": [Function],
+    "label": "map<string,any>",
+    "name": "objectNull",
+    "type": "object",
+  },
+  Object {
+    "attr": [Function],
+    "label": "map<string,any>",
+    "name": "objectUndefined",
+    "type": "object",
+  },
+  Object {
+    "attr": [Function],
+    "label": "map<string,string>",
+    "name": "objectSingle",
+    "type": "object",
+  },
+  Object {
+    "attr": [Function],
+    "label": "map<string,string>",
+    "name": "objectString",
+    "type": "object",
+  },
+  Object {
+    "attr": [Function],
+    "label": "map<string,number>",
+    "name": "objectInt",
+    "type": "object",
+  },
+  Object {
+    "attr": [Function],
+    "label": "map<string,any>",
+    "name": "objectMixed",
+    "type": "object",
+  },
+]
+`;
+
 exports[`transformer does not fail on null values 1`] = `
 Object {
   "1": Object {
