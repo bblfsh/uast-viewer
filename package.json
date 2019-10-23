@@ -48,7 +48,7 @@
     "prop-types": "^15.6.1",
     "react": "^16.11.0",
     "react-codemirror2": "^6.0.0",
-    "react-dom": "^16.8.4",
+    "react-dom": "^16.11.0",
     "react-styleguidist": "^9.0.1",
     "react-test-renderer": "^16.8.4",
     "sass-loader": "^7.0.3",
